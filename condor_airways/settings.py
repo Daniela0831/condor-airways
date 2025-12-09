@@ -10,9 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # =========================
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-default-key')
 
-DEBUG = 'RENDER' not in os.environ or os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME', 'localhost')]
+ALLOWED_HOSTS = ['*']
 
 # =========================
 # Application definition
