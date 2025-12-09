@@ -1,7 +1,9 @@
 Django>=5.2
+mysqlclient
 Faker
 Pillow
 pytz
 gunicorn
 dj-database-url
 whitenoise
+python-dotenv

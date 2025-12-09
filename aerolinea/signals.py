@@ -5,7 +5,7 @@ from aerolinea.models import Rol, Usuario
 
 @receiver(post_migrate)
 def crear_datos_iniciales(sender, **kwargs):
-    if sender.name != "aerolinea":  # Ejecutar solo para esta app
+    if sender.name != "aerolinea":
         return
 
     # Crear roles base
@@ -22,11 +22,11 @@ def crear_datos_iniciales(sender, **kwargs):
             email="root@condorairways.com",
             password="root123"
         )
+        # Crear perfil Usuario asociado
         Usuario.objects.create(
             user=root_user,
             rol=rol_root,
             email="root@condorairways.com",
-            password="root123",
             nombres="Root",
             apellidos="System",
             dni="0000000000",
@@ -37,3 +37,4 @@ def crear_datos_iniciales(sender, **kwargs):
             es_root=True
         )
         print("✅ Usuario root creado correctamente.")
+
