@@ -82,6 +82,18 @@ TIME_ZONE = "America/Bogota"
 USE_I18N = True
 USE_TZ = True
 
+
+
+# Ruta absoluta donde se recopilarán los archivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# URL para acceder a los archivos estáticos
+STATIC_URL = '/static/'
+
+# Opcional, si usas WhiteNoise para servir estáticos en producción
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
