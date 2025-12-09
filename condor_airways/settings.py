@@ -1,4 +1,5 @@
 from pathlib import Path
+from dotenv import load_dotenv
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -47,16 +48,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "condor_airways.wsgi.application"
 
+
+
 # --- DATABASE ---
 if "RENDER" in os.environ:  # Detecta Render automáticamente
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.mysql",
-            "NAME": os.environ["RENDER_DATABASE_DB_NAME"],
-            "USER": os.environ["RENDER_DATABASE_USERNAME"],
-            "PASSWORD": os.environ["RENDER_DATABASE_PASSWORD"],
-            "HOST": os.environ["RENDER_DATABASE_HOST"],
-            "PORT": os.environ.get("RENDER_DATABASE_PORT", "3306"),
+            "ENGINE": "django.db.backends.postgresql",
+            'NAME': os.getenv('DB_NAME'),
+            'USER': os.getenv('DB_USER'),
+            'PASSWORD': os.getenv('DB_PASSWORD'),
+            'HOST': os.getenv('DB_HOST'),
+            'PORT': os.getenv('DB_PORT', '5432'),
         }
     }
 else:  # Local MariaDB
