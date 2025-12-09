@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block title %}Historial de Compras y Reservas{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">📜 Historial de Compras y Reservas</h2>
+
+  <!-- 🔹 Pestañas -->
+  <ul class="nav nav-tabs justify-content-center" id="historialTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="compras-tab" data-bs-toggle="tab" data-bs-target="#compras" type="button" role="tab">
+        💳 Compras
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="reservas-tab" data-bs-toggle="tab" data-bs-target="#reservas" type="button" role="tab">
+        🧾 Reservas
+      </button>
+    </li>
+  </ul>
+
+  <!-- 🔸 Contenido de pestañas -->
+  <div class="tab-content mt-4" id="historialTabsContent">
+
+    <!-- 🟩 COMPRAS -->
+    <div class="tab-pane fade show active" id="compras" role="tabpanel">
+      {% if compras %}
+      <table class="table table-striped text-center align-middle shadow">
+        <thead class="table-dark">
+          <tr>
+            <th>Código</th>
+            <th>Vuelo</th>
+            <th>Fecha Salida</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for compra in compras %}
+          <tr>
+            <td>{{ compra.codigo_reserva }}</td>
+            <td>{{ compra.vuelo.origen }} → {{ compra.vuelo.destino }}</td>
+            <td>{{ compra.vuelo.fecha_salida|date:"d/m/Y" }} {{ compra.vuelo.hora_salida|time:"H:i" }}</td>
+            <td>${{ compra.monto_total|floatformat:2 }}</td>
+
+            <td>
+              {% if compra.estado == "activa" %}
+                <span class="badge bg-success">Activa</span>
+              {% elif compra.estado == "cancelada" %}
+                <span class="badge bg-danger">Cancelada</span><br>
+                <small class="text-muted">💵 Reintegro: ${{ compra.monto_total|floatformat:2 }}</small>
+              {% else %}
+                <span class="badge bg-secondary">{{ compra.estado }}</span>
+              {% endif %}
+            </td>
+
+            <td class="d-flex flex-column gap-1">
+              {% if compra.estado == "activa" %}
+                <!-- Hacer check-in -->
+                <a href="{% url 'checkin_vuelo' compra.id %}" class="btn btn-success btn-sm fw-bold">
+                  <i class="bi bi-check2-circle"></i> Check-in
+                </a>
+
+                <!-- Cambiar asiento antes de check-in -->
+                {% if compra.puede_cambiar_asiento %}
+                  <a href="{% url 'seleccionar_asiento' compra.id %}" class="btn btn-outline-primary btn-sm fw-bold">
+                    <i class="bi bi-arrow-repeat"></i> Cambiar asiento
+                  </a>
+                {% endif %}
+
+                <!-- Cancelar compra -->
+                {% if compra.puede_cancelar %}
+                  <a href="{% url 'cancelar_compra' compra.id %}" class="btn btn-outline-danger btn-sm fw-bold"
+                     onclick="return confirm('¿Deseas cancelar esta compra?')">
+                    <i class="bi bi-x-circle"></i> Cancelar compra
+                  </a>
+                {% endif %}
+              {% elif compra.estado == "checkin" %}
+                {% if compra.pendientes_checkin %}
+                  <span class="badge bg-warning">⚠️ Check-in Pendiente</span>
+                {% else %}
+                  <span class="badge bg-success">Check-in completado</span>
+                {% endif %}
+              {% else %}
+                <span class="text-muted">No disponible</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="alert alert-info text-center">No tienes compras registradas aún.</div>
+      {% endif %}
+    </div>
+
+    <!-- 🟦 RESERVAS -->
+    <div class="tab-pane fade" id="reservas" role="tabpanel">
+      {% if reservas %}
+      <table class="table table-striped text-center align-middle shadow">
+        <thead class="table-dark">
+          <tr>
+            <th>ID Reserva</th>
+            <th>Vuelo</th>
+            <th>Fecha Salida</th>
+            <th>Tiquetes</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reserva in reservas %}
+          <tr>
+            <td>{{ reserva.id }}</td>
+            <td>{{ reserva.vuelo.origen }} → {{ reserva.vuelo.destino }}</td>
+            <td>{{ reserva.vuelo.fecha_salida|date:"d/m/Y" }} {{ reserva.vuelo.hora_salida|time:"H:i" }}</td>
+            <td>{{ reserva.num_tiquetes }}</td>
+            <td>
+              {% if reserva.estado == "activa" %}
+                <span class="badge bg-success">Activa</span>
+              {% elif reserva.estado == "cancelada" %}
+                <span class="badge bg-danger">Cancelada</span>
+              {% else %}
+                <span class="badge bg-secondary">{{ reserva.estado }}</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if reserva.puede_cancelar %}
+                  <a href="{% url 'cancelar_reserva' reserva.id %}" class="btn btn-warning btn-sm fw-bold"
+                    onclick="return confirm('¿Deseas cancelar esta reserva?')">
+                    <i class="bi bi-x-circle"></i> Cancelar
+                  </a>
+              {% else %}
+                  <span class="text-muted">No disponible</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="alert alert-info text-center">No tienes reservas registradas aún.</div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- 🔙 Botón volver -->
+  <div class="text-center mt-4">
+    <a href="{% url 'buscar_vuelos' %}" class="btn btn-secondary">
+      <i class="bi bi-airplane"></i> Buscar nuevos vuelos
+    </a>
+  </div>
+</div>
+{% endblock %}

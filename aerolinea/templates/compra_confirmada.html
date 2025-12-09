@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Compra Confirmada{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 mx-auto" style="max-width: 700px;">
+    <div class="text-center mb-4">
+      <h2 class="text-success">¡Compra Realizada con Éxito! 💳</h2>
+      <p class="lead">Has comprado exitosamente tu vuelo <strong>{{ compra.vuelo.codigo }}</strong>.</p>
+    </div>
+
+    <ul class="list-group mb-4">
+      <li class="list-group-item d-flex justify-content-between">
+        <span><strong>Origen:</strong></span>
+        <span>{{ compra.vuelo.origen }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span><strong>Destino:</strong></span>
+        <span>{{ compra.vuelo.destino }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span><strong>Fecha de salida:</strong></span>
+        <span>{{ compra.vuelo.fecha_salida|date:"d/m/Y" }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span><strong>Hora de salida:</strong></span>
+        <span>{{ compra.vuelo.hora_salida|time:"H:i" }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span><strong>Fecha de llegada (hora local):</strong></span>
+        <span>{{ compra.vuelo.fecha_llegada|date:"d/m/Y" }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span><strong>Hora de llegada (hora local):</strong></span>
+        <span>{{ compra.vuelo.hora_llegada|time:"H:i" }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span><strong>Código de reserva:</strong></span>
+        <span class="text-primary fw-bold">{{ compra.codigo_reserva }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span><strong>Método de pago:</strong></span>
+        <span>{{ compra.metodo_pago }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span><strong>Estado:</strong></span>
+        <span>
+          {% if compra.estado == "activa" %}
+            <span class="badge bg-success">Activa</span>
+          {% elif compra.estado == "cancelada" %}
+            <span class="badge bg-danger">Cancelada</span>
+          {% else %}
+            <span class="badge bg-secondary">{{ compra.estado }}</span>
+          {% endif %}
+        </span>
+      </li>
+    </ul>
+
+    <div class="d-flex justify-content-center gap-3">
+      <a href="{% url 'checkin_vuelo' compra.id %}" class="btn btn-primary fw-bold">
+        ✈️ Hacer Check-In
+      </a>
+      <a href="{% url 'buscar_vuelos' %}" class="btn btn-outline-secondary fw-bold">
+        🔙 Volver al inicio
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

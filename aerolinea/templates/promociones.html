@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Promociones de Cóndor Airways</h2>
+
+{% if user.is_authenticated and not user.usuario.suscrito_promos %}
+<div class="alert alert-warning">
+  Suscríbete para ver promociones exclusivas
+  <a href="{% url 'toggle_suscripcion' %}" class="btn btn-sm btn-success">
+    Suscribirme
+  </a>
+</div>
+{% endif %}
+
+<div class="row">
+  {% for p in promos %}
+  <div class="col-md-4">
+    <div class="card mb-3">
+      {% if p.imagen %}<img src="{{ p.imagen.url }}" class="card-img-top">{% endif %}
+      <div class="card-body">
+        <h5>{{ p.titulo }}</h5>
+        <span class="badge bg-danger">{{ p.descuento }}% OFF</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,268 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Panel del Administrador{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/admin_custom.css' %}">
+
+<div class="admin-bg">
+  <div class="container py-5">
+    <!-- Encabezado -->
+    <header class="text-center mb-5 animate-fadein">
+      <h1 class="fw-bold titulo-admin">
+        <i class="bi bi-airplane-engines me-2"></i> Panel del Administrador
+      </h1>
+      <p class="text-dark fs-5 mb-0">Gestión completa de vuelos — <span class="text-dark brand">Cóndor Airways</span></p>
+      <hr class="divider mx-auto">
+    </header>
+
+    <!-- Crear vuelo -->
+    <section class="admin-section mb-5 animate-fadein">
+      <div class="card card-form shadow-lg mx-auto">
+        <div class="card-body">
+          <h4 class="text-center mb-4 fw-bold titulo-admin">
+            <i class="bi bi-plus-circle"></i> Crear nuevo vuelo
+          </h4>
+
+          <form method="POST" enctype="multipart/form-data" id="form-vuelo" class="mx-auto p-4" style="max-width:520px;">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            {% for field in form %}
+              <div class="mb-3">
+                <label class="form-label fw-semibold text-dark">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                  <div class="text-danger small mt-1">{{ field.errors }}</div>
+                {% endif %}
+              </div>
+            {% endfor %}
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-gradient mt-3">
+                <i class="bi bi-check-circle"></i> Crear Vuelo
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabla de vuelos -->
+    <section class="admin-section animate-fadein">
+      <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <h5 class="fw-bold titulo-admin mb-2">Listado de vuelos</h5>
+        <input type="text" id="search-vuelo" class="form-control w-auto" placeholder="Buscar vuelo...">
+      </div>
+
+      <div class="card card-table shadow-lg border-0 rounded-4 mt-4">
+        <div class="card-header bg-gradient text-white text-center rounded-top-4 py-3">
+          <h4 class="fw-semibold mb-0">
+            <i class="bi bi-airplane-fill me-2"></i> Vuelos registrados
+            <span class="badge bg-warning text-dark ms-2">Total: {{ vuelos|length }}</span>
+          </h4>
+        </div>
+
+        <div class="card-body bg-white">
+          <div class="table">
+            <table class="table table-hover align-middle text-center m-0">
+              <thead class="table-header text-white sticky-top">
+                <tr class="text-uppercase small">
+                  <th>Imagen</th>
+                  <th>Código</th>
+                  <th>Tipo</th>
+                  <th>Origen</th>
+                  <th>Destino</th>
+                  <th>Salida</th>
+                  <th>Llegada</th>
+                  <th>Duración</th>
+                  <th>Capacidad</th>
+                  <th>Precio</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for vuelo in vuelos %}
+                <tr class="fila-vuelo">
+                  <td>
+                    {% if vuelo.imagen %}
+                      <img src="{{ vuelo.imagen.url }}" alt="Imagen del vuelo"
+                        class="img-thumbnail shadow-sm"
+                        style="width:85px; height:55px; object-fit:cover; border-radius:8px;">
+                    {% else %}
+                      <span class="text-muted small">Sin imagen</span>
+                    {% endif %}
+                  </td>
+                  <td class="fw-bold">{{ vuelo.codigo }}</td>
+                  <td>
+                    {% if vuelo.tipo == "INTERNACIONAL" %}
+                      Internacional
+                    {% else %}
+                      Nacional
+                    {% endif %}
+                  </td>
+                  <td>{{ vuelo.origen }}</td>
+                  <td>{{ vuelo.destino }}</td>
+                  <td>
+                    <i class="bi bi-calendar-event"></i> {{ vuelo.fecha_salida }}<br>
+                    <small class="text-muted"><i class="bi bi-clock"></i> {{ vuelo.hora_salida }}</small>
+                  </td>
+                  <td>
+                    <i class="bi bi-calendar-check"></i> {{ vuelo.fecha_llegada }}<br>
+                    <small class="text-muted"><i class="bi bi-clock-history"></i> {{ vuelo.hora_llegada }}</small>
+                  </td>
+                  <td>{{ vuelo.tiempo_vuelo }}</td>
+                  <td>{{ vuelo.capacidad }}</td>
+                  <td class="fw-bold text-success">${{ vuelo.precio }}</td>
+
+                  <td>
+                    {% if vuelo.estado == "activo" %}
+                      <span class="badge bg-success px-3 py-2">Activo</span>
+                    {% elif vuelo.estado == "cancelado" %}
+                      <span class="badge bg-danger px-3 py-2">Cancelado</span>
+                    {% elif vuelo.estado == "finalizado" %}
+                      <span class="badge bg-secondary px-3 py-2">Finalizado</span>
+                    {% endif %}
+                  </td>
+
+                  <td>
+                    <div class="btn-group" role="group">
+                      {% if vuelo.estado == "activo" %}
+                        <a href="{% url 'editar_vuelo' vuelo.id %}" class="btn btn-warning btn-sm" title="Editar">
+                          <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <a href="{% url 'cancelar_vuelo' vuelo.id %}" class="btn btn-danger btn-sm" title="Cancelar">
+                          <i class="bi bi-x-circle"></i>
+                        </a>
+                        <a href="{% url 'finalizar_vuelo' vuelo.id %}" class="btn btn-secondary btn-sm" title="Finalizar">
+                          <i class="bi bi-clock-history"></i>
+                        </a>
+                      {% elif vuelo.estado == "cancelado" %}
+                        <a href="{% url 'reactivar_vuelo' vuelo.id %}" class="btn btn-success btn-sm" title="Reactivar">
+                          <i class="bi bi-arrow-clockwise"></i>
+                        </a>
+                      {% else %}
+                        <span class="text-muted small">Sin acciones</span>
+                      {% endif %}
+                    </div>
+                  </td>
+                </tr>
+                {% empty %}
+                <tr>
+                  <td colspan="12" class="text-muted py-4">No hay vuelos registrados aún.</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Botón flotante -->
+    <button id="scrollTop" class="btn btn-gradient rounded-circle">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const tipoSelect = document.getElementById("id_tipo");
+  const origenSelect = document.getElementById("id_origen");
+  const destinoSelect = document.getElementById("id_destino");
+  const codigoField = document.getElementById("id_codigo_preview");
+
+  // Cuando cambia el tipo de vuelo
+  tipoSelect.addEventListener("change", async () => {
+    const tipo = tipoSelect.value;
+
+    if (!tipo) return;
+
+    try {
+      // --- Actualizar código ---
+      const resCodigo = await fetch("{% url 'next_codigo_vuelo' %}?tipo=" + tipo);
+      const dataCodigo = await resCodigo.json();
+      if (dataCodigo.codigo) codigoField.value = dataCodigo.codigo;
+
+      // --- Actualizar origen y destino ---
+      const resOpciones = await fetch("{% url 'get_options_vuelo' %}?tipo=" + tipo);
+      const dataOpciones = await resOpciones.json();
+
+      origenSelect.innerHTML = "";
+      destinoSelect.innerHTML = "";
+
+      dataOpciones.origen_options.forEach(([val, txt]) => {
+        origenSelect.innerHTML += `<option value="${val}">${txt}</option>`;
+      });
+      dataOpciones.destino_options.forEach(([val, txt]) => {
+        destinoSelect.innerHTML += `<option value="${val}">${txt}</option>`;
+      });
+    } catch (err) {
+      console.error("Error cargando opciones:", err);
+    }
+  });
+
+  // Calcular tiempo de vuelo automáticamente
+  document.querySelectorAll("#id_origen, #id_destino, #id_fecha_salida, #id_hora_salida")
+    .forEach(el => el.addEventListener("change", async () => {
+      const tipo = tipoSelect.value;
+      const origen = origenSelect.value;
+      const destino = destinoSelect.value;
+      const fecha_salida = document.getElementById("id_fecha_salida").value;
+      const hora_salida = document.getElementById("id_hora_salida").value;
+
+      if (!tipo || !origen || !destino || !fecha_salida || !hora_salida) return;
+
+      try {
+        const res = await fetch(
+          `{% url 'calcular_tiempo_vuelo' %}?tipo=${tipo}&origen=${origen}&destino=${destino}&fecha_salida=${fecha_salida}&hora_salida=${hora_salida}`
+        );
+        const data = await res.json();
+
+        if (data.tiempo_vuelo) {
+          document.getElementById("id_tiempo_vuelo").value = data.tiempo_vuelo;
+          document.getElementById("id_fecha_llegada").value = data.fecha_llegada;
+          document.getElementById("id_hora_llegada").value = data.hora_llegada;
+        }
+      } catch (err) {
+        console.error("Error calculando tiempo de vuelo:", err);
+      }
+    }));
+
+    // Establecer capacidad automática según tipo de vuelo
+  tipoSelect.addEventListener("change", () => {
+    const tipo = tipoSelect.value;
+    const capacidadField = document.getElementById("id_capacidad");
+
+    if (tipo === "NACIONAL") {
+      capacidadField.value = 150;
+    } else if (tipo === "INTERNACIONAL") {
+      capacidadField.value = 250;
+    } else {
+      capacidadField.value = "";
+    }
+  });
+});
+</script>
+
+<!-- Script buscador -->
+<script>
+  const searchInput = document.getElementById("search-vuelo");
+  searchInput.addEventListener("input", (e) => {
+    const term = e.target.value.toLowerCase();
+    document.querySelectorAll("tbody tr").forEach(row => {
+      row.style.display = row.innerText.toLowerCase().includes(term) ? "" : "none";
+    });
+  });
+
+  const btn = document.getElementById("scrollTop");
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 200 ? "block" : "none";
+  });
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+</script>
+
+{% endblock %}

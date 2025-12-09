@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Confirmar Ida y Regreso{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+  <h2 class="text-center mb-4">✅ Confirmar trayecto completo</h2>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+
+      <div class="card shadow mb-4">
+        <div class="card-header bg-primary text-white">
+          ✈️ Vuelo de ida
+        </div>
+        <div class="card-body">
+          <p><strong>Ruta:</strong> {{ vuelo_ida.origen }} → {{ vuelo_ida.destino }}</p>
+          <p><strong>Fecha:</strong> {{ vuelo_ida.fecha_salida }} {{ vuelo_ida.hora_salida }}</p>
+          <p><strong>Precio:</strong> ${{ vuelo_ida.precio }}</p>
+        </div>
+      </div>
+
+      <div class="card shadow mb-4">
+        <div class="card-header bg-success text-white">
+          🔁 Vuelo de regreso
+        </div>
+        <div class="card-body">
+          <p><strong>Ruta:</strong> {{ vuelo_regreso.origen }} → {{ vuelo_regreso.destino }}</p>
+          <p><strong>Fecha:</strong> {{ vuelo_regreso.fecha_salida }} {{ vuelo_regreso.hora_salida }}</p>
+          <p><strong>Precio:</strong> ${{ vuelo_regreso.precio }}</p>
+        </div>
+      </div>
+
+      <div class="alert alert-info text-center">
+        <strong>Total:</strong>
+        ${{ vuelo_ida.precio|add:vuelo_regreso.precio }}
+      </div>
+
+      <div class="d-grid gap-2">
+        <a href="{% url 'ver_historial_compras' %}" class="btn btn-success btn-lg">
+          ✅ Confirmar compra
+        </a>
+
+        <a href="{% url 'buscar_vuelos' %}" class="btn btn-outline-secondary">
+          ❌ Cancelar
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}

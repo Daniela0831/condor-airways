@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Check-In Confirmado{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="text-center mb-4">✅ Check-In Confirmado</h2>
+
+    <h4>Pasajero</h4>
+    <ul class="list-group mb-3">
+      <li class="list-group-item"><strong>Nombre:</strong> {{ pasajero.nombres }} {{ pasajero.apellidos }}</li>
+      <li class="list-group-item"><strong>Documento:</strong> {{ pasajero.documento }}</li>
+      <li class="list-group-item"><strong>Asiento:</strong> {{ checkin.asiento }}</li>
+    </ul>
+
+    <h4>Vuelo</h4>
+    <ul class="list-group mb-3">
+      <li class="list-group-item"><strong>Vuelo:</strong> {{ reserva.vuelo }}</li>
+      <li class="list-group-item"><strong>Trayecto:</strong> {{ reserva.tipo_trayecto }}</li>
+      <li class="list-group-item"><strong>Clase:</strong> {{ reserva.clase }}</li>
+    </ul>
+
+    <h4>Compra</h4>
+    <ul class="list-group mb-3">
+      <li class="list-group-item"><strong>Monto base:</strong> ${{ compra.monto_base }}</li>
+      <li class="list-group-item"><strong>Recargo clase:</strong> ${{ compra.recargo_clase }}</li>
+      <li class="list-group-item"><strong>Costo maleta:</strong> ${{ compra.costo_maleta }}</li>
+      <li class="list-group-item"><strong>Monto total:</strong> ${{ compra.monto_total }}</li>
+    </ul>
+
+    {% if maletas %}
+    <h4>Maletas</h4>
+    <ul class="list-group mb-3">
+      {% for maleta in maletas %}
+        <li class="list-group-item">Peso: {{ maleta.peso }} kg - Costo: ${{ maleta.costo }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if pendientes %}
+    <a href="{% url 'checkin_vuelo' compra.id %}" class="btn btn-primary w-100 mt-3">
+      Hacer Check-In de otros pasajeros
+    </a>
+    {% endif %}
+
+    <a href="{% url 'buscar_vuelos' %}" class="btn btn-success w-100 mt-2">
+      Volver a Buscar Vuelos
+    </a>
+  </div>
+</div>
+{% endblock %}

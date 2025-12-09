@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Seleccionar asiento{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'selector_asientos/plane-svg.css' %}">
+
+<div class="container mt-4">
+  <h2 class="text-center mb-3">✈️ Selecciona tu asiento</h2>
+
+  <!-- Mensajes -->
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+
+  <!-- Pasajero -->
+  <div class="mb-3">
+    <label class="form-label fw-bold">Pasajero</label>
+    <select id="pasajero_id" class="form-select">
+      {% for pasajero in pasajeros %}
+        {% if not reserva.check_in_realizado and not pasajero.asiento_cambiado %}
+          <option value="{{ pasajero.id }}">
+            {{ pasajero.nombres }} {{ pasajero.apellidos }}
+          </option>
+        {% elif pasajero.asiento_cambiado %}
+          <option value="{{ pasajero.id }}" disabled>
+            {{ pasajero.nombres }} {{ pasajero.apellidos }} (Ya cambió asiento)
+          </option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+
+  <!-- AVIÓN -->
+  <div class="plane-wrapper">
+    <svg id="plane-svg" viewBox="0 0 1100 3000">
+
+      <!-- sombra -->
+      <ellipse cx="550" cy="2940" rx="420" ry="55"
+              fill="#cbd5e1" opacity="0.45"/>
+
+      <!-- alas -->
+      <polygon points="40,1200 420,1050 420,1500 40,1700"
+              fill="#e5e7eb" stroke="#cbd5e1"/>
+      <polygon points="1060,1200 680,1050 680,1500 1060,1700"
+              fill="#e5e7eb" stroke="#cbd5e1"/>
+
+      <!-- fuselaje -->
+      <rect
+        x="190" y="140"
+        width="720" height="2855"
+        rx="360"
+        fill="#f8fafc"
+        stroke="#cbd5e1"
+        stroke-width="4"/>
+
+      <!-- Cola -->
+      <path
+        d="
+          M190 2040
+          Q550 2200 910 2040
+          L910 2000
+          Q550 2100 190 2000
+          Z
+        "
+        fill="#f4f4f4"
+      />
+
+      <!-- pasillo -->
+      <rect x="510" y="260"
+            width="80" height="2480"
+            rx="30"
+            fill="#e2e8f0"/>
+
+      <!-- salidas emergencia -->
+      <rect x="190" y="1100" width="720" height="44"
+            fill="#fde68a" opacity="0.6"/>
+      <rect x="190" y="1600" width="720" height="44"
+            fill="#fde68a" opacity="0.6"/>
+
+      <text x="550" y="1130" text-anchor="middle"
+            fill="#92400e" font-weight="bold" font-size="14">
+        SALIDA DE EMERGENCIA
+      </text>
+      <text x="550" y="1630" text-anchor="middle"
+            fill="#92400e" font-weight="bold" font-size="14">
+        SALIDA DE EMERGENCIA
+      </text>
+
+      <!-- ASIENTOS -->
+      <g id="seats-layer"></g>
+
+    </svg>
+  </div>
+
+  <!-- Leyenda -->
+  <div class="legend mt-3 d-flex justify-content-center gap-3">
+    <span><i class="business"></i> Business</span>
+    <span><i class="economy"></i> Económica</span>
+    <span><i class="selected"></i> Seleccionado</span>
+    <span><i class="occupied"></i> Ocupado</span>
+  </div>
+
+  <!-- Formulario -->
+  <form id="seat-form" method="POST"
+        action="{% url 'guardar_asiento' compra.id %}">
+    {% csrf_token %}
+    <input type="hidden" name="asiento" id="seat-selected">
+    <input type="hidden" name="pasajero_id" id="hidden-pasajero">
+  </form>
+
+  <!-- Botones solo si no hizo check-in -->
+  {% if compra.estado != "checkin" and not reserva.check_in_realizado %}
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <button id="confirm" class="btn btn-primary w-50">
+        Confirmar asiento
+      </button>
+      <button id="clear" class="btn btn-outline-secondary w-50">
+        Borrar
+      </button>
+    </div>
+  {% else %}
+    <div class="alert alert-info text-center mt-3">
+      ✅ Check-in realizado, no se puede cambiar asiento
+    </div>
+  {% endif %}
+
+</div>
+
+<script>
+  // Asientos ocupados
+  window.ocupados = {{ asientos_ocupados|safe }};
+
+  // Sincronizar select con input oculto
+  const passengerSelect = document.getElementById('pasajero_id');
+  const hiddenPasajeroInput = document.getElementById('hidden-pasajero');
+  hiddenPasajeroInput.value = passengerSelect.value;
+  passengerSelect.addEventListener('change', () => {
+    hiddenPasajeroInput.value = passengerSelect.value;
+  });
+</script>
+
+<script src="{% static 'selector_asientos/plane-svg.js' %}"></script>
+{% endblock %}

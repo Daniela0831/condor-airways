@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Carrito de Compras{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/carrito.css' %}">
+
+<div class="carrito-container py-5">
+  <div class="container">
+    <div class="card shadow-lg carrito-card animate-fadein">
+      <div class="card-header bg-gradient text-white text-center py-4">
+        <h2 class="fw-bold mb-0">
+          <i class="bi bi-cart3 me-2"></i> Mi Carrito de Compras
+        </h2>
+      </div>
+
+      <div class="card-body bg-light rounded-bottom-4 p-4">
+        {% if carrito.items.all %}
+          <div class="table-responsive">
+            <table class="table table-hover align-middle text-center mb-4 carrito-table">
+              <thead class="text-white text-uppercase">
+                <tr>
+                  <th>Vuelo</th>
+                  <th>Ruta</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th>Total</th>
+                  <th colspan="2">Acciones</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for item in carrito.items.all %}
+                <tr>
+                  <td class="fw-semibold">{{ item.vuelo.codigo }}</td>
+                  <td>{{ item.vuelo.origen }} → {{ item.vuelo.destino }}</td>
+                  <td>${{ item.vuelo.precio|floatformat:2 }}</td>
+                  <td>{{ item.cantidad }}</td>
+                  <td class="fw-bold text-success">
+                    ${{ item.vuelo.precio|floatformat:2|add:item.cantidad }}
+                  </td>
+                  <td>
+                    {% if item.reserva %}
+                      <a href="{% url 'comprar_vuelo' item.reserva.id %}" class="btn btn-gradient btn-sm fw-bold">
+                        <i class="bi bi-credit-card"></i> Pagar
+                      </a>
+                    {% else %}
+                      <span class="text-muted">Sin reserva</span>
+                    {% endif %}
+                  </td>
+                  <td>
+                    <a href="{% url 'eliminar_del_carrito' item.id %}" 
+                       class="btn btn-danger btn-sm fw-bold"
+                       onclick="return confirm('¿Estás segur@ de eliminar esta reserva del carrito?')">
+                      <i class="bi bi-trash"></i> Eliminar
+                    </a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="text-end">
+            <h4 class="fw-bold text-dark">Total a pagar: 
+              <span class="text-success ms-2">${{ total|floatformat:2 }}</span>
+            </h4>
+          </div>
+
+        {% else %}
+          <div class="text-center py-5">
+            <i class="bi bi-cart-x fs-1 text-muted"></i>
+            <p class="text-dark fs-5 mt-3">Tu carrito está vacío.</p>
+            <a href="{% url 'buscar_vuelos' %}" class="btn btn-gradient mt-2">
+              <i class="bi bi-search"></i> Buscar vuelos
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

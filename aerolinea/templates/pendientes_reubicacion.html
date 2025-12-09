@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Reservas con decisión pendiente</h2>
+
+{% if reservas %}
+<ul class="list-group">
+  {% for r in reservas %}
+  <li class="list-group-item">
+      <strong>Vuelo cancelado:</strong> {{ r.vuelo.codigo }}  
+      ({{ r.vuelo.origen }} → {{ r.vuelo.destino }})  
+      <br>
+      <a href="{% url 'opciones_cancelacion' r.id %}" class="btn btn-primary btn-sm mt-2">
+          Elegir opción
+      </a>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No tienes decisiones pendientes.</p>
+{% endif %}
+{% endblock %}

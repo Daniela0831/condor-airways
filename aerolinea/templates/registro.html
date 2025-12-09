@@ -1,0 +1,216 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/registro.css' %}">
+
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="col-md-6">
+    <div class="card shadow">
+      <div class="card-body">
+        <h3 class="text-center mb-4">Crear Cuenta</h3>
+
+        <form method="post" enctype="multipart/form-data" id="registroForm">
+          {% csrf_token %}
+
+          <!-- Errores generales -->
+          {% if form.non_field_errors %}
+          <div class="alert alert-danger">
+            {% for error in form.non_field_errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <!-- Nombres -->
+          <div class="mb-3">
+            {{ form.nombres.label_tag }}
+            {{ form.nombres }}
+            {% for error in form.nombres.errors %}
+            <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <!-- Apellidos -->
+          <div class="mb-3">
+            {{ form.apellidos.label_tag }}
+            {{ form.apellidos }}
+            {% for error in form.apellidos.errors %}
+            <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <!-- DNI -->
+          <div class="mb-3">
+            {{ form.dni.label_tag }}
+            {{ form.dni }}
+            {% for error in form.dni.errors %}
+            <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <!-- Fecha nacimiento -->
+          <div class="mb-3">
+            {{ form.fecha_nacimiento.label_tag }}
+            {{ form.fecha_nacimiento }}
+            {% for error in form.fecha_nacimiento.errors %}
+            <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <!-- País -->
+          <div class="mb-3">
+            <label for="id_pais">País</label>
+            {{ form.pais }}
+          </div>
+
+          <!-- Departamento -->
+          <div class="mb-3">
+            <label for="id_departamento">Departamento</label>
+            {{ form.departamento }}
+          </div>
+
+          <!-- Municipio -->
+          <div class="mb-3">
+            <label for="id_municipio">Municipio</label>
+            {{ form.municipio }}
+          </div>
+
+          <!-- Dirección -->
+          <div class="mb-3">
+            {{ form.direccion_facturacion.label_tag }}
+            {{ form.direccion_facturacion }}
+            {% for error in form.direccion_facturacion.errors %}
+            <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <!-- Género -->
+          <div class="mb-3">
+            {{ form.genero.label_tag }}
+            {{ form.genero }}
+            {% for error in form.genero.errors %}
+            <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {% for error in form.email.errors %}
+            <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <!-- Username -->
+          <div class="mb-3">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+            {% for error in form.username.errors %}
+            <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+            {% for error in form.password.errors %}
+            <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <!-- Imagen de usuario -->
+          <div class="mb-3">
+            {{ form.imagen_usuario.label_tag }}
+            {{ form.imagen_usuario }}
+            <div id="preview-container" class="mt-3 text-center"></div>
+            {% for error in form.imagen_usuario.errors %}
+            <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <!-- Botón -->
+          <div class="d-grid mt-4">
+            <button type="submit" class="btn btn-success btn-lg">Registrarse</button>
+          </div>
+        </form>
+
+        <hr>
+        <p class="text-center mb-0">
+          ¿Ya tienes cuenta? <a href="{% url 'login' %}" class="text-black fw-bold">Inicia sesión</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts dinámicos -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const paisSelect = document.getElementById("id_pais");
+  const deptoSelect = document.getElementById("id_departamento");
+  const muniSelect = document.getElementById("id_municipio");
+  const imagenInput = document.getElementById("id_imagen_usuario");
+  const previewContainer = document.getElementById("preview-container");
+
+  // Inicializar selects
+  deptoSelect.disabled = true;
+  muniSelect.disabled = true;
+
+  paisSelect.addEventListener("change", async function() {
+    const paisId = this.value;
+    deptoSelect.innerHTML = '<option value="">Seleccione un departamento</option>';
+    muniSelect.innerHTML = '<option value="">Seleccione un municipio</option>';
+    muniSelect.disabled = true;
+
+    if (!paisId) {
+      deptoSelect.disabled = true;
+      return;
+    }
+
+    deptoSelect.disabled = false;
+    const response = await fetch(`/api/departamentos/${paisId}/`);
+    const data = await response.json();
+    data.forEach(d => {
+      deptoSelect.innerHTML += `<option value="${d.id}">${d.nombre}</option>`;
+    });
+  });
+
+  deptoSelect.addEventListener("change", async function() {
+    const deptoId = this.value;
+    muniSelect.innerHTML = '<option value="">Seleccione un municipio</option>';
+
+    if (!deptoId) {
+      muniSelect.disabled = true;
+      return;
+    }
+
+    muniSelect.disabled = false;
+    const response = await fetch(`/api/municipios/${deptoId}/`);
+    const data = await response.json();
+    data.forEach(m => {
+      muniSelect.innerHTML += `<option value="${m.id}">${m.nombre}</option>`;
+    });
+  });
+
+  // Vista previa de imagen
+  imagenInput.addEventListener("change", function() {
+    const file = this.files[0];
+    previewContainer.innerHTML = "";
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        previewContainer.innerHTML = `
+          <img src="${e.target.result}" alt="Vista previa" 
+               style="max-width: 150px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        `;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+});
+</script>
+{% endblock %}

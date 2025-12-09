@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/tarjetas.css' %}">
+
+<div class="finanzas-container">
+  <div class="header-finanzas">
+    <h2><i class="bi bi-credit-card-2-front-fill"></i> Mis Tarjetas</h2>
+    <a href="{% url 'agregar_tarjeta' %}" class="btn-agregar">
+      <i class="bi bi-plus-circle"></i> Agregar nueva tarjeta
+    </a>
+  </div>
+
+  {% if tarjetas %}
+    <div class="tarjetas-grid">
+      {% for t in tarjetas %}
+        <div class="tarjeta-item {% if t.tipo == 'CREDITO' %}credito{% else %}debito{% endif %}">
+          <div class="tarjeta-header">
+            <h5>{{ t.get_tipo_display }}</h5>
+            <i class="bi bi-wallet2"></i>
+          </div>
+          <p class="tarjeta-numero">**** **** **** {{ t.numero|slice:"-4:" }}</p>
+          <p class="tarjeta-saldo">Saldo: <span>${{ t.saldo }}</span></p>
+          <div class="acciones">
+            <a href="{% url 'eliminar_tarjeta' t.id %}" class="btn-eliminar">
+              <i class="bi bi-trash3-fill"></i> Eliminar
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="sin-tarjetas">No tienes tarjetas registradas.</p>
+  {% endif %}
+</div>
+{% endblock %}

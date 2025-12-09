@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Buscar Vuelos{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/buscar_vuelos.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- 🌇 HERO -->
+<div class="text-center mb-5 hero-section animate__animated animate__fadeInDown">
+  <h1 class="display-5 fw-bold text-light text-shadow">
+    Conectando destinos, creando recuerdos
+  </h1>
+  <p class="lead fw-bold text-light opacity-75">
+    Encuentra tu próximo viaje con Cóndor Airways
+  </p>
+</div>
+
+<!-- ⚠️ DECISIONES PENDIENTES -->
+{% if request.user.is_authenticated and pendientes %}
+<div class="alert alert-warning text-center fw-bold shadow-lg animate__animated animate__fadeInDown">
+    <i class="bi bi-exclamation-triangle-fill"></i>
+    Tienes decisiones pendientes por cancelación de vuelo.
+    <a href="{% url 'opciones_cancelacion' pendientes.first.reserva.id %}" class="alert-link ms-2">
+        Seleccionar opción
+    </a>
+</div>
+{% endif %}
+
+<!-- 🔍 BUSCADOR -->
+<div class="search-box mx-auto mb-5 p-4 shadow-sm rounded-4 animate__animated animate__fadeInUp">
+  <h3 class="text-center mb-3 fw-bold text-light">Buscar vuelos disponibles</h3>
+
+  <form method="get" class="row g-3 justify-content-center">
+
+    <!-- Tipo de trayecto -->
+    <div class="col-12 text-center">
+      <div class="btn-group" role="group">
+        <input type="radio" class="btn-check" name="tipo_trayecto" id="solo_ida"
+               value="ida" {% if tipo_trayecto != "ida_vuelta" %}checked{% endif %}>
+        <label class="btn btn-outline-light" for="solo_ida">Solo ida</label>
+
+        <input type="radio" class="btn-check" name="tipo_trayecto" id="ida_vuelta"
+               value="ida_vuelta" {% if tipo_trayecto == "ida_vuelta" %}checked{% endif %}>
+        <label class="btn btn-outline-light" for="ida_vuelta">Ida y vuelta</label>
+      </div>
+    </div>
+
+    <!-- Origen -->
+    <div class="col-md-4">
+      <input type="text" name="origen" class="form-control"
+             placeholder="Ciudad de origen" value="{{ origen }}">
+    </div>
+
+    <!-- Destino -->
+    <div class="col-md-4">
+      <input type="text" name="destino" class="form-control"
+             placeholder="Ciudad de destino" value="{{ destino }}">
+    </div>
+
+    <!-- Fecha ida -->
+    <div class="col-md-4">
+      <input type="date" name="fecha_ida" class="form-control"
+             value="{{ request.GET.fecha_ida }}">
+    </div>
+
+    <!-- Fecha regreso -->
+    <div class="col-md-4 {% if tipo_trayecto != 'ida_vuelta' %}d-none{% endif %}" 
+        id="fecha_regreso_container">
+      <input type="date" 
+            name="fecha_regreso" 
+            class="form-control"
+            value="{{ fecha_regreso }}">
+    </div>
+
+    <div class="col-md-2 d-grid">
+      <button type="submit" class="btn btn-gradient fw-bold">
+        <i class="bi bi-search"></i> Buscar
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- JS -->
+<script>
+document.getElementById("solo_ida").addEventListener("change", () => {
+    document.getElementById("fecha_regreso_container").style.display = "none";
+});
+document.getElementById("ida_vuelta").addEventListener("change", () => {
+    document.getElementById("fecha_regreso_container").style.display = "block";
+});
+</script>
+
+<!-- 🧳 RESULTADOS IDA -->
+<div class="row justify-content-center">
+  {% for vuelo in vuelos %}
+  <div class="col-md-4 mb-4">
+    <div class="card vuelo-card text-center">
+
+      {% if vuelo.imagen %}
+        <img src="{{ vuelo.imagen.url }}" class="card-img-top" style="height:200px;object-fit:cover;">
+      {% else %}
+        <img src="{% static 'img/avionnaranja.jpg' %}" class="card-img-top" style="height:200px;object-fit:cover;">
+      {% endif %}
+
+      <div class="card-body">
+        <h6 class="text-muted">{{ vuelo.codigo }}</h6>
+        <h5>{{ vuelo.origen }} → {{ vuelo.destino }}</h5>
+
+        <p class="small text-muted">
+          {{ vuelo.fecha_salida|date:"d/m/Y" }} - {{ vuelo.hora_salida|time:"H:i" }}
+        </p>
+
+        {% if vuelo.promocion_activa and user.is_authenticated and usuario.suscrito_promociones %}
+          <p class="text-muted text-decoration-line-through mb-0">
+              ${{ vuelo.precio }}
+          </p>
+          <p class="fw-bold text-success">
+              ${{ vuelo.precio_final }}
+              <span class="badge bg-danger ms-1">
+                  {{ vuelo.descuento_porcentaje }}% OFF
+              </span>
+          </p>
+        { % else %}
+          <p class="fw-bold">${{ vuelo.precio }}</p>
+        {% endif %}
+
+        <!-- ✅ SE PASA TODO EL CONTEXTO -->
+        <a href="{% url 'reservar_vuelo' vuelo.id %}?tipo_trayecto={{ tipo_trayecto }}&fecha_regreso={{ fecha_regreso }}"
+           class="btn btn-success">
+           Reservar
+        </a>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+    <p class="text-center text-muted">No hay vuelos disponibles.</p>
+  {% endfor %}
+</div>
+
+<!-- CHECK-IN RÁPIDO -->
+<div class="container mt-4 text-center">
+  <a href="{% url 'checkin_rapido' %}"
+     class="btn btn-outline-success btn-lg fw-bold px-5">
+    ✅ Check-In rápido
+  </a>
+  <p class="text-muted mt-2">
+    ¿Ya tienes tu código de reserva? Haz tu check-in aquí
+  </p>
+</div>
+
+<hr class="my-4">
+
+{% if user.is_authenticated %}
+  {% if not usuario.suscrito_promociones %}
+    <div class="alert alert-warning text-center">
+      <strong>💥 Noticias exclusivas en Cóndor Airways</strong><br>
+      Suscríbete para acceder a noticias y descuentos especiales
+      <br><br>
+      <a href="{% url 'suscribirse_noticias' %}" class="btn btn-danger">
+        Suscribirme a noticias
+      </a>
+    </div>
+  {% endif %}
+{% else %}
+  <div class="alert alert-info text-center">
+    Inicia sesión para acceder a noticias ✈️
+  </div>
+{% endif %}
+
+<!-- ✈️ CARRUSEL -->
+<div id="carouselVuelos" class="carousel slide shadow-lg mb-5" data-bs-ride="carousel" data-bs-interval="3500">
+  <div class="carousel-inner rounded-4 overflow-hidden">
+    <div class="carousel-item active"><img src="{% static 'img/avion.jpg' %}" class="d-block w-100"></div>
+    <div class="carousel-item"><img src="{% static 'img/pereira.webp' %}" class="d-block w-100"></div>
+    <div class="carousel-item"><img src="{% static 'img/avion2.jpg' %}" class="d-block w-100"></div>
+    <div class="carousel-item"><img src="{% static 'img/medellin.jpg' %}" class="d-block w-100"></div>
+  </div>
+</div>
+
+{% endblock %}

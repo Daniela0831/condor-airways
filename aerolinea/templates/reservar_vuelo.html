@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Reservar Vuelo{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/reserva.css' %}">
+
+<div class="reserva-bg d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="card reserva-card shadow-lg animate-fadein mx-auto">
+      <div class="card-header bg-gradient text-white text-center py-4">
+        <h2 class="fw-bold mb-0">
+          <i class="bi bi-ticket-detailed me-2"></i> Reserva de Vuelo
+        </h2>
+      </div>
+
+      <div class="card-body p-4 bg-light">
+        <!-- Información del vuelo -->
+        <div class="vuelo-info p-4 rounded-3 mb-4">
+          <h4 class="fw-bold texto-form mb-3">{{ vuelo.origen }} → {{ vuelo.destino }}</h4>
+          <p class="mb-1"><strong>Fecha de salida:</strong> {{ vuelo.fecha_salida }}</p>
+          <p class="mb-1"><strong>Precio:</strong> ${{ vuelo.precio }}</p>
+        </div>
+
+        <form method="post">
+          {% csrf_token %}
+        <div class="texto-form mb-3">
+          <!-- Selección de tiquetes -->
+            <label for="num_tiquetes" class="form-label fw-semibold">Número de tiquetes</label>
+            <input type="number" id="num_tiquetes" name="num_tiquetes" name="extra" min="1" max="5"
+              value="{{ formset.total_form_count }}" class="form-control" required>
+
+          <div class="alert alert-warning mt-2" id="alert-menor" style="display:none;">
+            No se permite que menores de edad viajen sin acompañante adulto.
+          </div>
+
+            <label for="clase" class="form-label fw-semibold">Clase</label>
+            <select name="clase" class="form-select input-custom">
+              <option value="economica">Económica</option>
+              <option value="primera">Primera Clase</option>
+            </select>
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="fw-bold texto-form mb-3">Datos de los pasajeros</h4>
+          {{ formset.management_form }}
+          <div class="texto-form mb-3">
+            <div id="formset-container">
+              {% for form in formset %}
+              <div class="pasajero-card p-4 rounded-4 mb-4 shadow-sm">
+                <h5 class="fw-bold mb-3 text-center text-dark">
+                  <i class="bi bi-person-fill"></i> Pasajero {{ forloop.counter }}
+                </h5>
+                <div class="row">
+                  {% for field in form.visible_fields %}
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label fw-semibold">{{ field.label }}</label>
+                    {{ field }}
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+              {% endfor %}
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-gradient mt-3 px-5">
+              <i class="bi bi-check-circle"></i> Confirmar Reserva
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('num_tiquetes');
+  input.addEventListener('change', function() {
+    const num = parseInt(this.value);
+    if (num>5) {
+      alert("Solo puedes reservar un máximo de 5 tiquetes por persona.")
+      this.value=5;
+      return
+    }
+    const url = new URL(window.location.href);
+    url.searchParams.set('extra', num);
+    window.location.href = url; // recargar con nuevo número de pasajeros
+  });
+});
+</script>
+
+{% endblock %}

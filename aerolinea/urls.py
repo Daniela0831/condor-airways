@@ -1,0 +1,61 @@
+from django.urls import path
+from . import views
+from django.contrib.auth.views import LogoutView
+from django.contrib.auth import views as auth_views
+from .views import CustomLoginView, admin_dashboard, admin_roles, admin_usuarios, admin_vuelos
+from .views import recomendaciones
+
+
+urlpatterns = [
+    path('buscar-vuelos/', views.buscar_vuelos, name='buscar_vuelos'),
+    path('reservar/<int:vuelo_id>/', views.reservar_vuelo, name='reservar_vuelo'),
+    path('comprar-vuelo/<int:reserva_id>/', views.comprar_vuelo, name='comprar_vuelo'),
+    path('cancelar_compra/<int:compra_id>/', views.cancelar_compra, name="cancelar_compra"),
+    path("opciones-cancelacion/<int:reserva_id>/", views.opciones_cancelacion, name="opciones_cancelacion"),
+    path("seleccionar-reubicacion/<int:reserva_id>/", views.seleccionar_reubicacion, name="seleccionar_reubicacion"),
+    path("procesar-reembolso/<int:reserva_id>/", views.procesar_reembolso, name="procesar_reembolso"),
+    path('historial/', views.ver_historial_compras, name="ver_historial_compras"),
+    path("perfil/", views.perfil_usuario, name="perfil_usuario"),
+    path('checkin-vuelo/<int:compra_id>/', views.checkin_vuelo, name='checkin_vuelo'),
+    path('checkin/rapido', views.checkin_rapido, name='checkin_rapido'),
+    path("checkin-confirmado/<int:checkin_id>/", views.checkin_confirmado, name="checkin_confirmado"),
+    path("obtener_asiento/", views.obtener_asiento, name="obtener_asiento"),
+    path('seleccionar-asiento/<int:compra_id>/', views.seleccionar_asiento, name='seleccionar_asiento'),
+    path('guardar-asiento/<int:compra_id>/', views.guardar_asiento, name='guardar_asiento'),
+    path("seleccionar-regreso/", views.seleccionar_regreso, name="seleccionar_regreso"),
+    path("confirmar-regreso/<int:vuelo_regreso_id>/", views.confirmar_regreso, name="confirmar_regreso"),
+    path('registro/', views.registro, name='registro'),
+    path('login/', views.iniciar_sesion, name='login'),
+    path('logout/', LogoutView.as_view(next_page='buscar_vuelos'), name='cerrar_sesion'),
+    path("noticias/", views.noticias, name="noticias"),
+    path("noticias/suscripcion/", views.toggle_suscripcion_noticias, name="suscribirse_noticias"),
+    path("admin/noticias/crear/", views.crear_noticia, name="crear_noticia"),
+    path('admin/login/',CustomLoginView.as_view(),name='admin_login'),
+    path('admin/vuelos/', views.admin_vuelos, name='admin_vuelos'),
+    path('admin/usuarios/', views.admin_usuarios, name='admin_usuarios'),
+    path('admin/roles/', views.admin_roles, name='roles'),
+    path("admin_dashboard/", views.admin_dashboard, name="admin_dashboard"),
+    path("admin/editar/<int:vuelo_id>/", views.editar_vuelo, name="editar_vuelo"),
+    path("admin/cancelar/<int:vuelo_id>/", views.cancelar_vuelo, name="cancelar_vuelo"),
+    path('vuelo/<int:vuelo_id>/finalizar/', views.finalizar_vuelo, name='finalizar_vuelo'),
+    path('vuelo/<int:vuelo_id>/reactivar/', views.reactivar_vuelo, name='reactivar_vuelo'),
+    path('admin/next_codigo_vuelo/', views.next_codigo_vuelo, name='next_codigo_vuelo'),
+    path('admin/get_options/', views.get_options_vuelo, name='get_options_vuelo'),
+    path('admin/calcular_tiempo_vuelo/', views.calcular_tiempo_vuelo, name='calcular_tiempo_vuelo'),
+    path("api/departamentos/<int:pais_id>/", views.obtener_departamentos, name="obtener_departamentos"),
+    path("api/municipios/<int:departamento_id>/", views.obtener_municipios, name="obtener_municipios"),
+    path("crear_admin/", views.crear_admin, name="crear_admin"),
+    path("root/eliminar_admin/<int:admin_id>/", views.eliminar_admin, name="eliminar_admin"),
+    path("root/dashboard/", views.root_dashboard, name="root_dashboard"),
+    path("completar_registro_admin/", views.completar_registro_admin, name="completar_registro_admin"),
+    path("root/cambiar_password/", views.root_cambiar_password, name="root_cambiar_password"),
+    path("finanzas/tarjetas/", views.tarjetas_usuario, name="tarjetas_usuario"),
+    path("finanzas/tarjetas/agregar/", views.agregar_tarjeta, name="agregar_tarjeta"),
+    path("finanzas/tarjetas/eliminar/<int:tarjeta_id>/", views.eliminar_tarjeta, name="eliminar_tarjeta"),
+    path("finanzas/tarjetas/", views.gestionar_tarjetas, name="gestionar_tarjetas"),
+    path("carrito/", views.ver_carrito, name='ver_carrito'),
+    path('carrito/agregar/<int:vuelo_id>', views.agregar_al_carrito, name='agregar_al_carrito'),
+    path('carrito/eliminar/<int:item_id>', views.eliminar_del_carrito, name='eliminar_del_carrito'),
+    path("recomendaciones/", recomendaciones, name="recomendaciones"),
+]
+

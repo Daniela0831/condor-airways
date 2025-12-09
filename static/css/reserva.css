@@ -1,0 +1,112 @@
+:root {
+  --color-primary: #ff7b1c;
+  --color-secondary: #7a3700;
+  --color-accent: #ffb46b;
+  --color-light: #fff6ef;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --transition: 0.4s ease;
+}
+
+/* === CARD PRINCIPAL === */
+.reserva-card {
+  max-width: 850px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === HEADER === */
+.card-header.bg-gradient {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary)) !important;
+  border: none;
+}
+
+.card-body {
+  background: linear-gradient(90deg, #ffaf72ff, #ff994aff);
+}
+
+/* === INFO DEL VUELO === */
+.vuelo-info {
+  background: linear-gradient(90deg, #d86507ff, #ffd5a4ff);
+  border: 1px solid var(--color-accent);
+  box-shadow: 0 2px 8px rgba(255, 136, 0, 0.1);
+}
+
+.texto-form {
+  color: #572300ff;
+}
+
+/* === INPUTS === */
+.input-custom {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+.input-custom:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 8px rgba(255, 136, 40, 0.3);
+  outline: none;
+}
+
+/* === PASAJEROS === */
+.pasajero-card {
+  background: #fff;
+  border: 1px solid #ffd6a3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.pasajero-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 5px 15px rgba(255, 136, 0, 0.25);
+}
+
+/* === BOTÓN === */
+.btn-gradient {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+}
+.btn-gradient:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+}
+
+/* === ALERTA === */
+.alert-warning {
+  background: linear-gradient(90deg, #ffe08a, #ffc66c);
+  border: 1px solid #ffb347;
+  color: #663c00;
+  border-radius: 8px;
+}
+
+/* === ANIMACIÓN === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadein {
+  animation: fadeIn 0.8s ease;
+}
+
+/* === MODO OSCURO === */
+body.dark-mode .reserva-bg {
+  background: linear-gradient(135deg, #2e2e2e, #6e6e6e);
+}
+body.dark-mode .reserva-card {
+  background: #1f1f1f;
+  color: #f2f2f2;
+}
+body.dark-mode .vuelo-info {
+  background: #333;
+  border-color: #555;
+}
+body.dark-mode .pasajero-card {
+  background: #2b2b2b;
+  border-color: #444;
+}
+body.dark-mode .btn-gradient {
+  background: linear-gradient(90deg, #ff9c47, #b15000);
+}

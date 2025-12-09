@@ -1,0 +1,148 @@
+/* === VARIABLES === */
+:root {
+  --color-primary: #ff7b1c;
+  --color-secondary: #7a3700;
+  --color-accent: #ffb46b;
+  --color-light: #fff6ef;
+  --color-text: #1b1b1b;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --transition: 0.4s ease;
+}
+
+/* === FONDO GENERAL === */
+body {
+  background: 
+    url("../img/fondo_avion.png") no-repeat right top,
+    linear-gradient(135deg, var(--color-accent), #fff9f4);
+  background-size: 600px auto, cover; /* Imagen pequeña, color ocupa todo */
+  background-attachment: fixed;
+  color: var(--color-text);
+  font-family: 'Segoe UI', sans-serif;
+  transition: background var(--transition), color var(--transition);
+  padding-top: 180px;
+}
+
+/* === TARJETA DE FORMULARIO === */
+.card {
+  background: #ffaf63ff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-top: 130px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.card-body h3 {
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* === CAMPOS DE FORMULARIO === */
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fff;
+  transition: border var(--transition), box-shadow var(--transition);
+  color: #333;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 8px rgba(255, 123, 28, 0.5);
+  outline: none;
+}
+
+label {
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 4px;
+}
+
+/* === BOTÓN DE REGISTRO === */
+.btn-success {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 15px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-success:hover {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  transform: translateY(-2px);
+}
+
+/* === ERRORES === */
+.text-error {
+  color: #d9534f;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* === INPUT DE IMAGEN (MEJORADO) === */
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  border: 2px dashed var(--color-primary);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #444;
+}
+
+input[type="file"]::file-selector-button {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-right: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+}
+
+/* Hover general sobre el campo */
+input[type="file"]:hover {
+  border-color: var(--color-accent);
+}
+
+/* === LINK LOGIN === */
+a.text-black {
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a.text-black:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .card {
+    margin-top: 20px;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+}

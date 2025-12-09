@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+/* --- Estilo tipo Netflix --- */
+.titulo-seccion {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.slider-horizontal {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+.slider-horizontal::-webkit-scrollbar {
+    height: 8px;
+}
+.slider-horizontal::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.card-netflix {
+    min-width: 280px;
+    max-width: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform .2s;
+}
+.card-netflix:hover {
+    transform: scale(1.05);
+}
+
+.card-netflix img {
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-netflix .info {
+    padding: 12px;
+}
+.card-netflix .info .ruta {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.card-netflix .precio {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0d6efd;
+}
+</style>
+
+<h2 class="mt-4 mb-4 text-center fw-bold">✈ Recomendaciones para ti</h2>
+
+<div class="container">
+
+    <!-- 1️⃣ Basado en historial -->
+    {% if recomendados_historial %}
+    <div class="mb-4">
+        <div class="titulo-seccion text-success">📘 Basado en tu historial</div>
+        <div class="slider-horizontal">
+            {% for vuelo in recomendados_historial %}
+            <div class="card-netflix">
+                <img src="{{ vuelo.imagen.url }}" alt="Imagen vuelo">
+
+                <div class="info">
+                    <div class="ruta">{{ vuelo.origen.nombre }} → {{ vuelo.destino.nombre }}</div>
+                    <div class="precio">${{ vuelo.precio }}</div>
+                    <a href="/ver-vuelo/{{ vuelo.id }}/" class="btn btn-primary mt-2 w-100">Ver vuelo</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- 1.5️⃣ Última búsqueda -->
+    {% if vuelos_ultima_busqueda %}
+    <div class="mb-4">
+        <div class="titulo-seccion text-primary">🕵️‍♂️ Vuelos según tu última búsqueda</div>
+        <div class="slider-horizontal">
+            {% for vuelo in vuelos_ultima_busqueda %}
+            <div class="card-netflix">
+                <img src="{{ vuelo.imagen.url }}" alt="Imagen vuelo">
+
+                <div class="info">
+                    <div class="ruta">{{ vuelo.origen.nombre }} → {{ vuelo.destino.nombre }}</div>
+                    <div class="precio">${{ vuelo.precio }}</div>
+                    <a href="/ver-vuelo/{{ vuelo.id }}/" class="btn btn-primary mt-2 w-100">Ver vuelo</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- 2️⃣ Tendencias -->
+    {% if recomendados_tendencias %}
+    <div class="mb-4">
+        <div class="titulo-seccion text-warning">🔥 Vuelos en tendencia</div>
+        <div class="slider-horizontal">
+            {% for vuelo in recomendados_tendencias %}
+            <div class="card-netflix">
+                <img src="{{ vuelo.imagen.url }}" alt="Imagen vuelo">
+                <div class="info">
+                    <div class="ruta">{{ vuelo.origen.nombre }} → {{ vuelo.destino.nombre }}</div>
+                    <div class="precio">${{ vuelo.precio }}</div>
+                    <a href="/ver-vuelo/{{ vuelo.id }}/" class="btn btn-warning mt-2 w-100 text-white">Ver vuelo</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- 3️⃣ Baratos -->
+    {% if recomendados_baratos %}
+    <div class="mb-4">
+        <div class="titulo-seccion text-info">💸 Vuelos más baratos</div>
+        <div class="slider-horizontal">
+            {% for vuelo in recomendados_baratos %}
+            <div class="card-netflix">
+                <img src="{{ vuelo.imagen.url }}" alt="Imagen vuelo">
+
+                <div class="info">
+                    <div class="ruta">{{ vuelo.origen.nombre }} → {{ vuelo.destino.nombre }}</div>
+                    <div class="precio">${{ vuelo.precio }}</div>
+                    <a href="/ver-vuelo/{{ vuelo.id }}/" class="btn btn-info mt-2 w-100 text-white">Ver vuelo</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- 4️⃣ Cuándo comprar -->
+    {% if recomendados_cuando_comprar %}
+    <div class="mb-4">
+        <div class="titulo-seccion text-dark">⏳ ¿Cuándo comprar?</div>
+        <div class="slider-horizontal">
+            {% for item in recomendados_cuando_comprar %}
+            <div class="card-netflix">
+
+                <img src="{{ item.vuelo.imagen.url }}" alt="Imagen vuelo">
+
+                <div class="info">
+                    <div class="ruta">{{ item.vuelo.origen.nombre }} → {{ item.vuelo.destino.nombre }}</div>
+                    <div class="text-muted small">{{ item.mensaje }}</div>
+
+                    <a href="/ver-vuelo/{{ item.vuelo.id }}/" class="btn btn-dark mt-2 w-100">
+                        Ver vuelo
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

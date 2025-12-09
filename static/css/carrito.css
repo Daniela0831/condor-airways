@@ -1,0 +1,90 @@
+/* === COLORES Y VARIABLES === */
+:root {
+  --color-primary: #ff7b1c;
+  --color-secondary: #7a3700;
+  --color-accent: #ffb46b;
+  --color-light: #fff6ef;
+  --color-text: #1b1b1b;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --transition: 0.4s ease;
+}
+
+/* === CARD PRINCIPAL === */
+.carrito-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+}
+
+/* === HEADER === */
+.card-header.bg-gradient {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border: none;
+}
+
+/* === TABLA === */
+.carrito-table thead {
+  background: linear-gradient(90deg, #ff8c20, #b15000);
+}
+
+.carrito-table th {
+  padding: 14px;
+  letter-spacing: 0.6px;
+}
+
+.carrito-table td {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.carrito-table tbody tr:hover {
+  background-color: rgba(255, 136, 40, 0.08);
+  transition: background 0.3s ease;
+}
+
+/* === BOTONES === */
+.btn-gradient {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  transform: scale(1.05);
+}
+
+/* === ANIMACIÓN === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadein {
+  animation: fadeIn 0.6s ease;
+}
+
+/* === MODO OSCURO === */
+body.dark-mode .carrito-card {
+  background: #1f1f1f;
+  color: #f2f2f2;
+}
+
+body.dark-mode .carrito-table thead {
+  background: linear-gradient(90deg, #ff9c47, #ff7b1c);
+}
+
+body.dark-mode .carrito-table tbody tr:hover {
+  background-color: rgba(255, 156, 71, 0.15);
+}
+
+body.dark-mode .btn-gradient {
+  background: linear-gradient(90deg, #ff9c47, #b15000);
+}
+
+body.dark-mode .text-dark {
+  color: #ffb265ff !important;
+}

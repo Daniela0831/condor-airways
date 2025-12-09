@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Check-In Rápido{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 mx-auto" style="max-width: 500px;">
+
+    <h2 class="text-center mb-4">Check-In Rápido</h2>
+
+    <!-- Mensajes -->
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} mt-3 text-center">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+
+      <!-- Código de reserva -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Código de reserva</label>
+        <input type="text"
+               name="codigo_reserva"
+               class="form-control text-center"
+               placeholder="Ingrese su código de reserva"
+               required>
+      </div>
+
+      <!-- Documento -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Documento</label>
+        <input type="text"
+               name="documento"
+               class="form-control text-center"
+               placeholder="Ingrese su documento"
+               required>
+      </div>
+
+      <!-- Peso de maleta -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Peso de maleta (kg)</label>
+        <input type="number"
+               step="0.1"
+               name="peso_maleta"
+               class="form-control text-center"
+               placeholder="Ej: 18 o 22">
+        <small class="text-muted d-block mt-1">
+          ≤ 20kg: $20.000 · +20kg: $50.000
+        </small>
+      </div>
+
+      <!-- Botón -->
+      <div class="d-grid mt-4">
+        <button type="submit" class="btn btn-primary fw-bold">
+          Confirmar Check-In
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+{% endblock %}

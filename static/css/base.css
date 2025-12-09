@@ -1,0 +1,364 @@
+/* === VARIABLES PRINCIPALES === */
+:root {
+  --color-primary: #ff7b1c;
+  --color-secondary: #7a3700;
+  --color-accent: #ffb46b;
+  --color-light: #fff6ef;
+  --color-text: #1b1b1b;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --transition: 0.4s ease;
+}
+
+body {
+  color: var(--color-text);
+  font-family: 'Segoe UI', sans-serif;
+  padding-top: 70px;
+  background: linear-gradient(135deg, #ffc098ff, #ffe6d3ff);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* === MODO OSCURO === */
+body.dark-mode {
+  --color-primary: #ff9e4c;
+  --color-secondary: #262626;
+  --color-accent: #ffae5a;
+  --color-light: #1a1a1a;
+  --color-text: #f2f2f2;
+  --shadow: rgba(255, 136, 40, 0.25);
+}
+
+/* === FONDO DECORATIVO === */
+.background-image {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 450px;
+  height: 450px;
+  background: url("../img/fondo_avion.png") no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+
+/* === FONDO PRINCIPAL === */
+.main-content {
+  position: relative;
+  min-height: 80vh;
+  background: url("../img/fondo_avion.png") no-repeat right top 110px;
+  background-size: 480px auto;
+  background-attachment: fixed;
+  transition: opacity 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    background: none;
+  }
+}
+
+/* === NAVBAR MODERNA === */
+.navbar {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)) !important;
+  padding: 0.8rem 1rem;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px var(--shadow);
+  min-height: 60px;
+}
+
+.navbar-brand img {
+  height: 50px;
+  transition: height 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+.navbar .nav-link,
+.navbar .navbar-text {
+  color: white !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color var(--transition);
+}
+
+.navbar .nav-link:hover {
+  color: var(--color-accent) !important;
+}
+
+.navbar .btn {
+  border-radius: 8px;
+  transition: all var(--transition);
+  font-weight: 600;
+}
+
+.navbar .btn-outline-light:hover {
+  background: var(--color-accent);
+  color: #fff !important;
+  border: none;
+}
+
+.navbar .btn-warning {
+  background: var(--color-accent);
+  border: none;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.navbar .btn-warning:hover {
+  background: var(--color-primary);
+}
+
+.navbar .badge {
+  font-size: 0.7rem;
+  padding: 4px 6px;
+}
+
+/* 🌙 Navbar en modo oscuro */
+body.dark-mode .navbar {
+  background: linear-gradient(90deg, #747474ff, #111)!important;
+  border-bottom: 1px solid #444;
+}
+
+/* === HERO (Eslogan) === */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  padding: 2rem 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 136, 40, 0.25);
+}
+
+.hero-section h1 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--color-light);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: color var(--transition);
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #444;
+  font-style: italic;
+}
+
+/* === CAJITA DE BÚSQUEDA === */
+.search-box {
+  background: linear-gradient(135deg, #a84900, #db6300);
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 136, 40, 0.25);
+}
+
+.search-box h3 {
+  color: #ffffff;
+  text-shadow: 0 0 4px rgba(255, 136, 40, 0.2);
+}
+
+.search-box .input,
+.search-box .input-group-text {
+  background: linear-gradient(90deg, #ffa260, #7a3700);
+  color: #fff !important;
+  border: none;
+}
+
+.search-box .input-group-text i {
+  color: #fff !important;
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+.search-box .input-group-text:hover {
+  background: linear-gradient(90deg, #ff9b4c, #8a4a00);
+}
+
+/* === CARDS DE VUELOS === */
+.card {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  border: none;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px var(--shadow);
+}
+
+.card h5 {
+  color: #fff;
+}
+
+.card p.text-muted {
+  color: #f5f5f5 !important;
+  font-size: 0.9rem;
+}
+
+/* === BOTONES === */
+.btn-primary,
+.btn-gradient {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background var(--transition), transform 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-gradient:hover {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background: linear-gradient(90deg, #4caf50, #2e7d32);
+  border: none;
+}
+
+.btn-success:hover {
+  background: linear-gradient(90deg, #66bb6a, #388e3c);
+}
+
+/* === BOTÓN MODO OSCURO === */
+#toggle-theme {
+  background: var(--color-accent);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#toggle-theme:hover {
+  background: var(--color-primary);
+  transform: rotate(20deg);
+}
+
+/* === INPUTS Y SELECT === */
+input, textarea, select {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border var(--transition), box-shadow var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 8px rgba(255, 136, 40, 0.5);
+  outline: none;
+}
+
+::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* === TABLAS === */
+.table {
+  background: #fff8f2;
+  color: var(--color-text);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 123, 28, 0.1);
+  transition: background 0.3s ease;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+/* === ALERTAS === */
+.alert {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--shadow);
+  font-weight: 500;
+}
+
+.alert-success {
+  background: linear-gradient(90deg, #008f21ff, #1d6d32);
+  color: #fff;
+}
+
+.alert-warning {
+  background: linear-gradient(90deg, #ffc107, #ff9800);
+  color: #222;
+}
+
+.alert-danger {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  color: #fff;
+}
+
+.alert-info {
+  background: linear-gradient(90deg, #17a2b8, #117a8b);
+  color: #fff;
+}
+
+/* === FOOTER === */
+.footer-custom {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  box-shadow: 0 3px 8px var(--shadow);
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 15px 0;
+  transition: background var(--transition);
+}
+
+/* === MODO OSCURO === */
+body.dark-mode {
+  background: linear-gradient(135deg, #2e2e2e, #6e6e6e);
+}
+
+body.dark-mode .table {
+  background: #2b2b2b;
+  color: #eee;
+}
+
+body.dark-mode .table th {
+  background: #444;
+}
+
+body.dark-mode .table-hover tbody tr:hover {
+  background: rgba(255, 179, 71, 0.1);
+}
+
+body.dark-mode .footer-custom {
+  background: linear-gradient(90deg, #1e1e1e, #333);
+  box-shadow: none;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 50px;
+  }
+  .navbar .btn {
+    font-size: 0.8rem;
+  }
+}

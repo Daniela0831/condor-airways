@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Seleccionar Vuelo de Regreso{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+  <h2 class="text-center mb-4">
+    ✈️ Selecciona tu vuelo de regreso
+  </h2>
+
+  <div class="alert alert-info text-center">
+    Estás reservando un <strong>trayecto ida y vuelta</strong>.
+    Selecciona el vuelo para tu regreso.
+  </div>
+
+  {% if vuelos %}
+    <div class="row justify-content-center">
+      {% for vuelo in vuelos %}
+        <div class="col-md-4 mb-4">
+          <div class="card shadow text-center">
+
+            {% if vuelo.imagen %}
+              <img src="{{ vuelo.imagen.url }}" class="card-img-top"
+                   style="height:200px; object-fit:cover;">
+            {% else %}
+              <img src="{% static 'img/avionnaranja.jpg' %}" class="card-img-top"
+                   style="height:200px; object-fit:cover;">
+            {% endif %}
+
+            <div class="card-body">
+              <h6 class="text-muted">{{ vuelo.codigo }}</h6>
+              <h5 class="fw-bold">{{ vuelo.origen }} → {{ vuelo.destino }}</h5>
+
+              <p class="text-muted">
+                <i class="bi bi-calendar-event"></i>
+                {{ vuelo.fecha_salida|date:"d/m/Y" }} -
+                {{ vuelo.hora_salida|time:"H:i" }}
+              </p>
+
+              <p class="fw-bold fs-5 text-success">
+                ${{ vuelo.precio }}
+              </p>
+
+              <a href="{% url 'confirmar_regreso' vuelo.id %}"
+                 class="btn btn-primary w-100">
+                Confirmar regreso
+              </a>
+            </div>
+
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-warning text-center">
+      No hay vuelos disponibles para el regreso.
+    </div>
+  {% endif %}
+
+  <div class="text-center mt-4">
+    <a href="{% url 'buscar_vuelos' %}" class="btn btn-secondary">
+      ⬅ Volver a buscar vuelos
+    </a>
+  </div>
+
+</div>
+{% endblock %}

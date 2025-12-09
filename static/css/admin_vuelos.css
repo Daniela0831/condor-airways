@@ -1,0 +1,41 @@
+.text-gradient {
+  background: linear-gradient(90deg, #ff7b1c, #7a3700);
+}
+
+.card {
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #ff7b1c, #7a3700);
+  border: none;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #ff9b4c, #9a4800);
+}
+
+.btn-danger {
+  background: linear-gradient(90deg, #d32f2f, #9a0007);
+  border: none;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(90deg, #f44336, #b71c1c);
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.table th {
+  background: linear-gradient(90deg, #7a3700, #ff7b1c);
+  color: white;
+}

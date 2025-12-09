@@ -1,0 +1,357 @@
+[
+  {
+    "model": "aerolinea.pais",
+    "pk": 1,
+    "fields": {
+      "nombre": "Colombia"
+    }
+  },
+
+  {
+    "model": "aerolinea.departamento",
+    "pk": 1,
+    "fields": { "nombre": "Amazonas", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 2,
+    "fields": { "nombre": "Antioquia", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 3,
+    "fields": { "nombre": "Arauca", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 4,
+    "fields": { "nombre": "Atlántico", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 5,
+    "fields": { "nombre": "Bolívar", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 6,
+    "fields": { "nombre": "Boyacá", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 7,
+    "fields": { "nombre": "Caldas", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 8,
+    "fields": { "nombre": "Caquetá", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 9,
+    "fields": { "nombre": "Casanare", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 10,
+    "fields": { "nombre": "Cauca", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 11,
+    "fields": { "nombre": "Cesar", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 12,
+    "fields": { "nombre": "Chocó", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 13,
+    "fields": { "nombre": "Córdoba", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 14,
+    "fields": { "nombre": "Cundinamarca", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 15,
+    "fields": { "nombre": "Guainía", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 16,
+    "fields": { "nombre": "Guaviare", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 17,
+    "fields": { "nombre": "Huila", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 18,
+    "fields": { "nombre": "La Guajira", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 19,
+    "fields": { "nombre": "Magdalena", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 20,
+    "fields": { "nombre": "Meta", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 21,
+    "fields": { "nombre": "Nariño", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 22,
+    "fields": { "nombre": "Norte de Santander", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 23,
+    "fields": { "nombre": "Putumayo", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 24,
+    "fields": { "nombre": "Quindío", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 25,
+    "fields": { "nombre": "Risaralda", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 26,
+    "fields": { "nombre": "San Andrés y Providencia", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 27,
+    "fields": { "nombre": "Santander", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 28,
+    "fields": { "nombre": "Sucre", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 29,
+    "fields": { "nombre": "Tolima", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 30,
+    "fields": { "nombre": "Valle del Cauca", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 31,
+    "fields": { "nombre": "Vaupés", "pais": 1 }
+  },
+  {
+    "model": "aerolinea.departamento",
+    "pk": 32,
+    "fields": { "nombre": "Vichada", "pais": 1 }
+  },
+
+
+  {
+    "model": "aerolinea.municipio",
+    "pk": 1,
+    "fields": { "nombre": "Leticia", "departamento": 1 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 2,
+    "fields": { "nombre": "Medellín", "departamento": 2 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 3,
+    "fields": { "nombre": "Bello", "departamento": 2 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 4,
+    "fields": { "nombre": "Apartadó", "departamento": 2 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 5,
+    "fields": { "nombre": "Arauca", "departamento": 3 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 6,
+    "fields": { "nombre": "Barranquilla", "departamento": 4 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 7,
+    "fields": { "nombre": "Soledad", "departamento": 4 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 8,
+    "fields": { "nombre": "Cartagena", "departamento": 5 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 9,
+    "fields": { "nombre": "Magangué", "departamento": 5 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 10,
+    "fields": { "nombre": "Tunja", "departamento": 6 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 11,
+    "fields": { "nombre": "Duitama", "departamento": 6 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 12,
+    "fields": { "nombre": "Manizales", "departamento": 7 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 13,
+    "fields": { "nombre": "Florencia", "departamento": 8 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 14,
+    "fields": { "nombre": "Yopal", "departamento": 9 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 15,
+    "fields": { "nombre": "Popayán", "departamento": 10 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 16,
+    "fields": { "nombre": "Valledupar", "departamento": 11 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 17,
+    "fields": { "nombre": "Quibdó", "departamento": 12 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 18,
+    "fields": { "nombre": "Montería", "departamento": 13 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 19,
+    "fields": { "nombre": "Bogotá", "departamento": 14 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 20,
+    "fields": { "nombre": "Inírida", "departamento": 15 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 21,
+    "fields": { "nombre": "San José del Guaviare", "departamento": 16 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 22,
+    "fields": { "nombre": "Neiva", "departamento": 17 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 23,
+    "fields": { "nombre": "Riohacha", "departamento": 18 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 24,
+    "fields": { "nombre": "Santa Marta", "departamento": 19 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 25,
+    "fields": { "nombre": "Villavicencio", "departamento": 20 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 26,
+    "fields": { "nombre": "Pasto", "departamento": 21 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 27,
+    "fields": { "nombre": "Cúcuta", "departamento": 22 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 28,
+    "fields": { "nombre": "Mocoa", "departamento": 23 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 29,
+    "fields": { "nombre": "Armenia", "departamento": 24 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 30,
+    "fields": { "nombre": "Pereira", "departamento": 25 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 31,
+    "fields": { "nombre": "San Andrés", "departamento": 26 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 32,
+    "fields": { "nombre": "Bucaramanga", "departamento": 27 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 33,
+    "fields": { "nombre": "Sincelejo", "departamento": 28 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 34,
+    "fields": { "nombre": "Ibagué", "departamento": 29 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 35,
+    "fields": { "nombre": "Cali", "departamento": 30 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 36,
+    "fields": { "nombre": "Mitú", "departamento": 31 }
+  },
+  {
+    "model": "aerolinea.municipio",
+    "pk": 37,
+    "fields": { "nombre": "Puerto Carreño", "departamento": 32 }
+  }
+]

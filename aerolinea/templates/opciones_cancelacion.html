@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Opciones por Cancelación{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <div class="card shadow-lg border-0">
+        <div class="card-body p-4">
+
+          <!-- 🚫 Título -->
+          <h2 class="text-center text-danger fw-bold mb-3">
+            ❌ Vuelo Cancelado
+          </h2>
+
+          <p class="lead text-center mb-4">
+            El vuelo <strong>{{ reserva.vuelo.codigo }}</strong>
+            (<strong>{{ reserva.vuelo.origen }} → {{ reserva.vuelo.destino }}</strong>)
+            ha sido cancelado.
+          </p>
+
+          <p class="text-center text-muted mb-4">
+            Por favor selecciona una de las siguientes opciones para continuar:
+          </p>
+
+          <form method="POST">
+            {% csrf_token %}
+
+            <!-- 💵 Reembolso -->
+            <div class="card border-success mb-3">
+              <div class="card-body">
+                <div class="form-check">
+                  <input class="form-check-input"
+                         type="radio"
+                         name="opcion"
+                         id="reembolso"
+                         value="reembolso"
+                         required>
+                  <label class="form-check-label fw-bold" for="reembolso">
+                    💰 Solicitar reembolso completo
+                  </label>
+                </div>
+                <p class="text-muted small mt-2 ms-4">
+                  El valor total pagado será devuelto a tu tarjeta registrada.
+                </p>
+              </div>
+            </div>
+
+            <!-- 🔁 Reubicación -->
+            <div class="card border-primary mb-4">
+              <div class="card-body">
+                <div class="form-check">
+                  <input class="form-check-input"
+                         type="radio"
+                         name="opcion"
+                         id="reubicacion"
+                         value="reubicacion">
+                  <label class="form-check-label fw-bold" for="reubicacion">
+                    ✈️ Solicitar cambio a otro vuelo
+                  </label>
+                </div>
+                <p class="text-muted small mt-2 ms-4">
+                  Podrás elegir un nuevo vuelo disponible en la misma ruta.
+                </p>
+              </div>
+            </div>
+
+            <!-- ✅ Botón -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg fw-bold">
+                Continuar
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Reserva Confirmada{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/reserva.css' %}">
+
+<div class="confirm-container text-center">
+  <div class="confirm-card shadow">
+    <div class="check-icon">
+      <i class="bi bi-check-circle-fill"></i>
+    </div>
+
+    <h2>¡Reserva confirmada!</h2>
+    <p class="lead">Tu reserva ha sido completada exitosamente.</p>
+
+    <div class="resumen">
+      <p><strong>Código de reserva:</strong> {{ reserva.id }}</p>
+      <p><strong>Vuelo:</strong> {{ reserva.vuelo.codigo }} — {{ reserva.vuelo.origen }} → {{ reserva.vuelo.destino }}</p>
+      <p><strong>Fecha de salida:</strong> {{ reserva.vuelo.fecha_salida|date:"d/m/Y" }} — {{ reserva.vuelo.hora_salida|time:"H:i" }}</p>
+      <p><strong>Estado:</strong> {{ reserva.estado|capfirst }}</p>
+    </div>
+
+    <div class="botones">
+      <a href="{% url 'ver_carrito' %}" class="btn btn-gradient"><i class="bi bi-cart3"></i> Ir al carrito</a>
+      <a href="{% url 'buscar_vuelos' %}" class="btn btn-secondary"><i class="bi bi-airplane"></i> Buscar más vuelos</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

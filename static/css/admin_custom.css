@@ -1,0 +1,336 @@
+/* === COLORES PRINCIPALES === */
+:root {
+  --color-primary: #ff7b1c;
+  --color-secondary: #7a3700;
+  --color-accent: #ffb46b;
+  --color-light: #fff6ef;
+  --color-text: #1b1b1b;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --transition: 0.4s ease;
+}
+
+/* efecto luz suave sobre el degradado */
+.admin-bg::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  right: -100px;
+  bottom: -100px;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 70%);
+  z-index: 0;
+}
+
+.container {
+  max-width: 1295px;
+  position: relative;
+  z-index: 1;
+}
+
+/* === ENCABEZADO === */
+.titulo-admin {
+  color: #6b2200ff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+
+.divider {
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #994500ff, #ff7300ff);
+  border: none;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.brand {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* === FORMULARIO === */
+.card-form {
+  background: linear-gradient(90deg, #ffa45eff, #ffbe8bff);
+  border: 2px solid var(--color-accent);
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.card-form:hover {
+  transform: scale(1.01);
+  box-shadow: 0 5px 20px rgba(255, 136, 0, 0.3);
+}
+
+/* === BOTONES === */
+.btn-gradient {
+  background: linear-gradient(90deg, #b65800ff, #dd7600ff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 25px;
+  transition: all 0.2s ease;
+}
+.btn-gradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 123, 0, 0.4);
+}
+
+/* === BOTÓN FLOTANTE === */
+#scrollTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(255, 123, 0, 0.5);
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadein {
+  animation: fadeIn 0.8s ease;
+}
+
+.card-header.bg-gradient {
+  background: linear-gradient(90deg, #ff7b00, #b15000) !important;
+  color: #fff !important;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.card-body .table {
+  padding-bottom: 16px !important;
+}
+
+/* Estilo visible para el input de archivo */
+input[type="file"] {
+  color: #000 !important;
+  background-color: #fff !important;
+  border: 1px solid #ccc !important;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+/* === MODO OSCURO === */
+body.dark-mode {
+  background: linear-gradient(90deg, #1a1a1aff, #202020ff);
+  color: #f1f1f1;
+}
+
+body.dark-mode .titulo-admin {
+  color: #ffb86b;
+  text-shadow: 0 3px 8px rgba(255, 136, 0, 0.3);
+}
+
+body.dark-mode .divider {
+  background: linear-gradient(90deg, #ff9c47, #ff7300);
+}
+
+body.dark-mode .card-form {
+  background: linear-gradient(90deg, #2e2e2e, #3b3b3b);
+  border: 1px solid #ff9c47;
+  color: #f1f1f1;
+}
+
+body.dark-mode label,
+body.dark-mode .form-label {
+  color: #ffb46b;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background: #222;
+  border: 1px solid #555;
+  color: #f1f1f1;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+  border-color: #ff9c47;
+  box-shadow: 0 0 8px rgba(255, 156, 71, 0.5);
+}
+
+/* === TABLA === */
+body.dark-mode .card-table {
+  background: #2b2b2b;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark-mode .table tbody tr:hover {
+  background: rgba(255, 140, 0, 0.1) !important;
+}
+
+/* === BOTONES === */
+body.dark-mode .btn-gradient {
+  background: linear-gradient(90deg, #ff8c1a, #cc6b00);
+  color: #fff;
+}
+
+body.dark-mode .btn-gradient:hover {
+  box-shadow: 0 4px 12px rgba(255, 156, 71, 0.5);
+}
+
+/* === SCROLL BUTTON === */
+body.dark-mode #scrollTop {
+  box-shadow: 0 4px 10px rgba(255, 156, 71, 0.5);
+}
+
+/* === INPUT PLACEHOLDER === */
+body.dark-mode ::placeholder {
+  color: #bbb;
+}
+
+/* === AJUSTES EXTRA PARA MODO OSCURO === */
+
+/* Texto de descripción ("Gestión completa de vuelos...") */
+body.dark-mode header p {
+  color: #ffb86b !important;
+}
+
+/* Marca de la aerolínea (Cóndor Airways) */
+body.dark-mode .brand {
+  color: #ffe0b2 !important;
+}
+
+/* Títulos de etiquetas del formulario (Tipo, Código, Origen, etc.) */
+body.dark-mode label,
+body.dark-mode .form-label,
+body.dark-mode .fw-semibold {
+  color: #ffcf9e !important;
+}
+
+/* Texto dentro del formulario */
+body.dark-mode .card-form {
+  color: #f5f5f5;
+}
+
+/* Placeholder (texto dentro de inputs vacíos) */
+body.dark-mode ::placeholder {
+  color: #bbb !important;
+}
+
+/* Inputs */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #222;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+/* Bordes e iluminación al enfocar inputs */
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+  border-color: #ff9c47;
+  box-shadow: 0 0 8px rgba(255, 156, 71, 0.5);
+}
+
+/* === CONFIRMACIÓN DE CANCELACIÓN === */
+
+.cancel-card {
+  background: rgba(255, 149, 62, 0.73);
+  border: 2px rgba(168, 67, 0, 0.73), 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  color: #ff9d4cff;
+  max-width: 650px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cancel-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Texto */
+.cancel-card h2 {
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.cancel-card p {
+  color: #f9f9f9;
+  line-height: 1.6;
+}
+
+.text-accent {
+  color: #ffe9c6;
+}
+
+/* Ícono de advertencia */
+.text-warning-glow {
+  color: #fff4b8;
+  text-shadow: 0 0 15px rgba(255, 230, 120, 0.8);
+}
+
+/* Botones */
+.btn-cancelar {
+  background: linear-gradient(90deg, #ff954eff, #c95918ff);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 30px;
+  transition: all 0.2s ease;
+}
+
+.btn-cancelar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 80, 80, 0.6);
+}
+
+.btn-volver {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  padding: 12px 30px;
+  transition: all 0.2s ease;
+}
+
+.btn-volver:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* === MODO OSCURO === */
+body.dark-mode .cancel-bg {
+  background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+}
+
+body.dark-mode .cancel-card {
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid #ff8b3d;
+}
+
+body.dark-mode .btn-cancelar {
+  background: linear-gradient(90deg, #ff6a00, #c94f00);
+}
+
+body.dark-mode .btn-volver {
+  border: 1px solid #ffb86b;
+  color: #ffb86b;
+}
+
+/* Centrar la card de confirmación */
+.cancel-bg {
+  display: flex;
+  justify-content: center;     /* Centra horizontalmente */
+  align-items: center;         /* Centra verticalmente */
+  min-height: 90vh;            /* Ocupa casi toda la pantalla */
+  padding: 20px;
+}
+
+.cancel-card {
+  margin: 0 auto;
+}
+

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card shadow">
+      <div class="card-body">
+        <h3 class="text-center mb-4">Iniciar Sesión</h3>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+          </div>
+        </form>
+        <hr>
+        <p class="text-center">
+          ¿No tienes cuenta? <a href="{% url 'registro' %}" class="text-black">Regístrate aquí</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="my-5">
+
+<h2 class="mb-3 text-black">Vuelos Disponibles</h2>
+<table class="table table-striped table-hover bg-white shadow">
+  <thead class="table-primary">
+    <tr>
+      <th>Código</th>
+      <th>Origen</th>
+      <th>Destino</th>
+      <th>Fecha salida</th>
+      <th>Precio</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for vuelo in vuelos %}
+    <tr>
+      <td>{{ vuelo.codigo }}</td>
+      <td>{{ vuelo.origen }}</td>
+      <td>{{ vuelo.destino }}</td>
+      <td>{{ vuelo.fecha_salida|date:"d/m/Y" }} {{ vuelo.hora_salida|time:"H:i" }}</td>
+      <td>${{ vuelo.precio }}</td>
+      <td>
+        <a href="{% url 'login' %}?next={% url 'reservar_vuelo' vuelo.id %}" class="btn btn-sm btn-success">Reservar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

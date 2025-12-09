@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/root_custom.css' %}">
+<div class="container mt-5">
+    <!-- Encabezado -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-gradient">
+            <i class="bi bi-shield-lock-fill"></i> Panel Root
+        </h1>
+        <p class="text-muted fs-5">
+            Gestiona los <b>administradores</b> del sistema de Cóndor Airways.
+        </p>
+    </div>
+
+    <!-- Sección para crear administradores -->
+    <div class="card shadow-lg border-0 rounded-4 mb-5">
+        <div class="card-body">
+            <h3 class="text-center mb-4">
+                <i class="bi bi-person-plus"></i> Crear nuevo Administrador
+            </h3>
+            <p class="text-center mb-4">
+                Los administradores tienen acceso al módulo de gestión de vuelos, pero no pueden realizar compras ni reservas.
+            </p>
+
+            <!-- Mostrar mensajes -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST" enctype="multipart/form-data" class="mt-3">
+                {% csrf_token %}
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="username" class="form-label fw-semibold">Nombre de usuario</label>
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Ej: admin_jose" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="email" class="form-label fw-semibold">Correo electrónico</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="admin@condor.com" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="password" class="form-label fw-semibold">Contraseña</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="********" required>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary px-4">
+                        <i class="bi bi-person-fill-add"></i> Crear Administrador
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tabla de administradores existentes -->
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body">
+            <h4 class="text-center mb-4 fw-bold">
+                <i class="bi bi-people-fill"></i> Administradores existentes
+            </h4>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for admin in administradores %}
+                        <tr>
+                            <td><i class="bi bi-person-circle me-2 text-primary"></i>{{ admin.user.username }}</td>
+                            <td>{{ admin.nombres }} {{ admin.apellidos }}</td>
+                            <td>{{ admin.email }}</td>
+                            <td><span class="badge bg-info text-dark">{{ admin.rol.nombre }}</span></td>
+                            <td>
+                                <a href="{% url 'eliminar_admin' admin.id %}"
+                                   class="btn btn-outline-danger btn-sm"
+                                   onclick="return confirm('¿Seguro que deseas eliminar a {{ admin.user.username }}?');">
+                                    <i class="bi bi-trash3"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-muted">No hay administradores registrados.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Botón flotante -->
+<button id="scrollTop" class="btn btn-gradient rounded-circle">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
+<script>
+  // Botón subir arriba
+  const btn = document.getElementById("scrollTop");
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 200 ? "block" : "none";
+  });
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+</script>
+{% endblock %}

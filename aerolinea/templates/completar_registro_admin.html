@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block title %}Completar Registro Administrador{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow">
+      <div class="card-body">
+        <h3 class="text-center mb-4">Completar Registro de Administrador</h3>
+
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+              {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          <div class="mb-3">
+            {{ form.nombres.label_tag }}
+            {{ form.nombres }}
+            {% for error in form.nombres.errors %}
+              <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="mb-3">
+            {{ form.apellidos.label_tag }}
+            {{ form.apellidos }}
+            {% for error in form.apellidos.errors %}
+              <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="mb-3">
+            {{ form.dni.label_tag }}
+            {{ form.dni }}
+            {% for error in form.dni.errors %}
+              <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="mb-3">
+            {{ form.fecha_nacimiento.label_tag }}
+            {{ form.fecha_nacimiento }}
+            {% for error in form.fecha_nacimiento.errors %}
+              <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="mb-3">
+            <label for="id_pais">País</label>
+            {{ form.pais }}
+          </div>
+
+          <div class="mb-3">
+            <label for="id_departamento">Departamento</label>
+            {{ form.departamento }}
+          </div>
+
+          <div class="mb-3">
+            <label for="id_municipio">Municipio</label>
+            {{ form.municipio }}
+          </div>
+
+          <div class="mb-3">
+            {{ form.direccion_facturacion.label_tag }}
+            {{ form.direccion_facturacion }}
+            {% for error in form.direccion_facturacion.errors %}
+              <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="mb-3">
+            {{ form.genero.label_tag }}
+            {{ form.genero }}
+            {% for error in form.genero.errors %}
+              <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="mb-3">
+            {{ form.imagen_usuario.label_tag }}
+            {{ form.imagen_usuario }}
+            {% for error in form.imagen_usuario.errors %}
+              <div class="text-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Guardar datos</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script dinámico para cargar departamentos y municipios -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const paisSelect = document.getElementById("id_pais");
+    const deptoSelect = document.getElementById("id_departamento");
+    const muniSelect = document.getElementById("id_municipio");
+
+    deptoSelect.disabled = true;
+    muniSelect.disabled = true;
+
+    paisSelect.addEventListener("change", async function() {
+        const paisId = this.value;
+        deptoSelect.innerHTML = '<option value="">Seleccione un departamento</option>';
+        muniSelect.innerHTML = '<option value="">Seleccione un municipio</option>';
+        muniSelect.disabled = true;
+
+        if (!paisId) {
+            deptoSelect.disabled = true;
+            return;
+        }
+
+        deptoSelect.disabled = false;
+        const response = await fetch(`/api/departamentos/${paisId}/`);
+        const data = await response.json();
+        data.forEach(d => {
+            deptoSelect.innerHTML += `<option value="${d.id}">${d.nombre}</option>`;
+        });
+    });
+
+    deptoSelect.addEventListener("change", async function() {
+        const deptoId = this.value;
+        muniSelect.innerHTML = '<option value="">Seleccione un municipio</option>';
+
+        if (!deptoId) {
+            muniSelect.disabled = true;
+            return;
+        }
+
+        muniSelect.disabled = false;
+        const response = await fetch(`/api/municipios/${deptoId}/`);
+        const data = await response.json();
+        data.forEach(m => {
+            muniSelect.innerHTML += `<option value="${m.id}">${m.nombre}</option>`;
+        });
+    });
+});
+</script>
+{% endblock %}

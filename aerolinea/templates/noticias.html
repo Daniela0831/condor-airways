@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Noticias{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+  <h2 class="mb-4 text-center">
+    📰 Noticias de Cóndor Airways
+  </h2>
+
+    {% if user.is_authenticated and not user.usuario.es_admin and not user.usuario.es_root %}
+        <div class="text-center mb-4">
+            <a href="{% url 'suscribirse_noticias' %}" class="btn btn-outline-primary">
+            {% if user.usuario.suscrito_noticias %}
+                ❌ Cancelar suscripción
+            {% else %}
+                ✅ Suscribirse a noticias
+            {% endif %}
+            </a>
+        </div>
+    {% endif %}
+
+  <div class="row">
+    {% for noticia in noticias %}
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+
+            <span class="badge bg-secondary mb-2">
+              {{ noticia.get_tipo_display }}
+            </span>
+
+            <h5 class="card-title">{{ noticia.titulo }}</h5>
+
+            <p class="card-text">
+              {{ noticia.contenido }}
+            </p>
+
+            {% if noticia.tipo == "PROMO" and noticia.descuento_porcentaje %}
+              <p class="text-success fw-bold">
+                Descuento: {{ noticia.descuento_porcentaje }}%
+              </p>
+            {% endif %}
+
+            {% if noticia.vuelo %}
+              <p class="text-muted small">
+                Vuelo relacionado: {{ noticia.vuelo.codigo }}
+              </p>
+            {% endif %}
+
+            <p class="text-muted small">
+              Publicado el {{ noticia.creada_en|date:"d/m/Y" }}
+            </p>
+
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-center text-muted">
+        No hay noticias disponibles.
+      </p>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

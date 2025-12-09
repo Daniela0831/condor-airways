@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center">Panel de Administración</h2>
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card text-center shadow">
+        <div class="card-body">
+          <h5 class="card-title">✈️ Vuelos</h5>
+          <p class="card-text">Crear, editar y eliminar vuelos disponibles.</p>
+          <a href="{% url 'admin_vuelos' %}" class="btn btn-primary">Administrar Vuelos</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-center shadow">
+        <div class="card-body">
+          <h5 class="card-title">👤 Usuarios</h5>
+          <p class="card-text">Ver y gestionar usuarios registrados.</p>
+          <a href="{% url 'admin_usuarios' %}" class="btn btn-primary">Administrar Usuarios</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-center shadow">
+        <div class="card-body">
+          <h5 class="card-title">🛠️ Administradores</h5>
+          <p class="card-text">Gestionar cuentas de administradores.</p>
+          <a href="{% url 'admin_cuentas' %}" class="btn btn-primary">Administrar Admins</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

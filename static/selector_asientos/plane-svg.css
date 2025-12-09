@@ -1,0 +1,84 @@
+.plane-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 12px;
+}
+
+#plane-svg {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Asientos */
+.seat rect {
+    stroke: #1f2937;
+    stroke-width: 1.4;
+    cursor: pointer;
+}
+
+/* Clases */
+.seat-business {
+    fill: #fcd34d;
+}
+
+.seat-economy {
+    fill: #9ae6b4;
+}
+
+.seat-selected {
+    fill: #3b82f6;
+    stroke: #1e40af;
+}
+
+.seat-occupied {
+    fill: #ef4444;
+    cursor: not-allowed;
+}
+
+/* Texto */
+.seat-label {
+    fill: #1f2937;
+    font-size: 11px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.row-number {
+    fill: #475569;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Leyenda */
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+}
+
+.legend .business {
+    background: #fcd34d;
+}
+.legend .economy {
+    background: #9ae6b4;
+}
+.legend .selected {
+    background: #3b82f6;
+}
+.legend .occupied {
+    background: #ef4444;
+}

@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}Panel Administrativo - Cóndor Airways{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/admin_custom.css' %}">
+{% endblock %}
+
+{% block branding %}
+<div id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'img/logoca.png' %}" alt="Cóndor Airways" style="height:60px; vertical-align:middle; margin-right:10px;">
+        <span style="font-size:22px; font-weight:bold; color:#fff;">Panel Administrativo</span>
+    </a>
+</div>
+{% endblock %}
+{% block nav-global %}{% endblock %}
+
+

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Mis Tarjetas{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+  <h2>💳 Mis Tarjetas</h2>
+
+  <form method="POST" class="mt-4">
+    {% csrf_token %}
+    <label>Tipo:</label>
+    <select name="tipo" required>
+      <option value="Débito">Débito</option>
+      <option value="Crédito">Crédito</option>
+    </select>
+
+    <label>Número:</label>
+    <input type="text" name="numero" maxlength="16" required>
+
+    <label>Saldo:</label>
+    <input type="number" name="saldo" step="0.01" required>
+
+    <label>Fecha de vencimiento:</label>
+    <input type="date" name="fecha_vencimiento" required>
+
+    <br><br>
+    <button type="submit">Agregar Tarjeta</button>
+  </form>
+
+  <hr>
+
+  <h3 class="mt-4">Tus Tarjetas Registradas</h3>
+  <ul>
+    {% for t in tarjetas %}
+      <li>{{ t.tipo }} - ****{{ t.numero|slice:"-4:" }} (Saldo: ${{ t.saldo }})</li>
+    {% empty %}
+      <p>No tienes tarjetas registradas.</p>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% for vuelo in vuelos %}
+<div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+  <div class="card vuelo-card border-0 text-center">
+    {% if vuelo.imagen %}
+      <img src="{{ vuelo.imagen.url }}" class="card-img-top" style="height:200px; object-fit:cover;">
+    {% else %}
+      <img src="{% static 'img/avionnaranja.jpg' %}" class="card-img-top" style="height:200px; object-fit:cover;">
+    {% endif %}
+    <div class="card-body">
+      <h6 class="text-muted fw-bold">{{ vuelo.codigo }}</h6>
+      <h5 class="fw-bold">{{ vuelo.origen }} → {{ vuelo.destino }}</h5>
+      <p class="text-muted small">
+        <i class="bi bi-calendar-event text-warning"></i>
+        {{ vuelo.fecha_salida|date:"d/m/Y" }} - {{ vuelo.hora_salida|time:"H:i" }}
+      </p>
+      <p class="fw-bold fs-5 text-gradient">${{ vuelo.precio }}</p>
+
+      <a href="{% url 'reservar_vuelo' vuelo.id %}" class="btn btn-success">Reservar</a>
+    </div>
+  </div>
+</div>
+{% empty %}
+<p class="text-center text-muted">No hay vuelos disponibles.</p>
+{% endfor %}

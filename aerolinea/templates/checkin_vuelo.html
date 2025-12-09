@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Check-In{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 mx-auto" style="max-width: 600px;">
+
+    <h2 class="text-center mb-4">Check-In de Vuelo</h2>
+
+    <!-- Mensajes -->
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} mt-3 text-center">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+
+      <!-- Pasajero -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Pasajero</label>
+        <input type="text" class="form-control text-center bg-light" value="{{ pasajero.nombres }} {{ pasajero.apellidos }}" readonly>
+      </div>
+
+      <!-- Documento -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Documento</label>
+        <input type="text" class="form-control text-center bg-light" value="{{ pasajero.documento }}" readonly>
+      </div>
+
+      <!-- Asiento asignado -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Asiento asignado</label>
+        <input type="text" class="form-control text-center bg-light" value="{{ pasajero.asiento }}" readonly>
+      </div>
+
+      <!-- Peso de maleta -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Peso de maleta (kg)</label>
+        <input type="number" step="0.1" name="peso_maleta" class="form-control text-center" placeholder="Ej: 18 o 22" required>
+        <small class="text-muted d-block mt-1">≤ 20kg: $20.000 · +20kg: $50.000</small>
+      </div>
+
+      <!-- Botón -->
+      <div class="d-grid mt-4">
+        <button type="submit" class="btn btn-primary fw-bold">
+          Confirmar Check-In
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+{% endblock %}

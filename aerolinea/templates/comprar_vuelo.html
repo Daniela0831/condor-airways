@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block title %}Confirmar Compra{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <div class="card shadow-lg border-0">
+        <div class="card-body p-4">
+
+          <!-- 🧾 Título -->
+          <h3 class="text-center mb-4 fw-bold">
+            🛫 Confirmar Compra
+          </h3>
+
+          <!-- 🔹 Información del vuelo -->
+          <div class="mb-4">
+            <h5 class="fw-bold text-primary mb-3">Información de la reserva</h5>
+
+            <div class="row">
+              <div class="col-md-6 mb-2">
+                <strong>Reserva:</strong> #{{ reserva.id }}
+              </div>
+              <div class="col-md-6 mb-2">
+                <strong>Vuelo:</strong> {{ reserva.vuelo.origen }} → {{ reserva.vuelo.destino }}
+              </div>
+              <div class="col-md-6 mb-2">
+                <strong>Fecha de salida:</strong><br>
+                {{ reserva.vuelo.fecha_salida }} · {{ reserva.vuelo.hora_salida }}
+              </div>
+              <div class="col-md-6 mb-2">
+                <strong>Tiquetes:</strong> {{ reserva.num_tiquetes }}
+              </div>
+              <div class="col-md-6 mb-2">
+                <strong>Clase:</strong>
+                {% if reserva.clase == "primera" %}
+                  <span class="badge bg-warning text-dark ms-2">Primera clase</span>
+                {% else %}
+                  <span class="badge bg-secondary ms-2">Económica</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <!-- 💰 Costos -->
+          <div class="mb-4">
+            <h5 class="fw-bold text-primary mb-3">Desglose de costos</h5>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between">
+                <span>
+                  Tiquetes ({{ reserva.vuelo.precio }} × {{ reserva.num_tiquetes }})
+                </span>
+                <strong>${{ precio_base }}</strong>
+              </li>
+
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Recargo por clase</span>
+                {% if reserva.clase == "primera" %}
+                  <strong>${{ recargo_clase }}</strong>
+                {% else %}
+                  <span class="text-muted">Incluido</span>
+                {% endif %}
+              </li>
+            </ul>
+          </div>
+
+          <hr>
+
+          <!-- 💳 Pago -->
+          <form method="POST">
+            {% csrf_token %}
+
+            <div class="mb-4">
+              <h5 class="fw-bold text-primary mb-3">Método de pago</h5>
+
+              <select name="tarjeta" class="form-select" required>
+                <option value="">-- Selecciona una tarjeta --</option>
+                {% for t in tarjetas %}
+                  <option value="{{ t.id }}">
+                    {{ t.tipo }} · **** {{ t.numero|slice:"-4:" }} · Saldo: ${{ t.saldo }}
+                  </option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <hr>
+
+            <!-- ✅ Total -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h4 class="mb-0">Total a pagar</h4>
+              <h4 class="text-success fw-bold mb-0">
+                ${{ total }}
+              </h4>
+            </div>
+
+            <!-- ✅ Botón -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success btn-lg fw-bold">
+                ✅ Confirmar compra
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

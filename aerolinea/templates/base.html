@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cóndor Airways</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+
+<body>
+    
+    <!-- Fondo decorativo -->
+    <div class="background-image"></div>
+    <!-- Navbar moderna -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top" 
+         style="background: linear-gradient(90deg, #7a3700, #ff821b);">
+        <div class="container">
+            <!-- Logo y nombre -->
+            <a class="navbar-brand d-flex align-items-center" href="
+            {% if user.is_authenticated %}
+                {% if user.usuario.es_root %}
+                    {% url 'root_dashboard' %}
+                {% elif user.usuario.es_admin %}
+                    {% url 'admin_dashboard' %}
+                {% else %}
+                    {% url 'buscar_vuelos' %}
+                {% endif %}
+            {% else %}
+                {% url 'buscar_vuelos' %}
+            {% endif %}
+            ">
+                <img src="{% static 'img/logoca.png' %}" alt="Logo" class="me-2" style="height:65px;">
+                <span class="fw-bold fs-4 text-white">Cóndor Airways</span>
+            </a>
+
+            <!-- Botón responsive -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto align-items-center">
+
+                    {% if user.is_authenticated %}
+                        <li class="nav-item me-3">
+                            <span class="text-white">¡Hola, {{ user.username }}!</span>
+                        </li>
+
+                        {% if user.usuario.es_root %}
+                            <li class="nav-item">
+                                <a href="{% url 'root_cambiar_password' %}" class="btn btn-outline-light btn-sm">
+                                    <i class="bi bi-key"></i> Cambiar Contraseña
+                                </a>
+                            </li>
+
+                        {% elif user.usuario.es_admin %}
+                            <li class="nav-item dropdown me-2">
+                                <a class="btn btn-warning btn-sm dropdown-toggle fw-bold text-dark"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown">
+                                    <i class="bi bi-speedometer2"></i> Admin
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-end shadow">
+
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'admin_dashboard' %}">
+                                            <i class="bi bi-speedometer2"></i> Panel Admin
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'crear_noticia' %}">
+                                            <i class="bi bi-megaphone"></i> Crear noticia
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'crear_noticia' %}">
+                                            <i class="bi bi-newspaper"></i> Gestionar noticias
+                                        </a>
+                                    </li>
+
+                                    <li><hr class="dropdown-divider"></li>
+
+                                    <li>
+                                        <form action="{% url 'cerrar_sesion' %}" method="post">
+                                            {% csrf_token %}
+                                            <button type="submit" class="dropdown-item text-danger fw-bold">
+                                                <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+                                            </button>
+                                        </form>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                        {% else %}
+                            <li class="nav-item dropdown me-2">
+                                <a class="btn btn-outline-light btn-sm dropdown-toggle fw-bold"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> {{ user.username }}
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-end shadow">
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'perfil_usuario' %}">
+                                            <i class="bi bi-pencil-square"></i> Editar perfil
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'gestionar_tarjetas' %}">
+                                            <i class="bi bi-credit-card"></i> Operaciones / Tarjetas
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'ver_historial_compras' %}">
+                                            <i class="bi bi-clock-history"></i> Historial
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'recomendaciones' %}">
+                                            <i class="bi bi-airplane"></i> Recomendaciones
+                                        </a>
+                                    </li>
+
+                                    <li><hr class="dropdown-divider"></li>
+
+                                    <li>
+                                        <form action="{% url 'cerrar_sesion' %}" method="post">
+                                            {% csrf_token %}
+                                            <button type="submit" class="dropdown-item text-danger fw-bold">
+                                                <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+                                            </button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            {% endif %}
+
+                    {% else %}
+                        <!-- No autenticado -->
+                        <li class="nav-item me-2">
+                            <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">
+                                <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'registro' %}" class="btn btn-warning btn-sm text-dark fw-bold">
+                                <i class="bi bi-person-plus"></i> Registrarse
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    <!-- Modo oscuro -->
+                    <li class="nav-item ms-3">
+                        <button id="toggle-theme" class="btn btn-sm btn-secondary">🌙</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🪶 Contenido dinámico -->
+    <div class="container mt-5 pt-5">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm mt-3">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Scripts -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const button = document.getElementById("toggle-theme");
+        const body = document.body;
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+            button.textContent = "☀️";
+        }
+        button.addEventListener("click", function() {
+            body.classList.toggle("dark-mode");
+            if (body.classList.contains("dark-mode")) {
+                button.textContent = "☀️";
+                localStorage.setItem("theme", "dark");
+            } else {
+                button.textContent = "🌙";
+                localStorage.setItem("theme", "light");
+            }
+        });
+    });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Footer -->
+    <footer class="text-center text-white py-3 mt-5" 
+            style="background: linear-gradient(90deg, #7a3700, #ff821b);">
+        <p class="mb-0 fw-bold">© 2025 Cóndor Airways - Todos los derechos reservados</p>
+        <small>Políticas de privacidad | Términos y condiciones</small>
+    </footer>
+</body>
+</html>

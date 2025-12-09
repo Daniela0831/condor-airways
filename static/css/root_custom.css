@@ -1,0 +1,59 @@
+.text-gradient {
+    background: linear-gradient(90deg, #472300ff, #723700ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Botones */
+.btn-gradient {
+  background: linear-gradient(90deg, #b65800ff, #ffae00ff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+}
+.btn-gradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 123, 0, 0.4);
+}
+
+/* Botón flotante */
+#scrollTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(255, 123, 0, 0.5);
+}
+
+.table-hover tbody tr:hover {
+    background-color: #fff7ec;
+    transition: 0.2s ease;
+}
+
+.titulo-root {
+    color: #ffe2c7ff !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
+
+.titulo-root:hover {
+    color: #ffa94d;
+    text-shadow: 0 0 6px rgba(255,136,0,0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.titulo-dos {
+    color: #b15000;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    border-bottom: 3px solid #ff9f40;
+    display: inline-block;
+    padding-bottom: 5px;
+}
