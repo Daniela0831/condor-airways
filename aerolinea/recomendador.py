@@ -111,7 +111,7 @@ class MotorRecomendacion:
         for v in vuelos:
             resultado.append({
                 "vuelo": v,
-                "mensaje": self.mejor_momento_compra(v),
+                "mensaje": "10% de descuento si compras entre las 11:00 pm a 6:00 am",
             })
 
         return resultado

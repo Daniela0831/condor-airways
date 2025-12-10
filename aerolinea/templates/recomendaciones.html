@@ -71,9 +71,9 @@
                 <img src="{{ vuelo.imagen.url }}" alt="Imagen vuelo">
 
                 <div class="info">
-                    <div class="ruta">{{ vuelo.origen.nombre }} → {{ vuelo.destino.nombre }}</div>
+                    <div class="ruta">{{ vuelo.origen }} → {{ vuelo.destino }}</div>
                     <div class="precio">${{ vuelo.precio }}</div>
-                    <a href="/ver-vuelo/{{ vuelo.id }}/" class="btn btn-primary mt-2 w-100">Reservar</a>
+                    <a href="{% url 'reservar_vuelo' vuelo.id %}" class="btn btn-primary mt-2 w-100">Reservar</a>
                 </div>
             </div>
             {% endfor %}
@@ -82,18 +82,18 @@
     {% endif %}
 
     <!-- 1.5️⃣ Última búsqueda -->
-    {% if vuelos_ultima_busqueda %}
+    {% if recomendados_busqueda %}
     <div class="mb-4">
         <div class="titulo-seccion text-primary">🕵️‍♂️ Vuelos según tu última búsqueda</div>
         <div class="slider-horizontal">
-            {% for vuelo in vuelos_ultima_busqueda %}
+            {% for vuelo in recomendados_busqueda %}
             <div class="card-netflix">
                 <img src="{{ vuelo.imagen.url }}" alt="Imagen vuelo">
 
                 <div class="info">
-                    <div class="ruta">{{ vuelo.origen.nombre }} → {{ vuelo.destino.nombre }}</div>
+                    <div class="ruta">{{ vuelo.origen }} → {{ vuelo.destino }}</div>
                     <div class="precio">${{ vuelo.precio }}</div>
-                    <a href="/ver-vuelo/{{ vuelo.id }}/" class="btn btn-primary mt-2 w-100">Reservar</a>
+                    <a href="{% url 'reservar_vuelo' vuelo.id %}" class="btn btn-primary mt-2 w-100">Reservar</a>
                 </div>
             </div>
             {% endfor %}
@@ -110,9 +110,9 @@
             <div class="card-netflix">
                 <img src="{{ vuelo.imagen.url }}" alt="Imagen vuelo">
                 <div class="info">
-                    <div class="ruta">{{ vuelo.origen.nombre }} → {{ vuelo.destino.nombre }}</div>
+                    <div class="ruta">{{ vuelo.origen }} → {{ vuelo.destino }}</div>
                     <div class="precio">${{ vuelo.precio }}</div>
-                    <a href="/ver-vuelo/{{ vuelo.id }}/" class="btn btn-warning mt-2 w-100 text-white">Reservar</a>
+                    <a href="{% url 'reservar_vuelo' vuelo.id %}" class="btn btn-warning mt-2 w-100 text-white">Reservar</a>
                 </div>
             </div>
             {% endfor %}
@@ -130,9 +130,9 @@
                 <img src="{{ vuelo.imagen.url }}" alt="Imagen vuelo">
 
                 <div class="info">
-                    <div class="ruta">{{ vuelo.origen.nombre }} → {{ vuelo.destino.nombre }}</div>
+                    <div class="ruta">{{ vuelo.origen }} → {{ vuelo.destino }}</div>
                     <div class="precio">${{ vuelo.precio }}</div>
-                    <a href="/ver-vuelo/{{ vuelo.id }}/" class="btn btn-info mt-2 w-100 text-white">Reservar</a>
+                    <a href="{% url 'reservar_vuelo' vuelo.id %}" class="btn btn-info mt-2 w-100 text-white">Reservar</a>
                 </div>
             </div>
             {% endfor %}
@@ -151,10 +151,14 @@
                 <img src="{{ item.vuelo.imagen.url }}" alt="Imagen vuelo">
 
                 <div class="info">
-                    <div class="ruta">{{ item.vuelo.origen.nombre }} → {{ item.vuelo.destino.nombre }}</div>
-                    <div class="text-muted small">{{ item.mensaje }}</div>
+                    <div class="ruta">{{ item.vuelo.origen }} → {{ item.vuelo.destino }}</div>
+                    <div class="precio">${{ item.vuelo.precio }}</div>
+                    <div style="color: green; font-weight: bold; font-size: 0.9rem;">
+                        {{ item.mensaje }}
+                    </div>
+                    
 
-                    <a href="/ver-vuelo/{{ item.vuelo.id }}/" class="btn btn-dark mt-2 w-100">
+                    <a href="{% url 'reservar_vuelo' item.vuelo.id %}" class="btn btn-dark mt-2 w-100">
                         Reservar
                     </a>
                 </div>

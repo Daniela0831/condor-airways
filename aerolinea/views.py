@@ -24,7 +24,7 @@ from .forms import ReservaPasajeroForm
 from django.forms import modelformset_factory
 from decimal import Decimal, InvalidOperation
 from .recomendador import MotorRecomendacion
-
+from django.shortcuts import render
 
 
 class CustomLoginView(LoginView):
@@ -1956,9 +1956,14 @@ def admin_roles(request):
     return render(request, "admin_roles.html")
 
 
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from aerolinea.models import Vuelo   # <- este sí es correcto
+
 @login_required
 def recomendaciones(request):
-    motor = MotorRecomendacion(request.user)
+
+    motor = MotorRecomendacion(request.user, request.session)
 
     return render(request, "recomendaciones.html", {
         "recomendados_historial": motor.vuelos_basados_en_historial(),
