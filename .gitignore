@@ -130,7 +130,6 @@ dmypy.json
 # Django specific
 *.log
 local_settings.py
-media/
 staticfiles/
 static_root/
 
