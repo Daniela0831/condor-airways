@@ -1,3947 +1,2243 @@
 [
-{
-    "model": "auth.permission",
-    "pk": 1,
-    "fields": {
-        "name": "Can add log entry",
-        "content_type": 1,
-        "codename": "add_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 2,
-    "fields": {
-        "name": "Can change log entry",
-        "content_type": 1,
-        "codename": "change_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 3,
-    "fields": {
-        "name": "Can delete log entry",
-        "content_type": 1,
-        "codename": "delete_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 4,
-    "fields": {
-        "name": "Can view log entry",
-        "content_type": 1,
-        "codename": "view_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 5,
-    "fields": {
-        "name": "Can add permission",
-        "content_type": 2,
-        "codename": "add_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 6,
-    "fields": {
-        "name": "Can change permission",
-        "content_type": 2,
-        "codename": "change_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 7,
-    "fields": {
-        "name": "Can delete permission",
-        "content_type": 2,
-        "codename": "delete_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 8,
-    "fields": {
-        "name": "Can view permission",
-        "content_type": 2,
-        "codename": "view_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 9,
-    "fields": {
-        "name": "Can add group",
-        "content_type": 3,
-        "codename": "add_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 10,
-    "fields": {
-        "name": "Can change group",
-        "content_type": 3,
-        "codename": "change_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 11,
-    "fields": {
-        "name": "Can delete group",
-        "content_type": 3,
-        "codename": "delete_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 12,
-    "fields": {
-        "name": "Can view group",
-        "content_type": 3,
-        "codename": "view_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 13,
-    "fields": {
-        "name": "Can add user",
-        "content_type": 4,
-        "codename": "add_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 14,
-    "fields": {
-        "name": "Can change user",
-        "content_type": 4,
-        "codename": "change_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 15,
-    "fields": {
-        "name": "Can delete user",
-        "content_type": 4,
-        "codename": "delete_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 16,
-    "fields": {
-        "name": "Can view user",
-        "content_type": 4,
-        "codename": "view_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 17,
-    "fields": {
-        "name": "Can add content type",
-        "content_type": 5,
-        "codename": "add_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 18,
-    "fields": {
-        "name": "Can change content type",
-        "content_type": 5,
-        "codename": "change_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 19,
-    "fields": {
-        "name": "Can delete content type",
-        "content_type": 5,
-        "codename": "delete_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 20,
-    "fields": {
-        "name": "Can view content type",
-        "content_type": 5,
-        "codename": "view_contenttype"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 21,
-    "fields": {
-        "name": "Can add session",
-        "content_type": 6,
-        "codename": "add_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 22,
-    "fields": {
-        "name": "Can change session",
-        "content_type": 6,
-        "codename": "change_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 23,
-    "fields": {
-        "name": "Can delete session",
-        "content_type": 6,
-        "codename": "delete_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 24,
-    "fields": {
-        "name": "Can view session",
-        "content_type": 6,
-        "codename": "view_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 25,
-    "fields": {
-        "name": "Can add Capital",
-        "content_type": 7,
-        "codename": "add_capital"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 26,
-    "fields": {
-        "name": "Can change Capital",
-        "content_type": 7,
-        "codename": "change_capital"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 27,
-    "fields": {
-        "name": "Can delete Capital",
-        "content_type": 7,
-        "codename": "delete_capital"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 28,
-    "fields": {
-        "name": "Can view Capital",
-        "content_type": 7,
-        "codename": "view_capital"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 29,
-    "fields": {
-        "name": "Can add rol",
-        "content_type": 8,
-        "codename": "add_rol"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 30,
-    "fields": {
-        "name": "Can change rol",
-        "content_type": 8,
-        "codename": "change_rol"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 31,
-    "fields": {
-        "name": "Can delete rol",
-        "content_type": 8,
-        "codename": "delete_rol"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 32,
-    "fields": {
-        "name": "Can view rol",
-        "content_type": 8,
-        "codename": "view_rol"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 33,
-    "fields": {
-        "name": "Can add usuario",
-        "content_type": 9,
-        "codename": "add_usuario"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 34,
-    "fields": {
-        "name": "Can change usuario",
-        "content_type": 9,
-        "codename": "change_usuario"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 35,
-    "fields": {
-        "name": "Can delete usuario",
-        "content_type": 9,
-        "codename": "delete_usuario"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 36,
-    "fields": {
-        "name": "Can view usuario",
-        "content_type": 9,
-        "codename": "view_usuario"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 37,
-    "fields": {
-        "name": "Can add vuelo",
-        "content_type": 10,
-        "codename": "add_vuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 38,
-    "fields": {
-        "name": "Can change vuelo",
-        "content_type": 10,
-        "codename": "change_vuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 39,
-    "fields": {
-        "name": "Can delete vuelo",
-        "content_type": 10,
-        "codename": "delete_vuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 40,
-    "fields": {
-        "name": "Can view vuelo",
-        "content_type": 10,
-        "codename": "view_vuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 41,
-    "fields": {
-        "name": "Can add reserva",
-        "content_type": 11,
-        "codename": "add_reserva"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 42,
-    "fields": {
-        "name": "Can change reserva",
-        "content_type": 11,
-        "codename": "change_reserva"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 43,
-    "fields": {
-        "name": "Can delete reserva",
-        "content_type": 11,
-        "codename": "delete_reserva"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 44,
-    "fields": {
-        "name": "Can view reserva",
-        "content_type": 11,
-        "codename": "view_reserva"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 45,
-    "fields": {
-        "name": "Can add compra",
-        "content_type": 12,
-        "codename": "add_compra"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 46,
-    "fields": {
-        "name": "Can change compra",
-        "content_type": 12,
-        "codename": "change_compra"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 47,
-    "fields": {
-        "name": "Can delete compra",
-        "content_type": 12,
-        "codename": "delete_compra"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 48,
-    "fields": {
-        "name": "Can view compra",
-        "content_type": 12,
-        "codename": "view_compra"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 49,
-    "fields": {
-        "name": "Can add check in",
-        "content_type": 13,
-        "codename": "add_checkin"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 50,
-    "fields": {
-        "name": "Can change check in",
-        "content_type": 13,
-        "codename": "change_checkin"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 51,
-    "fields": {
-        "name": "Can delete check in",
-        "content_type": 13,
-        "codename": "delete_checkin"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 52,
-    "fields": {
-        "name": "Can view check in",
-        "content_type": 13,
-        "codename": "view_checkin"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 53,
-    "fields": {
-        "name": "Can add maleta",
-        "content_type": 14,
-        "codename": "add_maleta"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 54,
-    "fields": {
-        "name": "Can change maleta",
-        "content_type": 14,
-        "codename": "change_maleta"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 55,
-    "fields": {
-        "name": "Can delete maleta",
-        "content_type": 14,
-        "codename": "delete_maleta"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 56,
-    "fields": {
-        "name": "Can view maleta",
-        "content_type": 14,
-        "codename": "view_maleta"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 57,
-    "fields": {
-        "name": "Can add historial operacion",
-        "content_type": 15,
-        "codename": "add_historialoperacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 58,
-    "fields": {
-        "name": "Can change historial operacion",
-        "content_type": 15,
-        "codename": "change_historialoperacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 59,
-    "fields": {
-        "name": "Can delete historial operacion",
-        "content_type": 15,
-        "codename": "delete_historialoperacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 60,
-    "fields": {
-        "name": "Can view historial operacion",
-        "content_type": 15,
-        "codename": "view_historialoperacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 61,
-    "fields": {
-        "name": "Can add publicacion",
-        "content_type": 16,
-        "codename": "add_publicacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 62,
-    "fields": {
-        "name": "Can change publicacion",
-        "content_type": 16,
-        "codename": "change_publicacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 63,
-    "fields": {
-        "name": "Can delete publicacion",
-        "content_type": 16,
-        "codename": "delete_publicacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 64,
-    "fields": {
-        "name": "Can view publicacion",
-        "content_type": 16,
-        "codename": "view_publicacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 65,
-    "fields": {
-        "name": "Can add comentario",
-        "content_type": 17,
-        "codename": "add_comentario"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 66,
-    "fields": {
-        "name": "Can change comentario",
-        "content_type": 17,
-        "codename": "change_comentario"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 67,
-    "fields": {
-        "name": "Can delete comentario",
-        "content_type": 17,
-        "codename": "delete_comentario"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 68,
-    "fields": {
-        "name": "Can view comentario",
-        "content_type": 17,
-        "codename": "view_comentario"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 69,
-    "fields": {
-        "name": "Can add notificacion",
-        "content_type": 18,
-        "codename": "add_notificacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 70,
-    "fields": {
-        "name": "Can change notificacion",
-        "content_type": 18,
-        "codename": "change_notificacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 71,
-    "fields": {
-        "name": "Can delete notificacion",
-        "content_type": 18,
-        "codename": "delete_notificacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 72,
-    "fields": {
-        "name": "Can view notificacion",
-        "content_type": 18,
-        "codename": "view_notificacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 73,
-    "fields": {
-        "name": "Can add pais",
-        "content_type": 19,
-        "codename": "add_pais"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 74,
-    "fields": {
-        "name": "Can change pais",
-        "content_type": 19,
-        "codename": "change_pais"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 75,
-    "fields": {
-        "name": "Can delete pais",
-        "content_type": 19,
-        "codename": "delete_pais"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 76,
-    "fields": {
-        "name": "Can view pais",
-        "content_type": 19,
-        "codename": "view_pais"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 77,
-    "fields": {
-        "name": "Can add municipio",
-        "content_type": 20,
-        "codename": "add_municipio"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 78,
-    "fields": {
-        "name": "Can change municipio",
-        "content_type": 20,
-        "codename": "change_municipio"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 79,
-    "fields": {
-        "name": "Can delete municipio",
-        "content_type": 20,
-        "codename": "delete_municipio"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 80,
-    "fields": {
-        "name": "Can view municipio",
-        "content_type": 20,
-        "codename": "view_municipio"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 81,
-    "fields": {
-        "name": "Can add departamento",
-        "content_type": 21,
-        "codename": "add_departamento"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 82,
-    "fields": {
-        "name": "Can change departamento",
-        "content_type": 21,
-        "codename": "change_departamento"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 83,
-    "fields": {
-        "name": "Can delete departamento",
-        "content_type": 21,
-        "codename": "delete_departamento"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 84,
-    "fields": {
-        "name": "Can view departamento",
-        "content_type": 21,
-        "codename": "view_departamento"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 85,
-    "fields": {
-        "name": "Can add country",
-        "content_type": 22,
-        "codename": "add_country"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 86,
-    "fields": {
-        "name": "Can change country",
-        "content_type": 22,
-        "codename": "change_country"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 87,
-    "fields": {
-        "name": "Can delete country",
-        "content_type": 22,
-        "codename": "delete_country"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 88,
-    "fields": {
-        "name": "Can view country",
-        "content_type": 22,
-        "codename": "view_country"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 89,
-    "fields": {
-        "name": "Can add region/state",
-        "content_type": 23,
-        "codename": "add_region"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 90,
-    "fields": {
-        "name": "Can change region/state",
-        "content_type": 23,
-        "codename": "change_region"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 91,
-    "fields": {
-        "name": "Can delete region/state",
-        "content_type": 23,
-        "codename": "delete_region"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 92,
-    "fields": {
-        "name": "Can view region/state",
-        "content_type": 23,
-        "codename": "view_region"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 93,
-    "fields": {
-        "name": "Can add city",
-        "content_type": 24,
-        "codename": "add_city"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 94,
-    "fields": {
-        "name": "Can change city",
-        "content_type": 24,
-        "codename": "change_city"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 95,
-    "fields": {
-        "name": "Can delete city",
-        "content_type": 24,
-        "codename": "delete_city"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 96,
-    "fields": {
-        "name": "Can view city",
-        "content_type": 24,
-        "codename": "view_city"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 97,
-    "fields": {
-        "name": "Can add SubRegion",
-        "content_type": 25,
-        "codename": "add_subregion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 98,
-    "fields": {
-        "name": "Can change SubRegion",
-        "content_type": 25,
-        "codename": "change_subregion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 99,
-    "fields": {
-        "name": "Can delete SubRegion",
-        "content_type": 25,
-        "codename": "delete_subregion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 100,
-    "fields": {
-        "name": "Can view SubRegion",
-        "content_type": 25,
-        "codename": "view_subregion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 101,
-    "fields": {
-        "name": "Can add tarjeta",
-        "content_type": 26,
-        "codename": "add_tarjeta"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 102,
-    "fields": {
-        "name": "Can change tarjeta",
-        "content_type": 26,
-        "codename": "change_tarjeta"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 103,
-    "fields": {
-        "name": "Can delete tarjeta",
-        "content_type": 26,
-        "codename": "delete_tarjeta"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 104,
-    "fields": {
-        "name": "Can view tarjeta",
-        "content_type": 26,
-        "codename": "view_tarjeta"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 105,
-    "fields": {
-        "name": "Can add carrito",
-        "content_type": 27,
-        "codename": "add_carrito"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 106,
-    "fields": {
-        "name": "Can change carrito",
-        "content_type": 27,
-        "codename": "change_carrito"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 107,
-    "fields": {
-        "name": "Can delete carrito",
-        "content_type": 27,
-        "codename": "delete_carrito"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 108,
-    "fields": {
-        "name": "Can view carrito",
-        "content_type": 27,
-        "codename": "view_carrito"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 109,
-    "fields": {
-        "name": "Can add carrito item",
-        "content_type": 28,
-        "codename": "add_carritoitem"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 110,
-    "fields": {
-        "name": "Can change carrito item",
-        "content_type": 28,
-        "codename": "change_carritoitem"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 111,
-    "fields": {
-        "name": "Can delete carrito item",
-        "content_type": 28,
-        "codename": "delete_carritoitem"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 112,
-    "fields": {
-        "name": "Can view carrito item",
-        "content_type": 28,
-        "codename": "view_carritoitem"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 113,
-    "fields": {
-        "name": "Can add reserva pasajero",
-        "content_type": 29,
-        "codename": "add_reservapasajero"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 114,
-    "fields": {
-        "name": "Can change reserva pasajero",
-        "content_type": 29,
-        "codename": "change_reservapasajero"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 115,
-    "fields": {
-        "name": "Can delete reserva pasajero",
-        "content_type": 29,
-        "codename": "delete_reservapasajero"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 116,
-    "fields": {
-        "name": "Can view reserva pasajero",
-        "content_type": 29,
-        "codename": "view_reservapasajero"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 117,
-    "fields": {
-        "name": "Can add reubicacion",
-        "content_type": 30,
-        "codename": "add_reubicacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 118,
-    "fields": {
-        "name": "Can change reubicacion",
-        "content_type": 30,
-        "codename": "change_reubicacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 119,
-    "fields": {
-        "name": "Can delete reubicacion",
-        "content_type": 30,
-        "codename": "delete_reubicacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 120,
-    "fields": {
-        "name": "Can view reubicacion",
-        "content_type": 30,
-        "codename": "view_reubicacion"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 121,
-    "fields": {
-        "name": "Can add noticia",
-        "content_type": 31,
-        "codename": "add_noticia"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 122,
-    "fields": {
-        "name": "Can change noticia",
-        "content_type": 31,
-        "codename": "change_noticia"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 123,
-    "fields": {
-        "name": "Can delete noticia",
-        "content_type": 31,
-        "codename": "delete_noticia"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 124,
-    "fields": {
-        "name": "Can view noticia",
-        "content_type": 31,
-        "codename": "view_noticia"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 125,
-    "fields": {
-        "name": "Can add precio historico vuelo",
-        "content_type": 32,
-        "codename": "add_preciohistoricovuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 126,
-    "fields": {
-        "name": "Can change precio historico vuelo",
-        "content_type": 32,
-        "codename": "change_preciohistoricovuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 127,
-    "fields": {
-        "name": "Can delete precio historico vuelo",
-        "content_type": 32,
-        "codename": "delete_preciohistoricovuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 128,
-    "fields": {
-        "name": "Can view precio historico vuelo",
-        "content_type": 32,
-        "codename": "view_preciohistoricovuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 129,
-    "fields": {
-        "name": "Can add historial vuelo",
-        "content_type": 33,
-        "codename": "add_historialvuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 130,
-    "fields": {
-        "name": "Can change historial vuelo",
-        "content_type": 33,
-        "codename": "change_historialvuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 131,
-    "fields": {
-        "name": "Can delete historial vuelo",
-        "content_type": 33,
-        "codename": "delete_historialvuelo"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 132,
-    "fields": {
-        "name": "Can view historial vuelo",
-        "content_type": 33,
-        "codename": "view_historialvuelo"
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 1,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$E9iQLrjl2WkB2LoKoCxCPw$SRTUw6EacDcc9DeGAr0m2h9HKFhruL2PlBvoB9k1C6w=",
-        "last_login": "2025-10-20T00:45:29.215Z",
-        "is_superuser": true,
-        "username": "KMCC",
-        "first_name": "",
-        "last_name": "",
-        "email": "karenmanuela.cardona@utp.edu.co",
-        "is_staff": true,
-        "is_active": true,
-        "date_joined": "2025-10-20T00:02:36.137Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 2,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$4CDEtEFh9cYpik8YG7ojNs$WuvjVu8ZqiHGBrFqCNEIAdx2Z/NWGu99Haup2hR6Akg=",
-        "last_login": "2025-11-28T14:31:37.305Z",
-        "is_superuser": false,
-        "username": "karencita22",
-        "first_name": "",
-        "last_name": "",
-        "email": "karencarcas@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-10-20T00:30:05.768Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 3,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$mrOzqYKDTfbh4DsTGej1Ae$+s+R65xTVB32wQRsOTgZ6bpQ619fC8JDDIlhlui0yck=",
-        "last_login": null,
-        "is_superuser": false,
-        "username": "jhoncito08",
-        "first_name": "",
-        "last_name": "",
-        "email": "jhoncito@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-10-20T00:44:07.133Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 4,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$6yd1nvvjsRVQfULxk8o2WM$9ORXF/pnsyV4m8B319mX1Z2kyMjSkj+AKeMeA9e72TA=",
-        "last_login": "2025-11-28T04:01:00.997Z",
-        "is_superuser": true,
-        "username": "root",
-        "first_name": "",
-        "last_name": "",
-        "email": "root@condorairways.com",
-        "is_staff": true,
-        "is_active": true,
-        "date_joined": "2025-10-20T01:58:59.846Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 6,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$UIZCyfNPIop4Snx5L3HFNi$fXvBy2ctsEHY06DSmar84TUj4WwdsDuDQKvSBE1DYxE=",
-        "last_login": "2025-10-21T21:55:36.475Z",
-        "is_superuser": false,
-        "username": "Manuela",
-        "first_name": "",
-        "last_name": "",
-        "email": "manuelita@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-10-21T21:54:23.200Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 7,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$C1FFWrli23WnUZITH0cbjm$+9TLQPoKJ8QDzg4EvEiuW/qBiNDnfhebrAT+I8hmTCs=",
-        "last_login": "2025-10-31T03:42:06.568Z",
-        "is_superuser": false,
-        "username": "Laura",
-        "first_name": "",
-        "last_name": "",
-        "email": "laurita@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-10-21T21:54:59.460Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 9,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$O1dOAQm5Xb8xkeQOHpr1So$w777EVBADuTU2PHke5YYc9cYr+l9iZV1OLEU7LNKPwk=",
-        "last_login": "2025-12-09T03:37:53.377Z",
-        "is_superuser": false,
-        "username": "Manu123",
-        "first_name": "",
-        "last_name": "",
-        "email": "manuelita@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-10-24T02:06:37.131Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 11,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$V52UZ9eDke6uC1lUl0UrBN$NXfVTIYzcS504FT4XCZ7+NJtGZFNrdaw3GILs6BQCCA=",
-        "last_login": "2025-10-26T02:41:52.868Z",
-        "is_superuser": false,
-        "username": "Juan88",
-        "first_name": "",
-        "last_name": "",
-        "email": "juanito@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-10-24T02:17:50.104Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 12,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$PyL4iI5s9bZnsuCfYA044s$J77ylCOjBGoH19+9nUFMP657emDs1r1hPMLdfPenyeo=",
-        "last_login": null,
-        "is_superuser": false,
-        "username": "Nico22",
-        "first_name": "",
-        "last_name": "",
-        "email": "nicolas22@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-10-24T02:21:35.558Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 13,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$I1Fo3IuZNtuqdyZUsTLSPl$zy7ZwYDjc1npVhKlHCPtjkjJBifAxO4JvO4+ZXQZMqM=",
-        "last_login": "2025-12-09T13:45:41.573Z",
-        "is_superuser": false,
-        "username": "Daniela_08",
-        "first_name": "",
-        "last_name": "",
-        "email": "daniela.diaz@utp.edu.co",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-10-30T03:18:43.669Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 14,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$OoIosKrJQBTYHTYaAY46WV$Z2UNciGy2v36RqPdiOIBvf/GTiFBumecwMKg6WEIv9s=",
-        "last_login": "2025-10-31T03:39:04.995Z",
-        "is_superuser": false,
-        "username": "Jero30",
-        "first_name": "",
-        "last_name": "",
-        "email": "jero0330@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-10-31T03:34:18.883Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 15,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$hC4zGZVvZuUw0WLUoqMipI$ARpE4MCGa44ZaDa//Zbllk+Yh0odJ9fglgqeNMmSntQ=",
-        "last_login": null,
-        "is_superuser": false,
-        "username": "Tina23",
-        "first_name": "",
-        "last_name": "",
-        "email": "martinard23@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-11-28T03:22:49.112Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 16,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$qyp2CS31L9Mq41SZAT7ulb$ixEl/p2N+7Gw+sBP6lPbN6SU6ltz193Ibidgfj5a3nw=",
-        "last_login": null,
-        "is_superuser": false,
-        "username": "18angelik",
-        "first_name": "",
-        "last_name": "",
-        "email": "18angelik@hotmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-11-28T03:26:20.444Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 17,
-    "fields": {
-        "password": "pbkdf2_sha256$1000000$kAGH9AEgQxjn5NeVC5ku5M$+MEMrQEsRBJdyQ8xTzPl1J/zDhhcmIKBmdaB8DnmAtg=",
-        "last_login": "2025-11-28T03:36:59.924Z",
-        "is_superuser": false,
-        "username": "Salo12",
-        "first_name": "",
-        "last_name": "",
-        "email": "salo12@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2025-11-28T03:36:20.248Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 1,
-    "fields": {
-        "app_label": "admin",
-        "model": "logentry"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 2,
-    "fields": {
-        "app_label": "auth",
-        "model": "permission"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 3,
-    "fields": {
-        "app_label": "auth",
-        "model": "group"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 4,
-    "fields": {
-        "app_label": "auth",
-        "model": "user"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 5,
-    "fields": {
-        "app_label": "contenttypes",
-        "model": "contenttype"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 6,
-    "fields": {
-        "app_label": "sessions",
-        "model": "session"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 7,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "capital"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 8,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "rol"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 9,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "usuario"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 10,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "vuelo"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 11,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "reserva"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 12,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "compra"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 13,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "checkin"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 14,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "maleta"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 15,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "historialoperacion"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 16,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "publicacion"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 17,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "comentario"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 18,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "notificacion"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 19,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "pais"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 20,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "municipio"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 21,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "departamento"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 22,
-    "fields": {
-        "app_label": "cities_light",
-        "model": "country"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 23,
-    "fields": {
-        "app_label": "cities_light",
-        "model": "region"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 24,
-    "fields": {
-        "app_label": "cities_light",
-        "model": "city"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 25,
-    "fields": {
-        "app_label": "cities_light",
-        "model": "subregion"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 26,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "tarjeta"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 27,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "carrito"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 28,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "carritoitem"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 29,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "reservapasajero"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 30,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "reubicacion"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 31,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "noticia"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 32,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "preciohistoricovuelo"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 33,
-    "fields": {
-        "app_label": "aerolinea",
-        "model": "historialvuelo"
-    }
-},
-{
+  {
     "model": "aerolinea.pais",
     "pk": 1,
     "fields": {
-        "nombre": "Colombia"
+      "nombre": "Colombia"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 1,
     "fields": {
-        "pais": 1,
-        "nombre": "Amazonas"
+      "pais": 1,
+      "nombre": "Amazonas"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 2,
     "fields": {
-        "pais": 1,
-        "nombre": "Antioquia"
+      "pais": 1,
+      "nombre": "Antioquia"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 3,
     "fields": {
-        "pais": 1,
-        "nombre": "Arauca"
+      "pais": 1,
+      "nombre": "Arauca"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 4,
     "fields": {
-        "pais": 1,
-        "nombre": "Atlßntico"
+      "pais": 1,
+      "nombre": "Atlßntico"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 5,
     "fields": {
-        "pais": 1,
-        "nombre": "BolÝvar"
+      "pais": 1,
+      "nombre": "BolÝvar"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 6,
     "fields": {
-        "pais": 1,
-        "nombre": "Boyacß"
+      "pais": 1,
+      "nombre": "Boyacß"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 7,
     "fields": {
-        "pais": 1,
-        "nombre": "Caldas"
+      "pais": 1,
+      "nombre": "Caldas"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 8,
     "fields": {
-        "pais": 1,
-        "nombre": "Caquetß"
+      "pais": 1,
+      "nombre": "Caquetß"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 9,
     "fields": {
-        "pais": 1,
-        "nombre": "Casanare"
+      "pais": 1,
+      "nombre": "Casanare"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 10,
     "fields": {
-        "pais": 1,
-        "nombre": "Cauca"
+      "pais": 1,
+      "nombre": "Cauca"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 11,
     "fields": {
-        "pais": 1,
-        "nombre": "Cesar"
+      "pais": 1,
+      "nombre": "Cesar"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 12,
     "fields": {
-        "pais": 1,
-        "nombre": "Choc¾"
+      "pais": 1,
+      "nombre": "Choc¾"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 13,
     "fields": {
-        "pais": 1,
-        "nombre": "C¾rdoba"
+      "pais": 1,
+      "nombre": "C¾rdoba"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 14,
     "fields": {
-        "pais": 1,
-        "nombre": "Cundinamarca"
+      "pais": 1,
+      "nombre": "Cundinamarca"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 15,
     "fields": {
-        "pais": 1,
-        "nombre": "GuainÝa"
+      "pais": 1,
+      "nombre": "GuainÝa"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 16,
     "fields": {
-        "pais": 1,
-        "nombre": "Guaviare"
+      "pais": 1,
+      "nombre": "Guaviare"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 17,
     "fields": {
-        "pais": 1,
-        "nombre": "Huila"
+      "pais": 1,
+      "nombre": "Huila"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 18,
     "fields": {
-        "pais": 1,
-        "nombre": "La Guajira"
+      "pais": 1,
+      "nombre": "La Guajira"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 19,
     "fields": {
-        "pais": 1,
-        "nombre": "Magdalena"
+      "pais": 1,
+      "nombre": "Magdalena"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 20,
     "fields": {
-        "pais": 1,
-        "nombre": "Meta"
+      "pais": 1,
+      "nombre": "Meta"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 21,
     "fields": {
-        "pais": 1,
-        "nombre": "Nari±o"
+      "pais": 1,
+      "nombre": "Nari±o"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 22,
     "fields": {
-        "pais": 1,
-        "nombre": "Norte de Santander"
+      "pais": 1,
+      "nombre": "Norte de Santander"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 23,
     "fields": {
-        "pais": 1,
-        "nombre": "Putumayo"
+      "pais": 1,
+      "nombre": "Putumayo"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 24,
     "fields": {
-        "pais": 1,
-        "nombre": "QuindÝo"
+      "pais": 1,
+      "nombre": "QuindÝo"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 25,
     "fields": {
-        "pais": 1,
-        "nombre": "Risaralda"
+      "pais": 1,
+      "nombre": "Risaralda"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 26,
     "fields": {
-        "pais": 1,
-        "nombre": "San AndrÚs y Providencia"
+      "pais": 1,
+      "nombre": "San AndrÚs y Providencia"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 27,
     "fields": {
-        "pais": 1,
-        "nombre": "Santander"
+      "pais": 1,
+      "nombre": "Santander"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 28,
     "fields": {
-        "pais": 1,
-        "nombre": "Sucre"
+      "pais": 1,
+      "nombre": "Sucre"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 29,
     "fields": {
-        "pais": 1,
-        "nombre": "Tolima"
+      "pais": 1,
+      "nombre": "Tolima"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 30,
     "fields": {
-        "pais": 1,
-        "nombre": "Valle del Cauca"
+      "pais": 1,
+      "nombre": "Valle del Cauca"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 31,
     "fields": {
-        "pais": 1,
-        "nombre": "VaupÚs"
+      "pais": 1,
+      "nombre": "VaupÚs"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.departamento",
     "pk": 32,
     "fields": {
-        "pais": 1,
-        "nombre": "Vichada"
+      "pais": 1,
+      "nombre": "Vichada"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 1,
     "fields": {
-        "departamento": 1,
-        "nombre": "Leticia"
+      "departamento": 1,
+      "nombre": "Leticia"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 2,
     "fields": {
-        "departamento": 2,
-        "nombre": "MedellÝn"
+      "departamento": 2,
+      "nombre": "MedellÝn"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 3,
     "fields": {
-        "departamento": 2,
-        "nombre": "Bello"
+      "departamento": 2,
+      "nombre": "Bello"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 4,
     "fields": {
-        "departamento": 2,
-        "nombre": "Apartad¾"
+      "departamento": 2,
+      "nombre": "Apartad¾"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 5,
     "fields": {
-        "departamento": 3,
-        "nombre": "Arauca"
+      "departamento": 3,
+      "nombre": "Arauca"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 6,
     "fields": {
-        "departamento": 4,
-        "nombre": "Barranquilla"
+      "departamento": 4,
+      "nombre": "Barranquilla"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 7,
     "fields": {
-        "departamento": 4,
-        "nombre": "Soledad"
+      "departamento": 4,
+      "nombre": "Soledad"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 8,
     "fields": {
-        "departamento": 5,
-        "nombre": "Cartagena"
+      "departamento": 5,
+      "nombre": "Cartagena"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 9,
     "fields": {
-        "departamento": 5,
-        "nombre": "MaganguÚ"
+      "departamento": 5,
+      "nombre": "MaganguÚ"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 10,
     "fields": {
-        "departamento": 6,
-        "nombre": "Tunja"
+      "departamento": 6,
+      "nombre": "Tunja"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 11,
     "fields": {
-        "departamento": 6,
-        "nombre": "Duitama"
+      "departamento": 6,
+      "nombre": "Duitama"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 12,
     "fields": {
-        "departamento": 7,
-        "nombre": "Manizales"
+      "departamento": 7,
+      "nombre": "Manizales"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 13,
     "fields": {
-        "departamento": 8,
-        "nombre": "Florencia"
+      "departamento": 8,
+      "nombre": "Florencia"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 14,
     "fields": {
-        "departamento": 9,
-        "nombre": "Yopal"
+      "departamento": 9,
+      "nombre": "Yopal"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 15,
     "fields": {
-        "departamento": 10,
-        "nombre": "Popayßn"
+      "departamento": 10,
+      "nombre": "Popayßn"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 16,
     "fields": {
-        "departamento": 11,
-        "nombre": "Valledupar"
+      "departamento": 11,
+      "nombre": "Valledupar"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 17,
     "fields": {
-        "departamento": 12,
-        "nombre": "Quibd¾"
+      "departamento": 12,
+      "nombre": "Quibd¾"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 18,
     "fields": {
-        "departamento": 13,
-        "nombre": "MonterÝa"
+      "departamento": 13,
+      "nombre": "MonterÝa"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 19,
     "fields": {
-        "departamento": 14,
-        "nombre": "Bogotß"
+      "departamento": 14,
+      "nombre": "Bogotß"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 20,
     "fields": {
-        "departamento": 15,
-        "nombre": "InÝrida"
+      "departamento": 15,
+      "nombre": "InÝrida"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 21,
     "fields": {
-        "departamento": 16,
-        "nombre": "San JosÚ del Guaviare"
+      "departamento": 16,
+      "nombre": "San JosÚ del Guaviare"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 22,
     "fields": {
-        "departamento": 17,
-        "nombre": "Neiva"
+      "departamento": 17,
+      "nombre": "Neiva"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 23,
     "fields": {
-        "departamento": 18,
-        "nombre": "Riohacha"
+      "departamento": 18,
+      "nombre": "Riohacha"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 24,
     "fields": {
-        "departamento": 19,
-        "nombre": "Santa Marta"
+      "departamento": 19,
+      "nombre": "Santa Marta"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 25,
     "fields": {
-        "departamento": 20,
-        "nombre": "Villavicencio"
+      "departamento": 20,
+      "nombre": "Villavicencio"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 26,
     "fields": {
-        "departamento": 21,
-        "nombre": "Pasto"
+      "departamento": 21,
+      "nombre": "Pasto"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 27,
     "fields": {
-        "departamento": 22,
-        "nombre": "C·cuta"
+      "departamento": 22,
+      "nombre": "C·cuta"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 28,
     "fields": {
-        "departamento": 23,
-        "nombre": "Mocoa"
+      "departamento": 23,
+      "nombre": "Mocoa"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 29,
     "fields": {
-        "departamento": 24,
-        "nombre": "Armenia"
+      "departamento": 24,
+      "nombre": "Armenia"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 30,
     "fields": {
-        "departamento": 25,
-        "nombre": "Pereira"
+      "departamento": 25,
+      "nombre": "Pereira"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 31,
     "fields": {
-        "departamento": 26,
-        "nombre": "San AndrÚs"
+      "departamento": 26,
+      "nombre": "San AndrÚs"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 32,
     "fields": {
-        "departamento": 27,
-        "nombre": "Bucaramanga"
+      "departamento": 27,
+      "nombre": "Bucaramanga"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 33,
     "fields": {
-        "departamento": 28,
-        "nombre": "Sincelejo"
+      "departamento": 28,
+      "nombre": "Sincelejo"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 34,
     "fields": {
-        "departamento": 29,
-        "nombre": "IbaguÚ"
+      "departamento": 29,
+      "nombre": "IbaguÚ"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 35,
     "fields": {
-        "departamento": 30,
-        "nombre": "Cali"
+      "departamento": 30,
+      "nombre": "Cali"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 36,
     "fields": {
-        "departamento": 31,
-        "nombre": "Mit·"
+      "departamento": 31,
+      "nombre": "Mit·"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.municipio",
     "pk": 37,
     "fields": {
-        "departamento": 32,
-        "nombre": "Puerto Carre±o"
+      "departamento": 32,
+      "nombre": "Puerto Carre±o"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 1,
     "fields": {
-        "nombre": "ARAUCA",
-        "lat": 7.0847,
-        "lon": -70.7591
+      "nombre": "ARAUCA",
+      "lat": 7.0847,
+      "lon": -70.7591
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 2,
     "fields": {
-        "nombre": "ARMENIA",
-        "lat": 4.5339,
-        "lon": -75.6811
+      "nombre": "ARMENIA",
+      "lat": 4.5339,
+      "lon": -75.6811
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 3,
     "fields": {
-        "nombre": "BARRANQUILLA",
-        "lat": 10.9685,
-        "lon": -74.7813
+      "nombre": "BARRANQUILLA",
+      "lat": 10.9685,
+      "lon": -74.7813
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 4,
     "fields": {
-        "nombre": "BOGOTA",
-        "lat": 4.711,
-        "lon": -74.0721
+      "nombre": "BOGOTA",
+      "lat": 4.711,
+      "lon": -74.0721
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 5,
     "fields": {
-        "nombre": "BUCARAMANGA",
-        "lat": 7.1193,
-        "lon": -73.1227
+      "nombre": "BUCARAMANGA",
+      "lat": 7.1193,
+      "lon": -73.1227
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 6,
     "fields": {
-        "nombre": "CALI",
-        "lat": 3.4516,
-        "lon": -76.5319
+      "nombre": "CALI",
+      "lat": 3.4516,
+      "lon": -76.5319
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 7,
     "fields": {
-        "nombre": "CARTAGENA",
-        "lat": 10.391,
-        "lon": -75.4794
+      "nombre": "CARTAGENA",
+      "lat": 10.391,
+      "lon": -75.4794
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 8,
     "fields": {
-        "nombre": "CUCUTA",
-        "lat": 7.8939,
-        "lon": -72.5078
+      "nombre": "CUCUTA",
+      "lat": 7.8939,
+      "lon": -72.5078
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 9,
     "fields": {
-        "nombre": "FLORENCIA",
-        "lat": 1.6144,
-        "lon": -75.6062
+      "nombre": "FLORENCIA",
+      "lat": 1.6144,
+      "lon": -75.6062
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 10,
     "fields": {
-        "nombre": "IBAGUE",
-        "lat": 4.4389,
-        "lon": -75.2322
+      "nombre": "IBAGUE",
+      "lat": 4.4389,
+      "lon": -75.2322
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 11,
     "fields": {
-        "nombre": "INIRIDA",
-        "lat": 3.8653,
-        "lon": -67.9239
+      "nombre": "INIRIDA",
+      "lat": 3.8653,
+      "lon": -67.9239
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 12,
     "fields": {
-        "nombre": "LETICIA",
-        "lat": -4.2153,
-        "lon": -69.9406
+      "nombre": "LETICIA",
+      "lat": -4.2153,
+      "lon": -69.9406
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 13,
     "fields": {
-        "nombre": "MANIZALES",
-        "lat": 5.0703,
-        "lon": -75.5138
+      "nombre": "MANIZALES",
+      "lat": 5.0703,
+      "lon": -75.5138
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 14,
     "fields": {
-        "nombre": "MEDELLIN",
-        "lat": 6.2442,
-        "lon": -75.5812
+      "nombre": "MEDELLIN",
+      "lat": 6.2442,
+      "lon": -75.5812
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 15,
     "fields": {
-        "nombre": "MITU",
-        "lat": 1.1983,
-        "lon": -70.1733
+      "nombre": "MITU",
+      "lat": 1.1983,
+      "lon": -70.1733
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 16,
     "fields": {
-        "nombre": "MOCOA",
-        "lat": 1.1498,
-        "lon": -76.6463
+      "nombre": "MOCOA",
+      "lat": 1.1498,
+      "lon": -76.6463
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 17,
     "fields": {
-        "nombre": "MONTERIA",
-        "lat": 8.748,
-        "lon": -75.8814
+      "nombre": "MONTERIA",
+      "lat": 8.748,
+      "lon": -75.8814
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 18,
     "fields": {
-        "nombre": "NEIVA",
-        "lat": 2.9273,
-        "lon": -75.2819
+      "nombre": "NEIVA",
+      "lat": 2.9273,
+      "lon": -75.2819
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 19,
     "fields": {
-        "nombre": "PASTO",
-        "lat": 1.2136,
-        "lon": -77.2811
+      "nombre": "PASTO",
+      "lat": 1.2136,
+      "lon": -77.2811
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 20,
     "fields": {
-        "nombre": "PEREIRA",
-        "lat": 4.8143,
-        "lon": -75.6946
+      "nombre": "PEREIRA",
+      "lat": 4.8143,
+      "lon": -75.6946
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 21,
     "fields": {
-        "nombre": "POPAYAN",
-        "lat": 2.4437,
-        "lon": -76.6147
+      "nombre": "POPAYAN",
+      "lat": 2.4437,
+      "lon": -76.6147
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 22,
     "fields": {
-        "nombre": "PUERTO_CARREÐO",
-        "lat": 6.187,
-        "lon": -67.4859
+      "nombre": "PUERTO_CARREÐO",
+      "lat": 6.187,
+      "lon": -67.4859
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 23,
     "fields": {
-        "nombre": "QUIBDO",
-        "lat": 5.6947,
-        "lon": -76.6612
+      "nombre": "QUIBDO",
+      "lat": 5.6947,
+      "lon": -76.6612
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 24,
     "fields": {
-        "nombre": "RIOHACHA",
-        "lat": 11.5444,
-        "lon": -72.9073
+      "nombre": "RIOHACHA",
+      "lat": 11.5444,
+      "lon": -72.9073
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 25,
     "fields": {
-        "nombre": "SAN_ANDRES",
-        "lat": 12.5847,
-        "lon": -81.7006
+      "nombre": "SAN_ANDRES",
+      "lat": 12.5847,
+      "lon": -81.7006
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 26,
     "fields": {
-        "nombre": "SAN_JOSE_DEL_GUAVIARE",
-        "lat": 2.5658,
-        "lon": -72.6396
+      "nombre": "SAN_JOSE_DEL_GUAVIARE",
+      "lat": 2.5658,
+      "lon": -72.6396
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 27,
     "fields": {
-        "nombre": "SANTA_MARTA",
-        "lat": 11.2408,
-        "lon": -74.199
+      "nombre": "SANTA_MARTA",
+      "lat": 11.2408,
+      "lon": -74.199
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 28,
     "fields": {
-        "nombre": "SINCELEJO",
-        "lat": 9.3047,
-        "lon": -75.3978
+      "nombre": "SINCELEJO",
+      "lat": 9.3047,
+      "lon": -75.3978
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 29,
     "fields": {
-        "nombre": "TUNJA",
-        "lat": 5.5353,
-        "lon": -73.3678
+      "nombre": "TUNJA",
+      "lat": 5.5353,
+      "lon": -73.3678
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 30,
     "fields": {
-        "nombre": "VALLEDUPAR",
-        "lat": 10.4631,
-        "lon": -73.2532
+      "nombre": "VALLEDUPAR",
+      "lat": 10.4631,
+      "lon": -73.2532
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 31,
     "fields": {
-        "nombre": "VILLAVICENCIO",
-        "lat": 4.142,
-        "lon": -73.6266
+      "nombre": "VILLAVICENCIO",
+      "lat": 4.142,
+      "lon": -73.6266
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 32,
     "fields": {
-        "nombre": "YOPAL",
-        "lat": 5.3378,
-        "lon": -72.3959
+      "nombre": "YOPAL",
+      "lat": 5.3378,
+      "lon": -72.3959
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 33,
     "fields": {
-        "nombre": "MADRID",
-        "lat": 40.4168,
-        "lon": -3.7038
+      "nombre": "MADRID",
+      "lat": 40.4168,
+      "lon": -3.7038
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 34,
     "fields": {
-        "nombre": "LONDRES",
-        "lat": 51.5074,
-        "lon": -0.1278
+      "nombre": "LONDRES",
+      "lat": 51.5074,
+      "lon": -0.1278
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 35,
     "fields": {
-        "nombre": "NUEVA_YORK",
-        "lat": 40.7128,
-        "lon": -74.006
+      "nombre": "NUEVA_YORK",
+      "lat": 40.7128,
+      "lon": -74.006
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 36,
     "fields": {
-        "nombre": "BUENOS_AIRES",
-        "lat": -34.6037,
-        "lon": -58.3816
+      "nombre": "BUENOS_AIRES",
+      "lat": -34.6037,
+      "lon": -58.3816
     }
-},
-{
+  },
+  {
     "model": "aerolinea.capital",
     "pk": 37,
     "fields": {
-        "nombre": "MIAMI",
-        "lat": 25.7617,
-        "lon": -80.1918
+      "nombre": "MIAMI",
+      "lat": 25.7617,
+      "lon": -80.1918
     }
-},
-{
+  },
+  {
     "model": "aerolinea.rol",
     "pk": 1,
     "fields": {
-        "nombre": "Cliente"
+      "nombre": "Cliente"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.rol",
     "pk": 2,
     "fields": {
-        "nombre": "Root"
+      "nombre": "Root"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.rol",
     "pk": 3,
     "fields": {
-        "nombre": "Administrador"
+      "nombre": "Administrador"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 1,
     "fields": {
-        "user": 2,
-        "rol": 1,
-        "email": "karencarcas@gmail.com",
-        "nombres": "Karen Manuela",
-        "apellidos": "Cardona Casta±o",
-        "direccion_facturacion": "JardÝn II etapa Mz 10 Casa 15",
-        "fecha_nacimiento": "2002-09-22",
-        "pais": 1,
-        "departamento": 25,
-        "municipio": 30,
-        "dni": "1004778917",
-        "genero": "F",
-        "imagen_usuario": "",
-        "es_admin": false,
-        "es_root": false,
-        "registro_completo": false,
-        "suscrito_noticias": true
+      "user": 2,
+      "rol": 1,
+      "email": "karencarcas@gmail.com",
+      "nombres": "Karen Manuela",
+      "apellidos": "Cardona Casta±o",
+      "direccion_facturacion": "JardÝn II etapa Mz 10 Casa 15",
+      "fecha_nacimiento": "2002-09-22",
+      "pais": 1,
+      "departamento": 25,
+      "municipio": 30,
+      "dni": "1004778917",
+      "genero": "F",
+      "imagen_usuario": "",
+      "es_admin": false,
+      "es_root": false,
+      "registro_completo": false,
+      "suscrito_noticias": true
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 2,
     "fields": {
-        "user": 3,
-        "rol": 1,
-        "email": "jhoncito@gmail.com",
-        "nombres": "Jhon Alexander",
-        "apellidos": "Cardona Rodas",
-        "direccion_facturacion": "Avenida Sim¾n Bolivar",
-        "fecha_nacimiento": "1971-08-19",
-        "pais": 1,
-        "departamento": 25,
-        "municipio": 30,
-        "dni": "10141297",
-        "genero": "M",
-        "imagen_usuario": "",
-        "es_admin": false,
-        "es_root": false,
-        "registro_completo": false,
-        "suscrito_noticias": false
+      "user": 3,
+      "rol": 1,
+      "email": "jhoncito@gmail.com",
+      "nombres": "Jhon Alexander",
+      "apellidos": "Cardona Rodas",
+      "direccion_facturacion": "Avenida Sim¾n Bolivar",
+      "fecha_nacimiento": "1971-08-19",
+      "pais": 1,
+      "departamento": 25,
+      "municipio": 30,
+      "dni": "10141297",
+      "genero": "M",
+      "imagen_usuario": "",
+      "es_admin": false,
+      "es_root": false,
+      "registro_completo": false,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 3,
     "fields": {
-        "user": 4,
-        "rol": 2,
-        "email": "root@condorairways.com",
-        "nombres": "Root",
-        "apellidos": "System",
-        "direccion_facturacion": "Sistema Central",
-        "fecha_nacimiento": "2000-01-01",
-        "pais": null,
-        "departamento": null,
-        "municipio": null,
-        "dni": "0000000000",
-        "genero": "O",
-        "imagen_usuario": "",
-        "es_admin": true,
-        "es_root": true,
-        "registro_completo": false,
-        "suscrito_noticias": false
+      "user": 4,
+      "rol": 2,
+      "email": "root@condorairways.com",
+      "nombres": "Root",
+      "apellidos": "System",
+      "direccion_facturacion": "Sistema Central",
+      "fecha_nacimiento": "2000-01-01",
+      "pais": null,
+      "departamento": null,
+      "municipio": null,
+      "dni": "0000000000",
+      "genero": "O",
+      "imagen_usuario": "",
+      "es_admin": true,
+      "es_root": true,
+      "registro_completo": false,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 5,
     "fields": {
-        "user": 7,
-        "rol": 3,
-        "email": "laurita@gmail.com",
-        "nombres": "Laura Ximena",
-        "apellidos": "Bohorquez",
-        "direccion_facturacion": "Avenida Nari±o",
-        "fecha_nacimiento": "1987-03-14",
-        "pais": 1,
-        "departamento": 29,
-        "municipio": 34,
-        "dni": "10334582",
-        "genero": "F",
-        "imagen_usuario": "",
-        "es_admin": true,
-        "es_root": false,
-        "registro_completo": true,
-        "suscrito_noticias": false
+      "user": 7,
+      "rol": 3,
+      "email": "laurita@gmail.com",
+      "nombres": "Laura Ximena",
+      "apellidos": "Bohorquez",
+      "direccion_facturacion": "Avenida Nari±o",
+      "fecha_nacimiento": "1987-03-14",
+      "pais": 1,
+      "departamento": 29,
+      "municipio": 34,
+      "dni": "10334582",
+      "genero": "F",
+      "imagen_usuario": "",
+      "es_admin": true,
+      "es_root": false,
+      "registro_completo": true,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 7,
     "fields": {
-        "user": 9,
-        "rol": 3,
-        "email": "manuelita@gmail.com",
-        "nombres": "Manuela",
-        "apellidos": "Cßrdenas",
-        "direccion_facturacion": "Calle 15 #5-89",
-        "fecha_nacimiento": "1980-05-27",
-        "pais": 1,
-        "departamento": 2,
-        "municipio": 4,
-        "dni": "45762987",
-        "genero": "F",
-        "imagen_usuario": "",
-        "es_admin": true,
-        "es_root": false,
-        "registro_completo": true,
-        "suscrito_noticias": false
+      "user": 9,
+      "rol": 3,
+      "email": "manuelita@gmail.com",
+      "nombres": "Manuela",
+      "apellidos": "Cßrdenas",
+      "direccion_facturacion": "Calle 15 #5-89",
+      "fecha_nacimiento": "1980-05-27",
+      "pais": 1,
+      "departamento": 2,
+      "municipio": 4,
+      "dni": "45762987",
+      "genero": "F",
+      "imagen_usuario": "",
+      "es_admin": true,
+      "es_root": false,
+      "registro_completo": true,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 9,
     "fields": {
-        "user": 11,
-        "rol": 3,
-        "email": "juanito@gmail.com",
-        "nombres": "Juan Camilo",
-        "apellidos": "RÝos Osorio",
-        "direccion_facturacion": "Avenida Boyacß",
-        "fecha_nacimiento": "2000-09-30",
-        "pais": 1,
-        "departamento": 6,
-        "municipio": 10,
-        "dni": "10460967",
-        "genero": "M",
-        "imagen_usuario": "",
-        "es_admin": true,
-        "es_root": false,
-        "registro_completo": true,
-        "suscrito_noticias": false
+      "user": 11,
+      "rol": 3,
+      "email": "juanito@gmail.com",
+      "nombres": "Juan Camilo",
+      "apellidos": "RÝos Osorio",
+      "direccion_facturacion": "Avenida Boyacß",
+      "fecha_nacimiento": "2000-09-30",
+      "pais": 1,
+      "departamento": 6,
+      "municipio": 10,
+      "dni": "10460967",
+      "genero": "M",
+      "imagen_usuario": "",
+      "es_admin": true,
+      "es_root": false,
+      "registro_completo": true,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 10,
     "fields": {
-        "user": 12,
-        "rol": 3,
-        "email": "nicolas22@gmail.com",
-        "nombres": "Pendiente",
-        "apellidos": "Pendiente",
-        "direccion_facturacion": "Sin definir",
-        "fecha_nacimiento": "2000-01-01",
-        "pais": null,
-        "departamento": null,
-        "municipio": null,
-        "dni": "TEMP12",
-        "genero": "O",
-        "imagen_usuario": "",
-        "es_admin": true,
-        "es_root": false,
-        "registro_completo": false,
-        "suscrito_noticias": false
+      "user": 12,
+      "rol": 3,
+      "email": "nicolas22@gmail.com",
+      "nombres": "Pendiente",
+      "apellidos": "Pendiente",
+      "direccion_facturacion": "Sin definir",
+      "fecha_nacimiento": "2000-01-01",
+      "pais": null,
+      "departamento": null,
+      "municipio": null,
+      "dni": "TEMP12",
+      "genero": "O",
+      "imagen_usuario": "",
+      "es_admin": true,
+      "es_root": false,
+      "registro_completo": false,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 11,
     "fields": {
-        "user": 13,
-        "rol": 1,
-        "email": "daniela.diaz@utp.edu.co",
-        "nombres": "Daniela",
-        "apellidos": "Diaz Rios",
-        "direccion_facturacion": "Av sur",
-        "fecha_nacimiento": "1993-08-31",
-        "pais": 1,
-        "departamento": 29,
-        "municipio": 34,
-        "dni": "1109297977",
-        "genero": "M",
-        "imagen_usuario": "",
-        "es_admin": false,
-        "es_root": false,
-        "registro_completo": false,
-        "suscrito_noticias": false
+      "user": 13,
+      "rol": 1,
+      "email": "daniela.diaz@utp.edu.co",
+      "nombres": "Daniela",
+      "apellidos": "Diaz Rios",
+      "direccion_facturacion": "Av sur",
+      "fecha_nacimiento": "1993-08-31",
+      "pais": 1,
+      "departamento": 29,
+      "municipio": 34,
+      "dni": "1109297977",
+      "genero": "M",
+      "imagen_usuario": "",
+      "es_admin": false,
+      "es_root": false,
+      "registro_completo": false,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 12,
     "fields": {
-        "user": 14,
-        "rol": 1,
-        "email": "jero0330@gmail.com",
-        "nombres": "Jeronimo",
-        "apellidos": "Duran",
-        "direccion_facturacion": "av 5",
-        "fecha_nacimiento": "2000-03-30",
-        "pais": 1,
-        "departamento": 25,
-        "municipio": 30,
-        "dni": "1001234",
-        "genero": "M",
-        "imagen_usuario": "",
-        "es_admin": false,
-        "es_root": false,
-        "registro_completo": false,
-        "suscrito_noticias": false
+      "user": 14,
+      "rol": 1,
+      "email": "jero0330@gmail.com",
+      "nombres": "Jeronimo",
+      "apellidos": "Duran",
+      "direccion_facturacion": "av 5",
+      "fecha_nacimiento": "2000-03-30",
+      "pais": 1,
+      "departamento": 25,
+      "municipio": 30,
+      "dni": "1001234",
+      "genero": "M",
+      "imagen_usuario": "",
+      "es_admin": false,
+      "es_root": false,
+      "registro_completo": false,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 13,
     "fields": {
-        "user": 15,
-        "rol": 1,
-        "email": "martinard23@gmail.com",
-        "nombres": "Martina",
-        "apellidos": "Ramirez Diaz",
-        "direccion_facturacion": "Av sur 53 20",
-        "fecha_nacimiento": "2000-02-23",
-        "pais": 1,
-        "departamento": 25,
-        "municipio": 30,
-        "dni": "1225016",
-        "genero": "F",
-        "imagen_usuario": "",
-        "es_admin": false,
-        "es_root": false,
-        "registro_completo": false,
-        "suscrito_noticias": false
+      "user": 15,
+      "rol": 1,
+      "email": "martinard23@gmail.com",
+      "nombres": "Martina",
+      "apellidos": "Ramirez Diaz",
+      "direccion_facturacion": "Av sur 53 20",
+      "fecha_nacimiento": "2000-02-23",
+      "pais": 1,
+      "departamento": 25,
+      "municipio": 30,
+      "dni": "1225016",
+      "genero": "F",
+      "imagen_usuario": "",
+      "es_admin": false,
+      "es_root": false,
+      "registro_completo": false,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 14,
     "fields": {
-        "user": 16,
-        "rol": 1,
-        "email": "18angelik@hotmail.com",
-        "nombres": "Angelica",
-        "apellidos": "Barrera Rios",
-        "direccion_facturacion": "Av 8 44 26",
-        "fecha_nacimiento": "1990-05-22",
-        "pais": 1,
-        "departamento": 29,
-        "municipio": 34,
-        "dni": "1109295123",
-        "genero": "F",
-        "imagen_usuario": "",
-        "es_admin": false,
-        "es_root": false,
-        "registro_completo": false,
-        "suscrito_noticias": false
+      "user": 16,
+      "rol": 1,
+      "email": "18angelik@hotmail.com",
+      "nombres": "Angelica",
+      "apellidos": "Barrera Rios",
+      "direccion_facturacion": "Av 8 44 26",
+      "fecha_nacimiento": "1990-05-22",
+      "pais": 1,
+      "departamento": 29,
+      "municipio": 34,
+      "dni": "1109295123",
+      "genero": "F",
+      "imagen_usuario": "",
+      "es_admin": false,
+      "es_root": false,
+      "registro_completo": false,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.usuario",
     "pk": 15,
     "fields": {
-        "user": 17,
-        "rol": 1,
-        "email": "salo12@gmail.com",
-        "nombres": "Salome",
-        "apellidos": "Diaz Valencia",
-        "direccion_facturacion": "calle 7 7 66",
-        "fecha_nacimiento": "2000-09-12",
-        "pais": 1,
-        "departamento": 29,
-        "municipio": 34,
-        "dni": "1224301123",
-        "genero": "F",
-        "imagen_usuario": "",
-        "es_admin": false,
-        "es_root": false,
-        "registro_completo": false,
-        "suscrito_noticias": false
+      "user": 17,
+      "rol": 1,
+      "email": "salo12@gmail.com",
+      "nombres": "Salome",
+      "apellidos": "Diaz Valencia",
+      "direccion_facturacion": "calle 7 7 66",
+      "fecha_nacimiento": "2000-09-12",
+      "pais": 1,
+      "departamento": 29,
+      "municipio": 34,
+      "dni": "1224301123",
+      "genero": "F",
+      "imagen_usuario": "",
+      "es_admin": false,
+      "es_root": false,
+      "registro_completo": false,
+      "suscrito_noticias": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 1,
     "fields": {
-        "codigo": "VN0001",
-        "origen": "ARMENIA",
-        "destino": "IBAGUE",
-        "estado": "finalizado",
-        "fecha_salida": "2025-10-20",
-        "hora_salida": "08:00:00",
-        "fecha_llegada": "2025-10-20",
-        "hora_llegada": "08:29:00",
-        "tiempo_vuelo": "00:00:29",
-        "capacidad": 150,
-        "precio": "300000.00",
-        "tipo": "NACIONAL",
-        "imagen": "",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VN0001",
+      "origen": "ARMENIA",
+      "destino": "IBAGUE",
+      "estado": "finalizado",
+      "fecha_salida": "2025-10-20",
+      "hora_salida": "08:00:00",
+      "fecha_llegada": "2025-10-20",
+      "hora_llegada": "08:29:00",
+      "tiempo_vuelo": "00:00:29",
+      "capacidad": 150,
+      "precio": "300000.00",
+      "tipo": "NACIONAL",
+      "imagen": "",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 2,
     "fields": {
-        "codigo": "VN0002",
-        "origen": "CALI",
-        "destino": "CARTAGENA",
-        "estado": "finalizado",
-        "fecha_salida": "2025-10-24",
-        "hora_salida": "06:50:00",
-        "fecha_llegada": "2025-10-24",
-        "hora_llegada": "08:20:00",
-        "tiempo_vuelo": "01:30:00",
-        "capacidad": 150,
-        "precio": "300000.00",
-        "tipo": "NACIONAL",
-        "imagen": "",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VN0002",
+      "origen": "CALI",
+      "destino": "CARTAGENA",
+      "estado": "finalizado",
+      "fecha_salida": "2025-10-24",
+      "hora_salida": "06:50:00",
+      "fecha_llegada": "2025-10-24",
+      "hora_llegada": "08:20:00",
+      "tiempo_vuelo": "01:30:00",
+      "capacidad": 150,
+      "precio": "300000.00",
+      "tipo": "NACIONAL",
+      "imagen": "",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 3,
     "fields": {
-        "codigo": "VN0003",
-        "origen": "MEDELLIN",
-        "destino": "FLORENCIA",
-        "estado": "finalizado",
-        "fecha_salida": "2025-10-31",
-        "hora_salida": "10:00:00",
-        "fecha_llegada": "2025-10-31",
-        "hora_llegada": "11:30:00",
-        "tiempo_vuelo": "01:30:00",
-        "capacidad": 150,
-        "precio": "310000.00",
-        "tipo": "NACIONAL",
-        "imagen": "",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VN0003",
+      "origen": "MEDELLIN",
+      "destino": "FLORENCIA",
+      "estado": "finalizado",
+      "fecha_salida": "2025-10-31",
+      "hora_salida": "10:00:00",
+      "fecha_llegada": "2025-10-31",
+      "hora_llegada": "11:30:00",
+      "tiempo_vuelo": "01:30:00",
+      "capacidad": 150,
+      "precio": "310000.00",
+      "tipo": "NACIONAL",
+      "imagen": "",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 4,
     "fields": {
-        "codigo": "VI0001",
-        "origen": "PEREIRA",
-        "destino": "LONDRES",
-        "estado": "finalizado",
-        "fecha_salida": "2025-12-12",
-        "hora_salida": "08:00:00",
-        "fecha_llegada": "2025-12-12",
-        "hora_llegada": "16:00:00",
-        "tiempo_vuelo": "10:30:00",
-        "capacidad": 250,
-        "precio": "1200000.00",
-        "tipo": "INTERNACIONAL",
-        "imagen": "vuelos/Londres.jpeg",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VI0001",
+      "origen": "PEREIRA",
+      "destino": "LONDRES",
+      "estado": "finalizado",
+      "fecha_salida": "2025-12-12",
+      "hora_salida": "08:00:00",
+      "fecha_llegada": "2025-12-12",
+      "hora_llegada": "16:00:00",
+      "tiempo_vuelo": "10:30:00",
+      "capacidad": 250,
+      "precio": "1200000.00",
+      "tipo": "INTERNACIONAL",
+      "imagen": "vuelos/Londres.jpeg",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 5,
     "fields": {
-        "codigo": "VI0002",
-        "origen": "MEDELLIN",
-        "destino": "BUENOS_AIRES",
-        "estado": "cancelado",
-        "fecha_salida": "2025-11-30",
-        "hora_salida": "10:00:00",
-        "fecha_llegada": "2025-11-30",
-        "hora_llegada": "18:00:00",
-        "tiempo_vuelo": "08:00:00",
-        "capacidad": 250,
-        "precio": "1500000.00",
-        "tipo": "INTERNACIONAL",
-        "imagen": "vuelos/29581ba3c89a845.jfif",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VI0002",
+      "origen": "MEDELLIN",
+      "destino": "BUENOS_AIRES",
+      "estado": "cancelado",
+      "fecha_salida": "2025-11-30",
+      "hora_salida": "10:00:00",
+      "fecha_llegada": "2025-11-30",
+      "hora_llegada": "18:00:00",
+      "tiempo_vuelo": "08:00:00",
+      "capacidad": 250,
+      "precio": "1500000.00",
+      "tipo": "INTERNACIONAL",
+      "imagen": "vuelos/29581ba3c89a845.jfif",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 7,
     "fields": {
-        "codigo": "VN0004",
-        "origen": "MANIZALES",
-        "destino": "RIOHACHA",
-        "estado": "finalizado",
-        "fecha_salida": "2025-11-29",
-        "hora_salida": "08:30:00",
-        "fecha_llegada": "2025-11-29",
-        "hora_llegada": "10:00:00",
-        "tiempo_vuelo": "01:30:00",
-        "capacidad": 150,
-        "precio": "350000.00",
-        "tipo": "NACIONAL",
-        "imagen": "vuelos/Guajira.jpeg",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VN0004",
+      "origen": "MANIZALES",
+      "destino": "RIOHACHA",
+      "estado": "finalizado",
+      "fecha_salida": "2025-11-29",
+      "hora_salida": "08:30:00",
+      "fecha_llegada": "2025-11-29",
+      "hora_llegada": "10:00:00",
+      "tiempo_vuelo": "01:30:00",
+      "capacidad": 150,
+      "precio": "350000.00",
+      "tipo": "NACIONAL",
+      "imagen": "vuelos/Guajira.jpeg",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 8,
     "fields": {
-        "codigo": "VI0003",
-        "origen": "PEREIRA",
-        "destino": "MADRID",
-        "estado": "finalizado",
-        "fecha_salida": "2025-11-05",
-        "hora_salida": "11:50:00",
-        "fecha_llegada": "2025-11-05",
-        "hora_llegada": "19:50:00",
-        "tiempo_vuelo": "08:00:00",
-        "capacidad": 250,
-        "precio": "4434.00",
-        "tipo": "INTERNACIONAL",
-        "imagen": "",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VI0003",
+      "origen": "PEREIRA",
+      "destino": "MADRID",
+      "estado": "finalizado",
+      "fecha_salida": "2025-11-05",
+      "hora_salida": "11:50:00",
+      "fecha_llegada": "2025-11-05",
+      "hora_llegada": "19:50:00",
+      "tiempo_vuelo": "08:00:00",
+      "capacidad": 250,
+      "precio": "4434.00",
+      "tipo": "INTERNACIONAL",
+      "imagen": "",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 9,
     "fields": {
-        "codigo": "VN0005",
-        "origen": "BOGOTA",
-        "destino": "CARTAGENA",
-        "estado": "finalizado",
-        "fecha_salida": "2025-12-05",
-        "hora_salida": "09:00:00",
-        "fecha_llegada": "2025-12-05",
-        "hora_llegada": "09:48:00",
-        "tiempo_vuelo": null,
-        "capacidad": 150,
-        "precio": "180000.00",
-        "tipo": "NACIONAL",
-        "imagen": "vuelos/Cartagena.jpg",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VN0005",
+      "origen": "BOGOTA",
+      "destino": "CARTAGENA",
+      "estado": "finalizado",
+      "fecha_salida": "2025-12-05",
+      "hora_salida": "09:00:00",
+      "fecha_llegada": "2025-12-05",
+      "hora_llegada": "09:48:00",
+      "tiempo_vuelo": null,
+      "capacidad": 150,
+      "precio": "180000.00",
+      "tipo": "NACIONAL",
+      "imagen": "vuelos/Cartagena.jpg",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 10,
     "fields": {
-        "codigo": "VI0004",
-        "origen": "MEDELLIN",
-        "destino": "MIAMI",
-        "estado": "cancelado",
-        "fecha_salida": "2025-12-23",
-        "hora_salida": "14:00:00",
-        "fecha_llegada": "2025-12-24",
-        "hora_llegada": "00:00:00",
-        "tiempo_vuelo": null,
-        "capacidad": 250,
-        "precio": "3200000.00",
-        "tipo": "INTERNACIONAL",
-        "imagen": "vuelos/Miami_f4lGxCw.jpg",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VI0004",
+      "origen": "MEDELLIN",
+      "destino": "MIAMI",
+      "estado": "cancelado",
+      "fecha_salida": "2025-12-23",
+      "hora_salida": "14:00:00",
+      "fecha_llegada": "2025-12-24",
+      "hora_llegada": "00:00:00",
+      "tiempo_vuelo": null,
+      "capacidad": 250,
+      "precio": "3200000.00",
+      "tipo": "INTERNACIONAL",
+      "imagen": "vuelos/Miami_f4lGxCw.jpg",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 11,
     "fields": {
-        "codigo": "VN0006",
-        "origen": "PEREIRA",
-        "destino": "RIOHACHA",
-        "estado": "activo",
-        "fecha_salida": "2026-01-05",
-        "hora_salida": "10:00:00",
-        "fecha_llegada": "2026-01-05",
-        "hora_llegada": "11:00:00",
-        "tiempo_vuelo": "01:00:39.249156",
-        "capacidad": 150,
-        "precio": "220000.00",
-        "tipo": "NACIONAL",
-        "imagen": "vuelos/Guajira_KffkcoA.jpeg",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VN0006",
+      "origen": "PEREIRA",
+      "destino": "RIOHACHA",
+      "estado": "activo",
+      "fecha_salida": "2026-01-05",
+      "hora_salida": "10:00:00",
+      "fecha_llegada": "2026-01-05",
+      "hora_llegada": "11:00:00",
+      "tiempo_vuelo": "01:00:39.249156",
+      "capacidad": 150,
+      "precio": "220000.00",
+      "tipo": "NACIONAL",
+      "imagen": "vuelos/Guajira_KffkcoA.jpeg",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.vuelo",
     "pk": 12,
     "fields": {
-        "codigo": "VI0005",
-        "origen": "MEDELLIN",
-        "destino": "MADRID",
-        "estado": "activo",
-        "fecha_salida": "2025-12-31",
-        "hora_salida": "20:30:00",
-        "fecha_llegada": "2026-01-01",
-        "hora_llegada": "05:25:00",
-        "tiempo_vuelo": "08:55:06.778746",
-        "capacidad": 250,
-        "precio": "4200000.00",
-        "tipo": "INTERNACIONAL",
-        "imagen": "vuelos/Madrid.jpg",
-        "promocion_activa": false,
-        "descuento_porcentaje": 0
+      "codigo": "VI0005",
+      "origen": "MEDELLIN",
+      "destino": "MADRID",
+      "estado": "activo",
+      "fecha_salida": "2025-12-31",
+      "hora_salida": "20:30:00",
+      "fecha_llegada": "2026-01-01",
+      "hora_llegada": "05:25:00",
+      "tiempo_vuelo": "08:55:06.778746",
+      "capacidad": 250,
+      "precio": "4200000.00",
+      "tipo": "INTERNACIONAL",
+      "imagen": "vuelos/Madrid.jpg",
+      "promocion_activa": false,
+      "descuento_porcentaje": 0
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 2,
     "fields": {
-        "usuario": 1,
-        "vuelo": 5,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-GV7801",
-        "asiento_asignado": "24F",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-10-29T01:46:06.038Z",
-        "reserved_until": null,
-        "estado": "cancelada",
-        "incluye_maleta": false
+      "usuario": 1,
+      "vuelo": 5,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-GV7801",
+      "asiento_asignado": "24F",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-10-29T01:46:06.038Z",
+      "reserved_until": null,
+      "estado": "cancelada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 3,
     "fields": {
-        "usuario": 11,
-        "vuelo": 3,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 10,
-        "codigo_reserva": "RES-FP4698",
-        "asiento_asignado": "20B",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-10-30T03:26:16.676Z",
-        "reserved_until": null,
-        "estado": "activa",
-        "incluye_maleta": false
+      "usuario": 11,
+      "vuelo": 3,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 10,
+      "codigo_reserva": "RES-FP4698",
+      "asiento_asignado": "20B",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-10-30T03:26:16.676Z",
+      "reserved_until": null,
+      "estado": "activa",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 4,
     "fields": {
-        "usuario": 11,
-        "vuelo": 2,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 2,
-        "codigo_reserva": "RES-EZ1958",
-        "asiento_asignado": "7D",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-10-30T19:48:58.782Z",
-        "reserved_until": "2025-10-31T19:48:58.782Z",
-        "estado": "expirada",
-        "incluye_maleta": false
+      "usuario": 11,
+      "vuelo": 2,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 2,
+      "codigo_reserva": "RES-EZ1958",
+      "asiento_asignado": "7D",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-10-30T19:48:58.782Z",
+      "reserved_until": "2025-10-31T19:48:58.782Z",
+      "estado": "expirada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 5,
     "fields": {
-        "usuario": 11,
-        "vuelo": 5,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-FO4732",
-        "asiento_asignado": "23A",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-10-30T20:27:40.028Z",
-        "reserved_until": "2025-10-31T20:27:40.028Z",
-        "estado": "finalizada",
-        "incluye_maleta": false
+      "usuario": 11,
+      "vuelo": 5,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-FO4732",
+      "asiento_asignado": "23A",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-10-30T20:27:40.028Z",
+      "reserved_until": "2025-10-31T20:27:40.028Z",
+      "estado": "finalizada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 6,
     "fields": {
-        "usuario": 11,
-        "vuelo": 5,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "primera",
-        "num_tiquetes": 2,
-        "codigo_reserva": "RES-DE4836",
-        "asiento_asignado": "5D",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-10-30T20:39:50.978Z",
-        "reserved_until": "2025-10-31T20:39:50.978Z",
-        "estado": "expirada",
-        "incluye_maleta": false
+      "usuario": 11,
+      "vuelo": 5,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "primera",
+      "num_tiquetes": 2,
+      "codigo_reserva": "RES-DE4836",
+      "asiento_asignado": "5D",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-10-30T20:39:50.978Z",
+      "reserved_until": "2025-10-31T20:39:50.978Z",
+      "estado": "expirada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 7,
     "fields": {
-        "usuario": 11,
-        "vuelo": 5,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-UI0832",
-        "asiento_asignado": "30D",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-10-30T21:51:10.743Z",
-        "reserved_until": "2025-10-31T21:51:10.726Z",
-        "estado": "expirada",
-        "incluye_maleta": false
+      "usuario": 11,
+      "vuelo": 5,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-UI0832",
+      "asiento_asignado": "30D",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-10-30T21:51:10.743Z",
+      "reserved_until": "2025-10-31T21:51:10.726Z",
+      "estado": "expirada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 8,
     "fields": {
-        "usuario": 11,
-        "vuelo": 5,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-AW7947",
-        "asiento_asignado": "14F",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-10-30T22:07:57.465Z",
-        "reserved_until": "2025-10-31T22:07:57.465Z",
-        "estado": "expirada",
-        "incluye_maleta": false
+      "usuario": 11,
+      "vuelo": 5,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-AW7947",
+      "asiento_asignado": "14F",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-10-30T22:07:57.465Z",
+      "reserved_until": "2025-10-31T22:07:57.465Z",
+      "estado": "expirada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 9,
     "fields": {
-        "usuario": 11,
-        "vuelo": 4,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-GH3506",
-        "asiento_asignado": "11C",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-10-30T23:54:37.306Z",
-        "reserved_until": "2025-10-31T23:54:37.306Z",
-        "estado": "cancelada",
-        "incluye_maleta": false
+      "usuario": 11,
+      "vuelo": 4,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-GH3506",
+      "asiento_asignado": "11C",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-10-30T23:54:37.306Z",
+      "reserved_until": "2025-10-31T23:54:37.306Z",
+      "estado": "cancelada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 10,
     "fields": {
-        "usuario": 11,
-        "vuelo": 4,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-TU1105",
-        "asiento_asignado": "27C",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-10-31T00:02:34.610Z",
-        "reserved_until": "2025-11-01T00:02:34.602Z",
-        "estado": "cancelada",
-        "incluye_maleta": false
+      "usuario": 11,
+      "vuelo": 4,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-TU1105",
+      "asiento_asignado": "27C",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-10-31T00:02:34.610Z",
+      "reserved_until": "2025-11-01T00:02:34.602Z",
+      "estado": "cancelada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 11,
     "fields": {
-        "usuario": 11,
-        "vuelo": 7,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-NP4775",
-        "asiento_asignado": "5B",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-11-05T13:00:16.274Z",
-        "reserved_until": "2025-11-06T13:00:16.274Z",
-        "estado": "cancelada",
-        "incluye_maleta": false
+      "usuario": 11,
+      "vuelo": 7,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-NP4775",
+      "asiento_asignado": "5B",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-11-05T13:00:16.274Z",
+      "reserved_until": "2025-11-06T13:00:16.274Z",
+      "estado": "cancelada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 14,
     "fields": {
-        "usuario": 11,
-        "vuelo": 5,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-QI1076",
-        "asiento_asignado": "6C",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-11-05T16:13:21.474Z",
-        "reserved_until": "2025-11-06T16:13:21.474Z",
-        "estado": "cancelada",
-        "incluye_maleta": false
+      "usuario": 11,
+      "vuelo": 5,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-QI1076",
+      "asiento_asignado": "6C",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-11-05T16:13:21.474Z",
+      "reserved_until": "2025-11-06T16:13:21.474Z",
+      "estado": "cancelada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 15,
     "fields": {
-        "usuario": 1,
-        "vuelo": 5,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-GB6812",
-        "asiento_asignado": "23A",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-11-05T16:50:30.756Z",
-        "reserved_until": "2025-11-06T16:50:30.756Z",
-        "estado": "cancelada",
-        "incluye_maleta": false
+      "usuario": 1,
+      "vuelo": 5,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-GB6812",
+      "asiento_asignado": "23A",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-11-05T16:50:30.756Z",
+      "reserved_until": "2025-11-06T16:50:30.756Z",
+      "estado": "cancelada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 16,
     "fields": {
-        "usuario": 1,
-        "vuelo": 9,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-OZ7581",
-        "asiento_asignado": "9C",
-        "check_in_realizado": true,
-        "fecha_reserva": "2025-11-28T14:34:13.392Z",
-        "reserved_until": "2025-11-29T14:34:13.390Z",
-        "estado": "confirmada",
-        "incluye_maleta": false
+      "usuario": 1,
+      "vuelo": 9,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-OZ7581",
+      "asiento_asignado": "9C",
+      "check_in_realizado": true,
+      "fecha_reserva": "2025-11-28T14:34:13.392Z",
+      "reserved_until": "2025-11-29T14:34:13.390Z",
+      "estado": "confirmada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reserva",
     "pk": 17,
     "fields": {
-        "usuario": 1,
-        "vuelo": 7,
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "clase": "economica",
-        "num_tiquetes": 1,
-        "codigo_reserva": "RES-TS3697",
-        "asiento_asignado": "3A",
-        "check_in_realizado": false,
-        "fecha_reserva": "2025-11-28T14:38:18.467Z",
-        "reserved_until": "2025-11-29T14:38:18.467Z",
-        "estado": "confirmada",
-        "incluye_maleta": false
+      "usuario": 1,
+      "vuelo": 7,
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "clase": "economica",
+      "num_tiquetes": 1,
+      "codigo_reserva": "RES-TS3697",
+      "asiento_asignado": "3A",
+      "check_in_realizado": false,
+      "fecha_reserva": "2025-11-28T14:38:18.467Z",
+      "reserved_until": "2025-11-29T14:38:18.467Z",
+      "estado": "confirmada",
+      "incluye_maleta": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 1,
     "fields": {
-        "reserva": 4,
-        "documento": "1109295085",
-        "nombres": "Alejandro",
-        "apellidos": "Diaz",
-        "fecha_nacimiento": "1900-06-29",
-        "genero": "M",
-        "telefono": "3024390549",
-        "correo": "alejo24@gmail.com",
-        "contacto_nombre": "Maria Rios",
-        "contacto_telefono": "3024390549",
-        "asiento": null,
-        "check_in_realizado": false,
-        "asiento_cambiado": false
+      "reserva": 4,
+      "documento": "1109295085",
+      "nombres": "Alejandro",
+      "apellidos": "Diaz",
+      "fecha_nacimiento": "1900-06-29",
+      "genero": "M",
+      "telefono": "3024390549",
+      "correo": "alejo24@gmail.com",
+      "contacto_nombre": "Maria Rios",
+      "contacto_telefono": "3024390549",
+      "asiento": null,
+      "check_in_realizado": false,
+      "asiento_cambiado": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 2,
     "fields": {
-        "reserva": 5,
-        "documento": "1109295085",
-        "nombres": "Alejandro",
-        "apellidos": "Diaz Rios",
-        "fecha_nacimiento": "1900-06-23",
-        "genero": "M",
-        "telefono": "3024390549",
-        "correo": "alejo24@gmail.com",
-        "contacto_nombre": "Mila Rios",
-        "contacto_telefono": "3222184254",
-        "asiento": null,
-        "check_in_realizado": false,
-        "asiento_cambiado": false
+      "reserva": 5,
+      "documento": "1109295085",
+      "nombres": "Alejandro",
+      "apellidos": "Diaz Rios",
+      "fecha_nacimiento": "1900-06-23",
+      "genero": "M",
+      "telefono": "3024390549",
+      "correo": "alejo24@gmail.com",
+      "contacto_nombre": "Mila Rios",
+      "contacto_telefono": "3222184254",
+      "asiento": null,
+      "check_in_realizado": false,
+      "asiento_cambiado": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 3,
     "fields": {
-        "reserva": 7,
-        "documento": "1109295085",
-        "nombres": "Alejandro",
-        "apellidos": "Diaz Rios",
-        "fecha_nacimiento": "1900-06-27",
-        "genero": "M",
-        "telefono": "3024390549",
-        "correo": "alejo24@gmail.com",
-        "contacto_nombre": "Mila Rios",
-        "contacto_telefono": "3222184254",
-        "asiento": null,
-        "check_in_realizado": false,
-        "asiento_cambiado": false
+      "reserva": 7,
+      "documento": "1109295085",
+      "nombres": "Alejandro",
+      "apellidos": "Diaz Rios",
+      "fecha_nacimiento": "1900-06-27",
+      "genero": "M",
+      "telefono": "3024390549",
+      "correo": "alejo24@gmail.com",
+      "contacto_nombre": "Mila Rios",
+      "contacto_telefono": "3222184254",
+      "asiento": null,
+      "check_in_realizado": false,
+      "asiento_cambiado": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 4,
     "fields": {
-        "reserva": 8,
-        "documento": "1109295085",
-        "nombres": "Alejandro",
-        "apellidos": "Diaz Rios",
-        "fecha_nacimiento": "1900-06-23",
-        "genero": "M",
-        "telefono": "3024390549",
-        "correo": "alejo24@gmail.com",
-        "contacto_nombre": "Mila Rios",
-        "contacto_telefono": "3222184254",
-        "asiento": null,
-        "check_in_realizado": false,
-        "asiento_cambiado": false
+      "reserva": 8,
+      "documento": "1109295085",
+      "nombres": "Alejandro",
+      "apellidos": "Diaz Rios",
+      "fecha_nacimiento": "1900-06-23",
+      "genero": "M",
+      "telefono": "3024390549",
+      "correo": "alejo24@gmail.com",
+      "contacto_nombre": "Mila Rios",
+      "contacto_telefono": "3222184254",
+      "asiento": null,
+      "check_in_realizado": false,
+      "asiento_cambiado": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 5,
     "fields": {
-        "reserva": 9,
-        "documento": "1109297977",
-        "nombres": "Daniela",
-        "apellidos": "Diaz Rios",
-        "fecha_nacimiento": "1800-08-31",
-        "genero": "F",
-        "telefono": "3024390549",
-        "correo": "daniela.diaz@utp.edu.co",
-        "contacto_nombre": "Mila Rios",
-        "contacto_telefono": "3222184254",
-        "asiento": null,
-        "check_in_realizado": false,
-        "asiento_cambiado": false
+      "reserva": 9,
+      "documento": "1109297977",
+      "nombres": "Daniela",
+      "apellidos": "Diaz Rios",
+      "fecha_nacimiento": "1800-08-31",
+      "genero": "F",
+      "telefono": "3024390549",
+      "correo": "daniela.diaz@utp.edu.co",
+      "contacto_nombre": "Mila Rios",
+      "contacto_telefono": "3222184254",
+      "asiento": null,
+      "check_in_realizado": false,
+      "asiento_cambiado": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 6,
     "fields": {
-        "reserva": 10,
-        "documento": "1109297977",
-        "nombres": "Daniela",
-        "apellidos": "Diaz Rios",
-        "fecha_nacimiento": "1900-09-30",
-        "genero": "F",
-        "telefono": "3024390549",
-        "correo": "daniela.diaz@utp.edu.co",
-        "contacto_nombre": "Mila Rios",
-        "contacto_telefono": "3222184254",
-        "asiento": null,
-        "check_in_realizado": false,
-        "asiento_cambiado": false
+      "reserva": 10,
+      "documento": "1109297977",
+      "nombres": "Daniela",
+      "apellidos": "Diaz Rios",
+      "fecha_nacimiento": "1900-09-30",
+      "genero": "F",
+      "telefono": "3024390549",
+      "correo": "daniela.diaz@utp.edu.co",
+      "contacto_nombre": "Mila Rios",
+      "contacto_telefono": "3222184254",
+      "asiento": null,
+      "check_in_realizado": false,
+      "asiento_cambiado": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 7,
     "fields": {
-        "reserva": 11,
-        "documento": "1109295085",
-        "nombres": "Alejandro",
-        "apellidos": "Diaz Rios",
-        "fecha_nacimiento": "1990-02-23",
-        "genero": "M",
-        "telefono": "3024390549",
-        "correo": "alejo24@gmail.com",
-        "contacto_nombre": "Mila Rios",
-        "contacto_telefono": "3222184254",
-        "asiento": null,
-        "check_in_realizado": false,
-        "asiento_cambiado": false
+      "reserva": 11,
+      "documento": "1109295085",
+      "nombres": "Alejandro",
+      "apellidos": "Diaz Rios",
+      "fecha_nacimiento": "1990-02-23",
+      "genero": "M",
+      "telefono": "3024390549",
+      "correo": "alejo24@gmail.com",
+      "contacto_nombre": "Mila Rios",
+      "contacto_telefono": "3222184254",
+      "asiento": null,
+      "check_in_realizado": false,
+      "asiento_cambiado": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 8,
     "fields": {
-        "reserva": 14,
-        "documento": "1109297977",
-        "nombres": "Daniela",
-        "apellidos": "Diaz Rios",
-        "fecha_nacimiento": "1993-08-31",
-        "genero": "F",
-        "telefono": "3024390549",
-        "correo": "daniela.diaz@utp.edu.co",
-        "contacto_nombre": "Mila Rios",
-        "contacto_telefono": "3222184254",
-        "asiento": "6C",
-        "check_in_realizado": false,
-        "asiento_cambiado": false
+      "reserva": 14,
+      "documento": "1109297977",
+      "nombres": "Daniela",
+      "apellidos": "Diaz Rios",
+      "fecha_nacimiento": "1993-08-31",
+      "genero": "F",
+      "telefono": "3024390549",
+      "correo": "daniela.diaz@utp.edu.co",
+      "contacto_nombre": "Mila Rios",
+      "contacto_telefono": "3222184254",
+      "asiento": "6C",
+      "check_in_realizado": false,
+      "asiento_cambiado": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 9,
     "fields": {
-        "reserva": 15,
-        "documento": "1109295085",
-        "nombres": "Alejandro",
-        "apellidos": "Diaz Rios",
-        "fecha_nacimiento": "1993-12-12",
-        "genero": "M",
-        "telefono": "3024390549",
-        "correo": "alejo24@gmail.com",
-        "contacto_nombre": "Daniela Diaz",
-        "contacto_telefono": "3222184254",
-        "asiento": "23A",
-        "check_in_realizado": false,
-        "asiento_cambiado": false
+      "reserva": 15,
+      "documento": "1109295085",
+      "nombres": "Alejandro",
+      "apellidos": "Diaz Rios",
+      "fecha_nacimiento": "1993-12-12",
+      "genero": "M",
+      "telefono": "3024390549",
+      "correo": "alejo24@gmail.com",
+      "contacto_nombre": "Daniela Diaz",
+      "contacto_telefono": "3222184254",
+      "asiento": "23A",
+      "check_in_realizado": false,
+      "asiento_cambiado": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 10,
     "fields": {
-        "reserva": 16,
-        "documento": "1004778917",
-        "nombres": "Karen Manuela",
-        "apellidos": "Cardona Casta±o",
-        "fecha_nacimiento": "2002-09-22",
-        "genero": "F",
-        "telefono": "3144710870",
-        "correo": "karencarcas@gmail.com",
-        "contacto_nombre": "Karen Cardona",
-        "contacto_telefono": "3144710870",
-        "asiento": "9C",
-        "check_in_realizado": true,
-        "asiento_cambiado": false
+      "reserva": 16,
+      "documento": "1004778917",
+      "nombres": "Karen Manuela",
+      "apellidos": "Cardona Casta±o",
+      "fecha_nacimiento": "2002-09-22",
+      "genero": "F",
+      "telefono": "3144710870",
+      "correo": "karencarcas@gmail.com",
+      "contacto_nombre": "Karen Cardona",
+      "contacto_telefono": "3144710870",
+      "asiento": "9C",
+      "check_in_realizado": true,
+      "asiento_cambiado": false
     }
-},
-{
+  },
+  {
     "model": "aerolinea.reservapasajero",
     "pk": 11,
     "fields": {
-        "reserva": 17,
-        "documento": "1109297977",
-        "nombres": "Daniela",
-        "apellidos": "Diaz Rios",
-        "fecha_nacimiento": "1993-08-31",
-        "genero": "F",
-        "telefono": "3144710870",
-        "correo": "daniela.diaz@utp.edu.co",
-        "contacto_nombre": "Karen Cardona",
-        "contacto_telefono": "3222184254",
-        "asiento": "11A",
-        "check_in_realizado": false,
-        "asiento_cambiado": true
+      "reserva": 17,
+      "documento": "1109297977",
+      "nombres": "Daniela",
+      "apellidos": "Diaz Rios",
+      "fecha_nacimiento": "1993-08-31",
+      "genero": "F",
+      "telefono": "3144710870",
+      "correo": "daniela.diaz@utp.edu.co",
+      "contacto_nombre": "Karen Cardona",
+      "contacto_telefono": "3222184254",
+      "asiento": "11A",
+      "check_in_realizado": false,
+      "asiento_cambiado": true
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 5,
     "fields": {
-        "usuario": 1,
-        "vuelo": 5,
-        "codigo_reserva": "R-20251029014631-935",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "reembolsada",
-        "monto_base": "0.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "0.00",
-        "monto_total": "0.00",
-        "reserva": null,
-        "fecha_compra": "2025-10-29T01:46:31.150Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T01:44:36.747Z"
+      "usuario": 1,
+      "vuelo": 5,
+      "codigo_reserva": "R-20251029014631-935",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "reembolsada",
+      "monto_base": "0.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "0.00",
+      "monto_total": "0.00",
+      "reserva": null,
+      "fecha_compra": "2025-10-29T01:46:31.150Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T01:44:36.747Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 6,
     "fields": {
-        "usuario": 1,
-        "vuelo": 5,
-        "codigo_reserva": "R-20251029165250-542",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "reembolsada",
-        "monto_base": "0.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "0.00",
-        "monto_total": "0.00",
-        "reserva": null,
-        "fecha_compra": "2025-10-29T16:52:50.888Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T01:44:36.747Z"
+      "usuario": 1,
+      "vuelo": 5,
+      "codigo_reserva": "R-20251029165250-542",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "reembolsada",
+      "monto_base": "0.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "0.00",
+      "monto_total": "0.00",
+      "reserva": null,
+      "fecha_compra": "2025-10-29T16:52:50.888Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T01:44:36.747Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 7,
     "fields": {
-        "usuario": 1,
-        "vuelo": 5,
-        "codigo_reserva": "R-20251029165252-819",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "reembolsada",
-        "monto_base": "0.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "0.00",
-        "monto_total": "0.00",
-        "reserva": null,
-        "fecha_compra": "2025-10-29T16:52:52.818Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T01:44:36.747Z"
+      "usuario": 1,
+      "vuelo": 5,
+      "codigo_reserva": "R-20251029165252-819",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "reembolsada",
+      "monto_base": "0.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "0.00",
+      "monto_total": "0.00",
+      "reserva": null,
+      "fecha_compra": "2025-10-29T16:52:52.818Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T01:44:36.747Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 8,
     "fields": {
-        "usuario": 11,
-        "vuelo": 5,
-        "codigo_reserva": "R-20251105161402-440",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "reembolsada",
-        "monto_base": "0.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "0.00",
-        "monto_total": "1500000.00",
-        "reserva": null,
-        "fecha_compra": "2025-11-05T16:14:02.851Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T01:44:36.747Z"
+      "usuario": 11,
+      "vuelo": 5,
+      "codigo_reserva": "R-20251105161402-440",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "reembolsada",
+      "monto_base": "0.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "0.00",
+      "monto_total": "1500000.00",
+      "reserva": null,
+      "fecha_compra": "2025-11-05T16:14:02.851Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T01:44:36.747Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 9,
     "fields": {
-        "usuario": 1,
-        "vuelo": 5,
-        "codigo_reserva": "R-20251105165049-696",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "reembolsada",
-        "monto_base": "0.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "0.00",
-        "monto_total": "1500000.00",
-        "reserva": null,
-        "fecha_compra": "2025-11-05T16:50:49.578Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T01:44:36.747Z"
+      "usuario": 1,
+      "vuelo": 5,
+      "codigo_reserva": "R-20251105165049-696",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "reembolsada",
+      "monto_base": "0.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "0.00",
+      "monto_total": "1500000.00",
+      "reserva": null,
+      "fecha_compra": "2025-11-05T16:50:49.578Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T01:44:36.747Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 10,
     "fields": {
-        "usuario": 1,
-        "vuelo": 5,
-        "codigo_reserva": "R-20251105165051-271",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "reembolsada",
-        "monto_base": "0.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "0.00",
-        "monto_total": "1500000.00",
-        "reserva": null,
-        "fecha_compra": "2025-11-05T16:50:51.546Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T01:44:36.747Z"
+      "usuario": 1,
+      "vuelo": 5,
+      "codigo_reserva": "R-20251105165051-271",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "reembolsada",
+      "monto_base": "0.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "0.00",
+      "monto_total": "1500000.00",
+      "reserva": null,
+      "fecha_compra": "2025-11-05T16:50:51.546Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T01:44:36.747Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 11,
     "fields": {
-        "usuario": 1,
-        "vuelo": 9,
-        "codigo_reserva": "R-20251128143514-996",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "activa",
-        "monto_base": "180000.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "0.00",
-        "monto_total": "180000.00",
-        "reserva": 16,
-        "fecha_compra": "2025-11-28T14:35:14.419Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T14:35:14.419Z"
+      "usuario": 1,
+      "vuelo": 9,
+      "codigo_reserva": "R-20251128143514-996",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "activa",
+      "monto_base": "180000.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "0.00",
+      "monto_total": "180000.00",
+      "reserva": 16,
+      "fecha_compra": "2025-11-28T14:35:14.419Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T14:35:14.419Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 12,
     "fields": {
-        "usuario": 1,
-        "vuelo": 9,
-        "codigo_reserva": "R-20251128143517-571",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "activa",
-        "monto_base": "180000.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "0.00",
-        "monto_total": "180000.00",
-        "reserva": 16,
-        "fecha_compra": "2025-11-28T14:35:17.460Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T14:35:17.460Z"
+      "usuario": 1,
+      "vuelo": 9,
+      "codigo_reserva": "R-20251128143517-571",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "activa",
+      "monto_base": "180000.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "0.00",
+      "monto_total": "180000.00",
+      "reserva": 16,
+      "fecha_compra": "2025-11-28T14:35:17.460Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T14:35:17.460Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 13,
     "fields": {
-        "usuario": 1,
-        "vuelo": 9,
-        "codigo_reserva": "R-20251128143518-478",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "activa",
-        "monto_base": "180000.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "0.00",
-        "monto_total": "180000.00",
-        "reserva": 16,
-        "fecha_compra": "2025-11-28T14:35:18.086Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T14:35:18.086Z"
+      "usuario": 1,
+      "vuelo": 9,
+      "codigo_reserva": "R-20251128143518-478",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "activa",
+      "monto_base": "180000.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "0.00",
+      "monto_total": "180000.00",
+      "reserva": 16,
+      "fecha_compra": "2025-11-28T14:35:18.086Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T14:35:18.086Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 14,
     "fields": {
-        "usuario": 1,
-        "vuelo": 9,
-        "codigo_reserva": "R-20251128143518-977",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "checkin",
-        "monto_base": "180000.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "50000.00",
-        "monto_total": "230000.00",
-        "reserva": 16,
-        "fecha_compra": "2025-11-28T14:35:18.802Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T14:35:18.802Z"
+      "usuario": 1,
+      "vuelo": 9,
+      "codigo_reserva": "R-20251128143518-977",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "checkin",
+      "monto_base": "180000.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "50000.00",
+      "monto_total": "230000.00",
+      "reserva": 16,
+      "fecha_compra": "2025-11-28T14:35:18.802Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T14:35:18.802Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.compra",
     "pk": 15,
     "fields": {
-        "usuario": 1,
-        "vuelo": 7,
-        "codigo_reserva": "R-20251128143835-922",
-        "metodo_pago": "Tarjeta CrÚdito",
-        "estado": "activa",
-        "monto_base": "350000.00",
-        "recargo_clase": "0.00",
-        "costo_maleta": "0.00",
-        "monto_total": "350000.00",
-        "reserva": 17,
-        "fecha_compra": "2025-11-28T14:38:35.777Z",
-        "vuelo_regreso": null,
-        "tipo_trayecto": "ida",
-        "creado": "2025-11-28T14:38:35.777Z"
+      "usuario": 1,
+      "vuelo": 7,
+      "codigo_reserva": "R-20251128143835-922",
+      "metodo_pago": "Tarjeta CrÚdito",
+      "estado": "activa",
+      "monto_base": "350000.00",
+      "recargo_clase": "0.00",
+      "costo_maleta": "0.00",
+      "monto_total": "350000.00",
+      "reserva": 17,
+      "fecha_compra": "2025-11-28T14:38:35.777Z",
+      "vuelo_regreso": null,
+      "tipo_trayecto": "ida",
+      "creado": "2025-11-28T14:38:35.777Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.checkin",
     "pk": 1,
     "fields": {
-        "compra": 5,
-        "asiento": "19D",
-        "pase_abordar": "",
-        "pasajero": null,
-        "fecha_checkin": "2025-11-28T01:44:36.927Z"
+      "compra": 5,
+      "asiento": "19D",
+      "pase_abordar": "",
+      "pasajero": null,
+      "fecha_checkin": "2025-11-28T01:44:36.927Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.checkin",
     "pk": 2,
     "fields": {
-        "compra": 8,
-        "asiento": "23A",
-        "pase_abordar": "",
-        "pasajero": null,
-        "fecha_checkin": "2025-11-28T01:44:36.927Z"
+      "compra": 8,
+      "asiento": "23A",
+      "pase_abordar": "",
+      "pasajero": null,
+      "fecha_checkin": "2025-11-28T01:44:36.927Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.checkin",
     "pk": 3,
     "fields": {
-        "compra": 14,
-        "asiento": "9C",
-        "pase_abordar": "",
-        "pasajero": 10,
-        "fecha_checkin": "2025-11-28T14:35:52.635Z"
+      "compra": 14,
+      "asiento": "9C",
+      "pase_abordar": "",
+      "pasajero": 10,
+      "fecha_checkin": "2025-11-28T14:35:52.635Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.maleta",
     "pk": 1,
     "fields": {
-        "checkin": 1,
-        "peso": "0.50",
-        "costo": "20000.00"
+      "checkin": 1,
+      "peso": "0.50",
+      "costo": "20000.00"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.maleta",
     "pk": 2,
     "fields": {
-        "checkin": 2,
-        "peso": "23.00",
-        "costo": "50000.00"
+      "checkin": 2,
+      "peso": "23.00",
+      "costo": "50000.00"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.maleta",
     "pk": 3,
     "fields": {
-        "checkin": 3,
-        "peso": "22.00",
-        "costo": "50000.00"
+      "checkin": 3,
+      "peso": "22.00",
+      "costo": "50000.00"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.tarjeta",
     "pk": 5,
     "fields": {
-        "estado": "activa",
-        "usuario": 2,
-        "tipo": "CrÚdito",
-        "numero": "1234567899876543",
-        "nombre_titular": "",
-        "fecha_vencimiento": "2028-11-30",
-        "cvv": "",
-        "saldo": "18930000.00"
+      "estado": "activa",
+      "usuario": 2,
+      "tipo": "CrÚdito",
+      "numero": "1234567899876543",
+      "nombre_titular": "",
+      "fecha_vencimiento": "2028-11-30",
+      "cvv": "",
+      "saldo": "18930000.00"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.tarjeta",
     "pk": 6,
     "fields": {
-        "estado": "activa",
-        "usuario": 13,
-        "tipo": "DÚbito",
-        "numero": "1234567891012345",
-        "nombre_titular": "",
-        "fecha_vencimiento": "2026-06-30",
-        "cvv": "",
-        "saldo": "5000000.00"
+      "estado": "activa",
+      "usuario": 13,
+      "tipo": "DÚbito",
+      "numero": "1234567891012345",
+      "nombre_titular": "",
+      "fecha_vencimiento": "2026-06-30",
+      "cvv": "",
+      "saldo": "5000000.00"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.tarjeta",
     "pk": 7,
     "fields": {
-        "estado": "activa",
-        "usuario": 13,
-        "tipo": "CrÚdito",
-        "numero": "1275278902234567",
-        "nombre_titular": "",
-        "fecha_vencimiento": "2028-02-23",
-        "cvv": "",
-        "saldo": "47000000.00"
+      "estado": "activa",
+      "usuario": 13,
+      "tipo": "CrÚdito",
+      "numero": "1275278902234567",
+      "nombre_titular": "",
+      "fecha_vencimiento": "2028-02-23",
+      "cvv": "",
+      "saldo": "47000000.00"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.carrito",
     "pk": 1,
     "fields": {
-        "usuario": 1,
-        "creado_en": "2025-10-28T22:53:29.156Z"
+      "usuario": 1,
+      "creado_en": "2025-10-28T22:53:29.156Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.carrito",
     "pk": 2,
     "fields": {
-        "usuario": 11,
-        "creado_en": "2025-10-30T03:26:16.676Z"
+      "usuario": 11,
+      "creado_en": "2025-10-30T03:26:16.676Z"
     }
-},
-{
+  },
+  {
     "model": "aerolinea.carrito",
     "pk": 3,
     "fields": {
-        "usuario": 15,
-        "creado_en": "2025-11-28T03:37:25.919Z"
+      "usuario": 15,
+      "creado_en": "2025-11-28T03:37:25.919Z"
     }
-}
+  }
 ]
