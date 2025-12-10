@@ -99,7 +99,7 @@ LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/buscar-vuelos"
 LOGOUT_REDIRECT_URL = "/accounts/login/"
 
-MEDIA_URL = "/media/"
+MEDIA_URL = "https://media-condor.onrender.com/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
