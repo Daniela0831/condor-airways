@@ -6,7 +6,12 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-temporal-key")
-DEBUG = os.environ.get("DJANGO_DEBUG", "False") == "True"
+
+IS_RENDER = "RENDER" in os.environ
+if IS_RENDER:
+    DEBUG = False
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,condor-airways.onrender.com").split(",")
 
@@ -16,14 +21,28 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "whitenoise.runserver_nostatic",
-    "django.contrib.staticfiles",
-    "aerolinea",
 ]
+
+if IS_RENDER:
+    INSTALLED_APPS += [
+        "whitenoise.runserver_nostatic",
+        "django.contrib.staticfiles",
+    ]
+else:
+    INSTALLED_APPS += [
+        "django.contrib.staticfiles",
+    ]
+
+INSTALLED_APPS += ["aerolinea"]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+]
+
+if IS_RENDER:
+    MIDDLEWARE += ["whitenoise.middleware.WhiteNoiseMiddleware"]
+
+MIDDLEWARE += [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -31,6 +50,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+
 
 ROOT_URLCONF = "condor_airways.urls"
 
@@ -92,14 +113,20 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+if IS_RENDER:
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/buscar-vuelos"
 LOGOUT_REDIRECT_URL = "/accounts/login/"
 
-MEDIA_URL = "https://media-condor.onrender.com/"
+if IS_RENDER:
+    MEDIA_URL = "https://media-condor.onrender.com/"
+else:
+    MEDIA_URL = "/media/"
+
+
 MEDIA_ROOT = BASE_DIR / "media"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
