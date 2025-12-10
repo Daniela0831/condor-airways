@@ -1,5 +1,257 @@
 [
   {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$E9iQLrjl2WkB2LoKoCxCPw$SRTUw6EacDcc9DeGAr0m2h9HKFhruL2PlBvoB9k1C6w=",
+      "last_login": "2025-10-20T00:45:29.215Z",
+      "is_superuser": true,
+      "username": "KMCC",
+      "first_name": "",
+      "last_name": "",
+      "email": "karenmanuela.cardona@utp.edu.co",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-10-20T00:02:36.137Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$4CDEtEFh9cYpik8YG7ojNs$WuvjVu8ZqiHGBrFqCNEIAdx2Z/NWGu99Haup2hR6Akg=",
+      "last_login": "2025-11-28T14:31:37.305Z",
+      "is_superuser": false,
+      "username": "karencita22",
+      "first_name": "",
+      "last_name": "",
+      "email": "karencarcas@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-20T00:30:05.768Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$mrOzqYKDTfbh4DsTGej1Ae$+s+R65xTVB32wQRsOTgZ6bpQ619fC8JDDIlhlui0yck=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jhoncito08",
+      "first_name": "",
+      "last_name": "",
+      "email": "jhoncito@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-20T00:44:07.133Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$6yd1nvvjsRVQfULxk8o2WM$9ORXF/pnsyV4m8B319mX1Z2kyMjSkj+AKeMeA9e72TA=",
+      "last_login": "2025-11-28T04:01:00.997Z",
+      "is_superuser": true,
+      "username": "root",
+      "first_name": "",
+      "last_name": "",
+      "email": "root@condorairways.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-10-20T01:58:59.846Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$UIZCyfNPIop4Snx5L3HFNi$fXvBy2ctsEHY06DSmar84TUj4WwdsDuDQKvSBE1DYxE=",
+      "last_login": "2025-10-21T21:55:36.475Z",
+      "is_superuser": false,
+      "username": "Manuela",
+      "first_name": "",
+      "last_name": "",
+      "email": "manuelita@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-21T21:54:23.200Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$C1FFWrli23WnUZITH0cbjm$+9TLQPoKJ8QDzg4EvEiuW/qBiNDnfhebrAT+I8hmTCs=",
+      "last_login": "2025-10-31T03:42:06.568Z",
+      "is_superuser": false,
+      "username": "Laura",
+      "first_name": "",
+      "last_name": "",
+      "email": "laurita@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-21T21:54:59.460Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$O1dOAQm5Xb8xkeQOHpr1So$w777EVBADuTU2PHke5YYc9cYr+l9iZV1OLEU7LNKPwk=",
+      "last_login": "2025-12-09T03:37:53.377Z",
+      "is_superuser": false,
+      "username": "Manu123",
+      "first_name": "",
+      "last_name": "",
+      "email": "manuelita@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-24T02:06:37.131Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$V52UZ9eDke6uC1lUl0UrBN$NXfVTIYzcS504FT4XCZ7+NJtGZFNrdaw3GILs6BQCCA=",
+      "last_login": "2025-10-26T02:41:52.868Z",
+      "is_superuser": false,
+      "username": "Juan88",
+      "first_name": "",
+      "last_name": "",
+      "email": "juanito@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-24T02:17:50.104Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$PyL4iI5s9bZnsuCfYA044s$J77ylCOjBGoH19+9nUFMP657emDs1r1hPMLdfPenyeo=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Nico22",
+      "first_name": "",
+      "last_name": "",
+      "email": "nicolas22@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-24T02:21:35.558Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$I1Fo3IuZNtuqdyZUsTLSPl$zy7ZwYDjc1npVhKlHCPtjkjJBifAxO4JvO4+ZXQZMqM=",
+      "last_login": "2025-12-10T02:41:37.632Z",
+      "is_superuser": false,
+      "username": "Daniela_08",
+      "first_name": "",
+      "last_name": "",
+      "email": "daniela.diaz@utp.edu.co",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-30T03:18:43.669Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$OoIosKrJQBTYHTYaAY46WV$Z2UNciGy2v36RqPdiOIBvf/GTiFBumecwMKg6WEIv9s=",
+      "last_login": "2025-10-31T03:39:04.995Z",
+      "is_superuser": false,
+      "username": "Jero30",
+      "first_name": "",
+      "last_name": "",
+      "email": "jero0330@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-31T03:34:18.883Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$hC4zGZVvZuUw0WLUoqMipI$ARpE4MCGa44ZaDa//Zbllk+Yh0odJ9fglgqeNMmSntQ=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Tina23",
+      "first_name": "",
+      "last_name": "",
+      "email": "martinard23@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-11-28T03:22:49.112Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$qyp2CS31L9Mq41SZAT7ulb$ixEl/p2N+7Gw+sBP6lPbN6SU6ltz193Ibidgfj5a3nw=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "18angelik",
+      "first_name": "",
+      "last_name": "",
+      "email": "18angelik@hotmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-11-28T03:26:20.444Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 17,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$kAGH9AEgQxjn5NeVC5ku5M$+MEMrQEsRBJdyQ8xTzPl1J/zDhhcmIKBmdaB8DnmAtg=",
+      "last_login": "2025-11-28T03:36:59.924Z",
+      "is_superuser": false,
+      "username": "Salo12",
+      "first_name": "",
+      "last_name": "",
+      "email": "salo12@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-11-28T03:36:20.248Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
     "model": "aerolinea.pais",
     "pk": 1,
     "fields": {
