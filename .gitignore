@@ -135,7 +135,6 @@ staticfiles/
 static_root/
 
 # Media files (uploads)
-media/
 
 # Static files
 staticfiles/
