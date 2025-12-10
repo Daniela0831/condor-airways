@@ -429,7 +429,7 @@ class EditarPerfilForm(forms.ModelForm):
     class Meta:
         model = Usuario
         fields = [
-            "nombres", "apellidos", "dni",
+            "user", "nombres", "apellidos", "dni",
             "email",
             "pais", "departamento", "municipio",
             "fecha_nacimiento",

@@ -2,6 +2,14 @@
 {% load static %}
 
 {% block content %}
+
+<style>
+    /* Ocultar el input de foto */
+    #id_imagen_usuario {
+        display: none;
+    }
+</style>
+
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -16,32 +24,45 @@
 
                 <div class="card-body p-4">
 
+                    <!-- FOTO + BOTÓN EDITAR -->
                     <div class="text-center mb-4">
 
-                        {% if form.instance.imagen_usuario %}
-                            <img src="{{ form.instance.imagen_usuario.url }}"
-                                class="rounded-circle shadow"
-                                style="width:140px;height:140px;object-fit:cover;">
-                        {% else %}
-                            <img src="{% static 'img/avatar-default.png' %}"
-                                class="rounded-circle shadow"
-                                style="width:140px;height:140px;object-fit:cover;">
-                        {% endif %}
+                        <div class="position-relative mx-auto" style="width:150px;">
 
+                            {% if form.instance.imagen_usuario %}
+                                <img id="previewImg" src="{{ form.instance.imagen_usuario.url }}"
+                                    class="rounded-circle shadow"
+                                    style="width:140px;height:140px;object-fit:cover;">
+                            {% else %}
+                                <img id="previewImg" src="{% static 'img/avatar-default.png' %}"
+                                    class="rounded-circle shadow"
+                                    style="width:140px;height:140px;object-fit:cover;">
+                            {% endif %}
+
+                            <!-- Botón flotante -->
+                            <label for="id_imagen_usuario"
+                                class="btn btn-sm btn-warning rounded-circle shadow position-absolute"
+                                style="bottom:5px; right:0;">
+                                <i class="bi bi-pencil-fill"></i>
+                            </label>
+                        </div>
+
+                        <!-- Nombre y correo centrados -->
                         <h5 class="mt-3 fw-bold">{{ request.user.username }}</h5>
                         <p class="text-muted mb-0">{{ request.user.email }}</p>
                     </div>
-
-
+                    <!-- FORMULARIO -->
                     <form method="POST" enctype="multipart/form-data" class="row g-3">
                         {% csrf_token %}
 
-                        <!-- Cuenta -->
+                        <!-- Información de Cuenta -->
                         <h6 class="text-muted">Información de cuenta</h6>
+
                         <div class="col-md-6">
-                            {{ form.username.label_tag }}
-                            {{ form.username }}
+                            {{ form.user.label_tag }}
+                            {{ form.user }}
                         </div>
+
                         <div class="col-md-6">
                             {{ form.email.label_tag }}
                             {{ form.email }}
@@ -49,12 +70,14 @@
 
                         <hr class="my-3">
 
-                        <!-- Personal -->
+                        <!-- Información personal -->
                         <h6 class="text-muted">Información personal</h6>
+
                         <div class="col-md-6">
                             {{ form.nombres.label_tag }}
                             {{ form.nombres }}
                         </div>
+
                         <div class="col-md-6">
                             {{ form.apellidos.label_tag }}
                             {{ form.apellidos }}
@@ -64,6 +87,7 @@
                             {{ form.dni.label_tag }}
                             {{ form.dni }}
                         </div>
+
                         <div class="col-md-6">
                             {{ form.fecha_nacimiento.label_tag }}
                             {{ form.fecha_nacimiento }}
@@ -74,8 +98,8 @@
                             {{ form.genero }}
                         </div>
 
-                        <div class="col-md-6">
-                            {{ form.imagen_usuario.label_tag }}
+                        <!-- Campo imagen oculto -->
+                        <div class="col-md-6 d-none">
                             {{ form.imagen_usuario }}
                         </div>
 
@@ -83,14 +107,17 @@
 
                         <!-- Dirección -->
                         <h6 class="text-muted">Dirección</h6>
+
                         <div class="col-md-4">
                             {{ form.pais.label_tag }}
                             {{ form.pais }}
                         </div>
+
                         <div class="col-md-4">
                             {{ form.departamento.label_tag }}
                             {{ form.departamento }}
                         </div>
+
                         <div class="col-md-4">
                             {{ form.municipio.label_tag }}
                             {{ form.municipio }}
@@ -106,6 +133,7 @@
                                 <i class="bi bi-save"></i> Guardar cambios
                             </button>
                         </div>
+
                     </form>
 
                 </div>
@@ -114,4 +142,16 @@
         </div>
     </div>
 </div>
+
+<!-- Script vista previa imagen -->
+<script>
+document.getElementById("id_imagen_usuario").addEventListener("change", function(){
+    const img = document.getElementById("previewImg");
+    const file = this.files[0];
+    if (file) {
+        img.src = URL.createObjectURL(file);
+    }
+});
+</script>
+
 {% endblock %}
